@@ -3,6 +3,8 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_smartfmri.h"
+#include "qfiledialog.h"
+#include "qdebug.h"
 
 class smartfMRI : public QMainWindow
 {
@@ -11,6 +13,9 @@ class smartfMRI : public QMainWindow
 public:
 	smartfMRI(QWidget *parent = 0);
 	~smartfMRI();
+
+public slots:
+	int addExperiment();
 
 private:
 	Ui::smartfMRIClass ui;
