@@ -2,6 +2,7 @@
 #define EXPERIMENT_H
 
 #include <QObject>
+#include <qurl.h>
 
 class Experiment : public QObject
 {
@@ -9,19 +10,31 @@ class Experiment : public QObject
 
 public:
 	Experiment(QObject *parent);
-	Experiment(const QString URL, QObject *parent = 0);
+	Experiment(const QUrl url, QObject *parent = 0);
 	~Experiment();
 
-	QString getURL();
+	QUrl getUrl();
 	QString getName();
 	
 public slots:
-	int setURL(const QString URL);
+	int setUrl(const QUrl url);
 	int setName(const QString name);
 
 private:
-	QString URL;
+	QUrl url;
 	QString name;
+	/*
+	more parameter should be insert here
+	following is the parameter
+	tr
+	control period
+	task period
+	dummy samples
+	cycles
+	task trial period
+	control trail period
+	scan time
+	*/
 	
 };
 

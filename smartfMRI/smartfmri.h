@@ -5,6 +5,8 @@
 #include "ui_smartfmri.h"
 #include "qfiledialog.h"
 #include "qdebug.h"
+#include "experiment.h"
+
 
 class smartfMRI : public QMainWindow
 {

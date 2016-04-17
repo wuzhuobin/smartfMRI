@@ -7,10 +7,10 @@ Experiment::Experiment(QObject *parent)
 }
 
 
-Experiment::Experiment(const QString URL, QObject *parent)
-	: QObject(parent), URL(URL)
+Experiment::Experiment(const QUrl url, QObject *parent)
+	: QObject(parent), url(url)
 {
-
+	name = url.fileName().split('.').constFirst();
 }
 
 
@@ -19,10 +19,10 @@ Experiment::~Experiment()
 
 }
 
-int Experiment::setURL(const QString URL) {
-	if (this->URL == URL)
+int Experiment::setUrl(const QUrl url) {
+	if (this->url == url)
 		return 0;
-	this->URL = URL;
+	this->url = url;
 	return 1;
 }
 
@@ -34,8 +34,8 @@ int Experiment::setName(const QString name) {
 
 }
 
-QString Experiment::getURL() {
-	return URL;
+QUrl Experiment::getUrl() {
+	return this->url;
 }
 
 QString Experiment::getName() {
