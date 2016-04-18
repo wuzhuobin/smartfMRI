@@ -6,6 +6,13 @@ Experiment::Experiment(QObject *parent)
 
 }
 
+//Experiment::Experiment(const Experiment & e)
+//{
+//	this->name = e.name;
+//	this->url = e.url;
+//	qDebug() << "NEW EXPERIMENT";
+//}
+
 
 Experiment::Experiment(const QUrl url, QObject *parent)
 	: QObject(parent), url(url)

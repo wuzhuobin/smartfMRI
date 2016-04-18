@@ -5,7 +5,7 @@
 #include "ui_smartfmri.h"
 #include "qfiledialog.h"
 #include "qdebug.h"
-#include "experiment.h"
+#include "experimentmodel.h"
 
 
 class smartfMRI : public QMainWindow
@@ -21,6 +21,8 @@ public slots:
 
 private:
 	Ui::smartfMRIClass ui;
+	ExperimentModel expMod;
+
 };
 
 #endif // SMARTFMRI_H

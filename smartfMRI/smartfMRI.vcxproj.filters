@@ -50,13 +50,10 @@
     <ClCompile Include="GeneratedFiles\qrc_smartfmri.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_experiment.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_experiment.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="experiment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="experimentmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,6 +74,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_smartfmri.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="experimentmodel.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

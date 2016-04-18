@@ -2,21 +2,20 @@
 #define EXPERIMENT_H
 
 #include <QObject>
-#include <qurl.h>
+#include "qurl.h"
+#include "qdebug.h"
 
 class Experiment : public QObject
 {
-	Q_OBJECT
-
+	
 public:
-	Experiment(QObject *parent);
+	Experiment(QObject *parent = 0);
+	//Experiment(const Experiment& e);
 	Experiment(const QUrl url, QObject *parent = 0);
 	~Experiment();
 
 	QUrl getUrl();
 	QString getName();
-	
-public slots:
 	int setUrl(const QUrl url);
 	int setName(const QString name);
 
