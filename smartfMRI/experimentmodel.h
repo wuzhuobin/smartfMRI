@@ -2,8 +2,8 @@
 #define EXPERIMENTMODEL_H
 
 #include <QAbstractListModel>
+#include <QDebug>
 #include "experiment.h"
-#include "qdebug.h"
 
 class ExperimentModel : public QAbstractListModel
 {

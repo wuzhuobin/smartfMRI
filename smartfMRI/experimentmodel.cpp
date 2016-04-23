@@ -3,7 +3,7 @@
 ExperimentModel::ExperimentModel(QObject *parent)
 	: QAbstractListModel(parent)
 {
-
+	qDebug() << "ExperimentModel construction";
 }
 
 ExperimentModel::~ExperimentModel()
@@ -27,8 +27,7 @@ QVariant ExperimentModel::data(const QModelIndex &index, int role) const
 	if (index.row() < 0 || index.row() >= qExpMap.size())
 		return QVariant();
 	QString key = qExpMap.keys()[index.row()];
-	//QUrl url = qExpMap.first()->getUrl();
-	//QString path = qExpMap[key]->getUrl().path();
+	QString path = qExpMap[key]->getUrl().path();
 	switch (role)
 	{
 	case Qt::DisplayRole:
@@ -36,8 +35,7 @@ QVariant ExperimentModel::data(const QModelIndex &index, int role) const
 		//return qExpMap.keys()[index.row()];
 		break;
 	case Qt::ToolTipRole:
-		//return path;
-		return QVariant();
+		return path;
 		//return QString(qExpMap.values()[index.row()]->getUrl().path());
 		break;
 	default:
@@ -53,6 +51,8 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 	if(row > qExpMap.size() || row < 0)
 		return false;
 	qExpMap[e.getName()] = &e;
+	//QDesktopServices::openUrl(e.getUrl());
+
 	QMapIterator<QString, Experiment*> i(qExpMap);
 	while (i.hasNext()) {
 		i.next();

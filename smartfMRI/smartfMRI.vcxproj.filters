@@ -70,6 +70,9 @@
     <CustomBuild Include="experiment.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="Experiment Manager.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_smartfmri.h">
@@ -77,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="experimentmodel.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_Experiment Manager.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

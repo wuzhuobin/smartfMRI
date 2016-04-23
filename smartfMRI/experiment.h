@@ -2,8 +2,9 @@
 #define EXPERIMENT_H
 
 #include <QObject>
-#include "qurl.h"
-#include "qdebug.h"
+#include <QDir>
+#include <QUrl>
+#include <QDebug>
 
 class Experiment : public QObject
 {
@@ -22,6 +23,7 @@ public:
 private:
 	QUrl url;
 	QString name;
+	QDir dir;
 	/*
 	more parameter should be insert here
 	following is the parameter

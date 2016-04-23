@@ -2,25 +2,27 @@
 #define SMARTFMRI_H
 
 #include <QtWidgets/QMainWindow>
+#include <QFileDialog>
+#include <QDir>
+#include <QDebug>
 #include "ui_smartfmri.h"
-#include "qfiledialog.h"
-#include "qdebug.h"
 #include "experimentmodel.h"
 
 
-class smartfMRI : public QMainWindow
+class SmartfMRI : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	smartfMRI(QWidget *parent = 0);
-	~smartfMRI();
+	SmartfMRI(QWidget *parent = 0);
+	~SmartfMRI();
 
 public slots:
 	int addExperiment();
 
 private:
 	Ui::smartfMRIClass ui;
+	QDir dir;
 	ExperimentModel expMod;
 
 };

@@ -15,9 +15,12 @@ Experiment::Experiment(QObject *parent)
 
 
 Experiment::Experiment(const QUrl url, QObject *parent)
-	: QObject(parent), url(url)
+	: QObject(parent), url(url), name(url.fileName().split('.').constFirst()), dir(QDir(url.path().remove(url.fileName())))
 {
-	name = url.fileName().split('.').constFirst();
+	qDebug() << "Experiment construction";
+	qDebug() << this->url;
+	qDebug() << this->name;
+	qDebug() << this->dir;
 }
 
 

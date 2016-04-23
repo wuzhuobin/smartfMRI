@@ -1,24 +1,25 @@
 #include "smartfmri.h"
 
-smartfMRI::smartfMRI(QWidget *parent)
+SmartfMRI::SmartfMRI(QWidget *parent)
 	: QMainWindow(parent)
 {
 	//initialization UI setting
 	qDebug() << "set up UI.";
 	ui.setupUi(this);
+	if (dir.mkdir("experiment")) 
+		qDebug() << "experiment directory created";
 
 
-	
 	ui.experimentlistView->setModel(&expMod);
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addExperiment()));
 }
 
-smartfMRI::~smartfMRI()
+SmartfMRI::~SmartfMRI()
 {
 
 }
 
-int smartfMRI::addExperiment() {
+int SmartfMRI::addExperiment() {
 
 	QUrl url = QFileDialog::getOpenFileUrl(this, tr("Add Experiment"),
 		QUrl(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
