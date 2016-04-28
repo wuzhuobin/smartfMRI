@@ -21,8 +21,16 @@ SmartfMRI::~SmartfMRI()
 
 int SmartfMRI::removeExperiment()
 {
-	qDebug() << ui.experimentlistView->currentIndex().data(Qt::ToolTipRole);
-	return 1;
+	QDir dir = QFileInfo(ui.experimentlistView->currentIndex().data(Qt::ToolTipRole).toString()).absoluteDir();
+	dir.setFilter(QDir::NoDotAndDotDot);
+	if (dir.removeRecursively()) {
+		qDebug() << "remove successfully";
+		delete expMod;
+		expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
+		return 1;
+	}
+	else 
+		return 0;
 }
 
 int SmartfMRI::addExperiment() {
