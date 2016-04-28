@@ -5,6 +5,7 @@
 #include <QFileDialog>
 #include <QDir>
 #include <QDebug>
+#include <QMessageBox>
 #include "ui_smartfmri.h"
 #include "experimentmodel.h"
 #include "experimentmanager.hpp"
