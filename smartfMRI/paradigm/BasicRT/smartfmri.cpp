@@ -10,19 +10,12 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 		qDebug() << "paradigm directory created";
 	expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
 	ui.experimentlistView->setModel(expMod);
-	connect(ui.removeButton, SIGNAL(clicked()), this, SLOT(removeExperiment()));
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addExperiment()));
 }
 
 SmartfMRI::~SmartfMRI()
 {
 	qDebug() << "Close SmartfMRI";
-}
-
-int SmartfMRI::removeExperiment()
-{
-	qDebug() << ui.experimentlistView->currentIndex().data(Qt::ToolTipRole);
-	return 1;
 }
 
 int SmartfMRI::addExperiment() {
@@ -57,4 +50,3 @@ int SmartfMRI::addExperiment() {
 
 	return 1;
 }
-

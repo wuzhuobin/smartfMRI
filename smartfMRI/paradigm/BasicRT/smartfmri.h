@@ -20,7 +20,6 @@ public:
 
 public slots:
 	int addExperiment();
-	int removeExperiment();
 
 private:
 	Ui::smartfMRIClass ui;
