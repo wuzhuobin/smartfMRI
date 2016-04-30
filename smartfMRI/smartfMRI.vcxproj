@@ -173,6 +173,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="scanparametersmodel.cpp" />
     <ClCompile Include="smartfmri.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -216,6 +217,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="scanparametersmodel.h" />
     <CustomBuild Include="experiment.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </Message>

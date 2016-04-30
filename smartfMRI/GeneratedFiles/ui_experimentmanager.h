@@ -36,11 +36,11 @@ public:
     QLineEdit *paradigmNamelineEdit;
     QWidget *layoutWidget_2;
     QGridLayout *gridLayout_4;
-    QTableView *scanParametersTableView;
     QSpacerItem *horizontalSpacer_4;
-    QLabel *label_6;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *confirmPushButton;
+    QTableView *scanParametersTableView;
+    QLabel *label_6;
 
     void setupUi(QWidget *ExperimentManager)
     {
@@ -50,6 +50,9 @@ public:
         layoutWidget = new QWidget(ExperimentManager);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(130, 220, 361, 98));
+        QFont font;
+        font.setPointSize(12);
+        layoutWidget->setFont(font);
         gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -57,11 +60,13 @@ public:
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
         label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setFont(font);
 
         gridLayout_3->addWidget(label_4, 0, 0, 1, 1);
 
         experimentNameLineEdit = new QLineEdit(layoutWidget);
         experimentNameLineEdit->setObjectName(QStringLiteral("experimentNameLineEdit"));
+        experimentNameLineEdit->setFont(font);
 
         gridLayout_3->addWidget(experimentNameLineEdit, 0, 1, 1, 1);
 
@@ -71,35 +76,28 @@ public:
 
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setFont(font);
 
         gridLayout_3->addWidget(label_5, 2, 0, 1, 1);
 
         paradigmNamelineEdit = new QLineEdit(layoutWidget);
         paradigmNamelineEdit->setObjectName(QStringLiteral("paradigmNamelineEdit"));
+        paradigmNamelineEdit->setFont(font);
 
         gridLayout_3->addWidget(paradigmNamelineEdit, 2, 1, 1, 1);
 
         layoutWidget_2 = new QWidget(ExperimentManager);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
         layoutWidget_2->setGeometry(QRect(660, 80, 421, 411));
+        layoutWidget_2->setFont(font);
         gridLayout_4 = new QGridLayout(layoutWidget_2);
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        scanParametersTableView = new QTableView(layoutWidget_2);
-        scanParametersTableView->setObjectName(QStringLiteral("scanParametersTableView"));
-
-        gridLayout_4->addWidget(scanParametersTableView, 1, 0, 1, 3);
-
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_4->addItem(horizontalSpacer_4, 2, 2, 1, 1);
-
-        label_6 = new QLabel(layoutWidget_2);
-        label_6->setObjectName(QStringLiteral("label_6"));
-
-        gridLayout_4->addWidget(label_6, 0, 0, 1, 2);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -107,8 +105,32 @@ public:
 
         confirmPushButton = new QPushButton(layoutWidget_2);
         confirmPushButton->setObjectName(QStringLiteral("confirmPushButton"));
+        confirmPushButton->setFont(font);
 
         gridLayout_4->addWidget(confirmPushButton, 2, 1, 1, 1);
+
+        scanParametersTableView = new QTableView(layoutWidget_2);
+        scanParametersTableView->setObjectName(QStringLiteral("scanParametersTableView"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(scanParametersTableView->sizePolicy().hasHeightForWidth());
+        scanParametersTableView->setSizePolicy(sizePolicy);
+        scanParametersTableView->setFont(font);
+        scanParametersTableView->setTextElideMode(Qt::ElideLeft);
+
+        gridLayout_4->addWidget(scanParametersTableView, 1, 0, 1, 3);
+
+        label_6 = new QLabel(layoutWidget_2);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
+        label_6->setSizePolicy(sizePolicy1);
+        label_6->setFont(font);
+
+        gridLayout_4->addWidget(label_6, 0, 0, 1, 3);
 
 
         retranslateUi(ExperimentManager);
@@ -121,8 +143,8 @@ public:
         ExperimentManager->setWindowTitle(QApplication::translate("ExperimentManager", "ExperimentManager", 0));
         label_4->setText(QApplication::translate("ExperimentManager", "Experiment Name:", 0));
         label_5->setText(QApplication::translate("ExperimentManager", "Paradigm Name:", 0));
-        label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
         confirmPushButton->setText(QApplication::translate("ExperimentManager", "Confirm", 0));
+        label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
     } // retranslateUi
 
 };

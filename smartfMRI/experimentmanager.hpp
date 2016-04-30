@@ -5,6 +5,8 @@
 #include <QUrl>
 #include <QDir>
 #include <QDirIterator>
+#include "experiment.h"
+#include "scanparametersmodel.h"
 #include "ui_experimentmanager.h"
 
 class ExperimentManager : public QDialog {

@@ -3,8 +3,8 @@
 ExperimentManager::ExperimentManager(QWidget * parent) : QDialog(parent) {
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
-
-	//connect(ui.confirmPushButton, SIGNAL(clicked()), this, SIGNAL(t))
+	
+	ui.scanParametersTableView->setModel(new ScanParametersModel(this));
 	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(copyParadigm()));
 }
 
@@ -61,12 +61,20 @@ int ExperimentManager::copyParadigm()
 	QFileInfoList files = beforeDir.entryInfoList(QDir::Files);
 	
 	for (int i = 0; i < files.size(); ++i) {
+		
 		QFile targetFile(targetDir.path() + "/" + ui.paradigmNamelineEdit->text() + "/" + files[i].fileName());
 		QFile beforeFile(files[i].absoluteFilePath());
+
 		if (targetFile.exists())
 			targetFile.remove();
+		
 		if (beforeFile.copy(targetFile.fileName()))
 			qDebug() << files[i].absoluteFilePath() << "copied";
+		
+		if (files[i].absoluteFilePath().contains(".ebs2", Qt::CaseInsensitive)) {
+			Experiment newE(files[i].absoluteFilePath(), this);
+		}
+			
 
 	}
 	this->accept();
