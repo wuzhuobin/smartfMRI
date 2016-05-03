@@ -24,8 +24,8 @@ SmartfMRI::~SmartfMRI()
 
 int SmartfMRI::removeExperiment()
 {
-	QDir dirr = QFileInfo(ui.experimentlistView->
-		currentIndex().data(Qt::ToolTipRole).toString()).absoluteDir();
+	QDir dirr(ui.experimentlistView->
+		currentIndex().data(Qt::ToolTipRole).toString());
 	dirr.setFilter(QDir::NoDotAndDotDot);
 	if (dirr.removeRecursively()) {
 		qDebug() << "remove successfully";
