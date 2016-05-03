@@ -27,7 +27,7 @@ int SmartfMRI::removeExperiment()
 	QDir dirr(ui.experimentlistView->
 		currentIndex().data(Qt::ToolTipRole).toString());
 	dirr.setFilter(QDir::NoDotAndDotDot);
-	if (dirr.removeRecursively()) {
+	if (dirr != QDir::current() && dirr.removeRecursively()) {
 		qDebug() << "remove successfully";
 		delete expMod;
 		expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
