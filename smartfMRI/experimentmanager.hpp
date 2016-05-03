@@ -17,10 +17,10 @@ public:
 	~ExperimentManager();
 	int setUpdataFlag(bool flag);
 	bool getUpdataFlag();
-	int setBeforeUrl(QUrl url);
-	QUrl getBeforeUrl();
-	int setParadigmUrl(QUrl url);
-	QUrl getParadigmUrl();
+	int setBeforePath(QString beforPath);
+	QString getBeforePath();
+	int setParadigmPath(QString Path);
+	QString getParadigmPath();
 public slots:
 	int copyParadigm();
 
@@ -28,6 +28,6 @@ public slots:
 private:
 	Ui::ExperimentManager ui;
 	bool updataFlag;
-	QUrl paradigmUrl;
-	QUrl beforeUrl;
+	QString paradigmPath;
+	QString beforePath;
 };

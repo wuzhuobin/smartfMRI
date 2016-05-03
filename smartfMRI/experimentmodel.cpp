@@ -11,9 +11,8 @@ ExperimentModel::ExperimentModel(QObject *parent, QDir dir)
 		QFileInfoList fil(QDir(folders[i].absoluteFilePath()).entryInfoList(
 			QStringList("*.ebs2")));
 		if (fil.size() > 0) {
-			QUrl url(fil[0].absoluteFilePath());
-			qDebug() << url;
-			this->insertRow(this->rowCount(), *new Experiment(url, this));
+			qDebug() << fil[0].absoluteFilePath();
+			this->insertRow(this->rowCount(), *new Experiment(fil[0].absoluteFilePath(), this));
 		}
 	}
 
@@ -41,7 +40,7 @@ QVariant ExperimentModel::data(const QModelIndex &index, int role) const
 	if (index.row() < 0 || index.row() >= qExpMap.size())
 		return QVariant();
 	QString key = qExpMap.keys()[index.row()];
-	QString path = qExpMap[key]->getUrl().path();
+	QString path = qExpMap[key]->getDir().absolutePath();
 	switch (role)
 	{
 	case Qt::DisplayRole:
@@ -70,7 +69,7 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 	QMapIterator<QString, Experiment*> i(qExpMap);
 	while (i.hasNext()) {
 		i.next();
-		qDebug() << i.key() << i.value()->getUrl().path();
+		qDebug() << i.key() << i.value()->getDir().absolutePath();
 		//qDebug() << i.key() << i.value();
 	}
 	endInsertRows();

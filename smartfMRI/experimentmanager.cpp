@@ -8,28 +8,28 @@ ExperimentManager::ExperimentManager(QWidget * parent) : QDialog(parent) {
 	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(copyParadigm()));
 }
 
-int ExperimentManager::setBeforeUrl(QUrl url)
+int ExperimentManager::setBeforePath(QString beforePath)
 {
-	this->beforeUrl = url;
-		ui.paradigmNamelineEdit->setText(url.fileName().split('.').constFirst());
-		ui.experimentNameLineEdit->setText(url.fileName().split('.').constFirst());
+	this->beforePath = beforePath;
+		ui.paradigmNamelineEdit->setText(QFileInfo(beforePath).baseName());
+		ui.experimentNameLineEdit->setText(QFileInfo(beforePath).baseName());
 	return 1;
 }
 
-QUrl ExperimentManager::getBeforeUrl()
+QString ExperimentManager::getBeforePath()
 {
-	return this->beforeUrl;
+	return this->beforePath;
 }
 
-int ExperimentManager::setParadigmUrl(QUrl url)
+int ExperimentManager::setParadigmPath(QString paradigmPath)
 {
-	this->paradigmUrl = url;
+	this->paradigmPath = paradigmPath;
 	return 1;
 }
 
-QUrl ExperimentManager::getParadigmUrl()
+QString ExperimentManager::getParadigmPath()
 {
-	return paradigmUrl;
+	return paradigmPath;
 }
 
 ExperimentManager::~ExperimentManager() {
@@ -52,8 +52,8 @@ int ExperimentManager::copyParadigm()
 	if (getUpdataFlag() == true)
 		return 0;
 	qDebug() << "Copy Paradigm>>>";
-	QDir beforeDir(beforeUrl.path().remove(beforeUrl.fileName()).remove(0,1));
-	QDir targetDir(paradigmUrl.path());
+	QDir beforeDir(beforePath);
+	QDir targetDir(paradigmPath);
 	if (targetDir.mkdir(ui.paradigmNamelineEdit->text()))
 		qDebug() << " make directory" << ui.paradigmNamelineEdit->text();
 	qDebug() << beforeDir;

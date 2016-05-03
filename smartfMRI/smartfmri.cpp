@@ -43,14 +43,15 @@ int SmartfMRI::removeExperiment()
 
 int SmartfMRI::addExperiment() {
 
-	QUrl url = QFileDialog::getOpenFileUrl(this, tr("Add Experiment"),
-		QUrl(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
-	if (url.isEmpty())
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Add Experiment"),
+		QString(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
+	if (fileName.isEmpty())
 		return 0;
 	expMan.setUpdataFlag(false);
-	expMan.setBeforeUrl(url);
-	expMan.setParadigmUrl(QUrl(dir.path() + "/paradigm/"));
-	qDebug() << expMan.getBeforeUrl() << "*******" << expMan.getParadigmUrl();
+	QFileInfo(fileName).absoluteDir();
+	expMan.setBeforePath(QFileInfo(fileName).absolutePath());
+	expMan.setParadigmPath(dir.path() + "/paradigm/");
+	qDebug() << expMan.getBeforePath() << "*******" << expMan.getParadigmPath();
 	if (expMan.exec() == QDialog::Accepted) {
 		if (expMod != nullptr) {
 			delete expMod;

@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QDir>
-#include <QUrl>
+#include <QFileInfo>
 #include <QDebug>
 
 class Experiment : public QObject
@@ -12,18 +12,20 @@ class Experiment : public QObject
 public:
 	Experiment(QObject *parent = 0);
 	//Experiment(const Experiment& e);
-	Experiment(const QUrl url, QObject *parent = 0);
+	Experiment(const QFileInfo fi, QObject *parent = 0);
 	~Experiment();
 
-	QUrl getUrl();
 	QString getName();
-	int setUrl(const QUrl url);
 	int setName(const QString name);
 
+	QDir getDir();
+	int setDir(const QDir dir);
+
 private:
-	QUrl url;
 	QString name;
 	QDir dir;
+	QFileInfo fi;
+
 	double tr;
 	double controlPeriod;
 	double taskPeriod;

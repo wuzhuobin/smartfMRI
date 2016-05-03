@@ -14,8 +14,9 @@ Experiment::Experiment(QObject *parent)
 //}
 
 
-Experiment::Experiment(const QUrl url, QObject *parent)
-	: QObject(parent), url(url), name(url.fileName().split('.').constFirst()), dir(QDir(url.path().remove(url.fileName())))
+
+Experiment::Experiment(const QFileInfo fi, QObject * parent)
+	: QObject(parent), name(fi.baseName()), dir(fi.absoluteDir())
 {
 	tr = 3000.0;
 	controlPeriod = 30000.0;
@@ -26,7 +27,7 @@ Experiment::Experiment(const QUrl url, QObject *parent)
 	controlTrialPeriod = 8000.0;
 
 	qDebug() << "Experiment construction";
-	qDebug() << this->url;
+	qDebug() << this->dir;
 	qDebug() << this->name;
 	//qDebug() << this->dir;
 }
@@ -37,12 +38,7 @@ Experiment::~Experiment()
 	qDebug() << "Experiment destroied";
 }
 
-int Experiment::setUrl(const QUrl url) {
-	if (this->url == url)
-		return 0;
-	this->url = url;
-	return 1;
-}
+
 
 int Experiment::setName(const QString name) {
 	if (this->name == name)
@@ -52,8 +48,15 @@ int Experiment::setName(const QString name) {
 
 }
 
-QUrl Experiment::getUrl() {
-	return this->url;
+QDir Experiment::getDir()
+{
+	return this->dir;
+}
+
+int Experiment::setDir(const QDir dir)
+{
+	this->dir = dir;
+	return 1;
 }
 
 QString Experiment::getName() {
