@@ -48,8 +48,7 @@ int SmartfMRI::addExperiment() {
 	if (fileName.isEmpty())
 		return 0;
 	expMan.setUpdataFlag(false);
-	QFileInfo(fileName).absoluteDir();
-	expMan.setBeforePath(QFileInfo(fileName).absolutePath());
+	expMan.setBeforePath(fileName);
 	expMan.setParadigmPath(dir.path() + "/paradigm/");
 	qDebug() << expMan.getBeforePath() << "*******" << expMan.getParadigmPath();
 	if (expMan.exec() == QDialog::Accepted) {

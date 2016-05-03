@@ -52,7 +52,7 @@ int ExperimentManager::copyParadigm()
 	if (getUpdataFlag() == true)
 		return 0;
 	qDebug() << "Copy Paradigm>>>";
-	QDir beforeDir(beforePath);
+	QDir beforeDir(QFileInfo(beforePath).absolutePath());
 	QDir targetDir(paradigmPath);
 	if (targetDir.mkdir(ui.paradigmNamelineEdit->text()))
 		qDebug() << " make directory" << ui.paradigmNamelineEdit->text();
