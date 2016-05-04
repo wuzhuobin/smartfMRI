@@ -143,7 +143,6 @@
     </CustomBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\ScanParameters\scanparameters.cpp" />
     <ClCompile Include="experiment.cpp" />
     <ClCompile Include="experimentmanager.cpp" />
     <ClCompile Include="experimentmodel.cpp" />
@@ -175,6 +174,7 @@
     </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="qcopydirrecursively.cpp" />
+    <ClCompile Include="scanparameters.cpp" />
     <ClCompile Include="scanparametersmodel.cpp" />
     <ClCompile Include="smartfmri.cpp" />
   </ItemGroup>
@@ -219,9 +219,34 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ScanParameters\scanparameters.h" />
     <ClInclude Include="GeneratedFiles\ui_experimentmanager.h" />
     <ClInclude Include="qcopydirrecursively.h" />
+    <CustomBuild Include="scanparameters.h">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Command>
+    </CustomBuild>
     <ClInclude Include="scanparametersmodel.h" />
     <CustomBuild Include="experiment.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

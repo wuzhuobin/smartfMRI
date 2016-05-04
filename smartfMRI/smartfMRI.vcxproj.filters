@@ -71,7 +71,7 @@
     <ClCompile Include="qcopydirrecursively.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ScanParameters\scanparameters.cpp">
+    <ClCompile Include="scanparameters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,6 +94,9 @@
     <CustomBuild Include="experimentmanager.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="scanparameters.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_smartfmri.h">
@@ -110,9 +113,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_experimentmanager.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ScanParameters\scanparameters.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

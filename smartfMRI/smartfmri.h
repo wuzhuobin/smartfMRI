@@ -26,6 +26,7 @@ public slots:
 	int removeExperiment();
 	int runExperiment();
 	int updateExperiment();
+	int selectExperiment(const QModelIndex& index);
 
 private:
 	Ui::smartfMRIClass ui;

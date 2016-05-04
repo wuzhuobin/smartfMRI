@@ -25,7 +25,7 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	//cycles = 4;
 	//taskTrialPeriod = 4000.0;
 	//controlTrialPeriod = 8000.0;
-
+	sps = new ScanParameters(fi, this);
 	qDebug() << "Experiment construction";
 	qDebug() << this->dir;
 	qDebug() << this->name;

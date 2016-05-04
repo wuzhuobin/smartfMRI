@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QDebug>
+#include "scanparameters.h"
 
 class Experiment : public QObject
 {
@@ -24,10 +25,12 @@ public:
 	QFileInfo getFi() const;
 	int setFi(const QFileInfo fi);
 
+	
 private:
 	QString name;
 	QDir dir;
 	QFileInfo fi;
+	ScanParameters* sps;
 
 
 	/*

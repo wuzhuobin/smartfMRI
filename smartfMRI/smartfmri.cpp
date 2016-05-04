@@ -16,6 +16,7 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addExperiment()));
 	connect(ui.runPushButton, SIGNAL(clicked()), this, SLOT(runExperiment()));
 	connect(ui.updataPushButton, SIGNAL(clicked()), this, SLOT(updateExperiment()));
+	connect(ui.experimentlistView, SIGNAL(clicked(const QModelIndex&)), this, SLOT(selectExperiment(const QModelIndex&)));
 
 }
 
@@ -103,5 +104,11 @@ int SmartfMRI::runExperiment() {
 int SmartfMRI::updateExperiment()
 {
 	qDebug() << "update";
+	return 0;
+}
+
+int SmartfMRI::selectExperiment(const QModelIndex& index)
+{
+	qDebug() << index.row();
 	return 0;
 }
