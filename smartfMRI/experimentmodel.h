@@ -15,6 +15,7 @@ public:
 	int rowCount(const QModelIndex& parent = QModelIndex()) const;
 	QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
 	bool insertRow(int row, Experiment& e,const QModelIndex& parent = QModelIndex());
+	bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
 	Experiment* getExperiment(const QString key) const;
 
 private:

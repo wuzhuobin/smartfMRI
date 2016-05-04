@@ -36,6 +36,11 @@ int SmartfMRI::removeExperiment()
 		ui.experimentlistView->setModel(expMod);
 		return 1;
 	}
+	else if (!ui.experimentlistView->currentIndex().data().isValid()) {
+		QMessageBox::critical(this, tr("Fail to remove"),
+			QString("Please select an item."));
+		return 0;
+	}
 	else {
 		QMessageBox::critical(this, tr("Fail to remove"),
 			QString("Please remove ") + dirr.absolutePath() + " by yourself");
@@ -76,17 +81,23 @@ int SmartfMRI::addExperiment() {
 }
 
 int SmartfMRI::runExperiment() {
-
-	Experiment* e = expMod->getExperiment(ui.experimentlistView->
-		currentIndex().data(Qt::DisplayRole).toString());
-	if (e == nullptr) {
-		qDebug() << "please select a paradigm";
-
+	if (!ui.experimentlistView->currentIndex().data().isValid()) {
+		QMessageBox::critical(this, tr("Fail to run"),
+			QString("Please select an item."));
 		return 0;
 	}
-	qDebug() << e->getFi().absoluteFilePath();
-	qDebug() << "run";
-	return 1;
+	Experiment* e = expMod->getExperiment(ui.experimentlistView->
+		currentIndex().data(Qt::DisplayRole).toString());
+	if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
+		qDebug() << "run";
+		return 1;
+	}
+	else {
+		QMessageBox::critical(this, tr("Fail to run"),
+			QString("Cannot open the *.ebs2 file."));
+		return 0;
+	}
+
 }
 
 int SmartfMRI::updateExperiment()

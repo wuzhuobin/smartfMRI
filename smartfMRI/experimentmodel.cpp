@@ -75,6 +75,15 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 	return  true;
 }
 
+bool ExperimentModel::insertRows(int row, int count, const QModelIndex & parent)
+{
+
+	beginInsertRows(parent, row, row);
+
+	endInsertRows();
+	return false;
+}
+
 Experiment* ExperimentModel::getExperiment(const QString key) const
 {
 	return qExpMap[key];
