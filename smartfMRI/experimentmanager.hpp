@@ -5,6 +5,7 @@
 #include <QUrl>
 #include <QDir>
 #include <QDirIterator>
+#include "qcopydirrecursively.h"
 #include "experiment.h"
 #include "scanparametersmodel.h"
 #include "ui_experimentmanager.h"

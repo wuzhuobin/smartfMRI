@@ -6,9 +6,11 @@
 #include <QDir>
 #include <QDebug>
 #include <QMessageBox>
+#include <Qdesktopservices>
 #include "ui_smartfmri.h"
 #include "experimentmodel.h"
 #include "experimentmanager.hpp"
+
 
 
 class SmartfMRI : public QMainWindow
@@ -22,6 +24,8 @@ public:
 public slots:
 	int addExperiment();
 	int removeExperiment();
+	int runExperiment();
+	int updateExperiment();
 
 private:
 	Ui::smartfMRIClass ui;

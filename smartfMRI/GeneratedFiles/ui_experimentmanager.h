@@ -33,7 +33,7 @@ public:
     QLineEdit *experimentNameLineEdit;
     QSpacerItem *verticalSpacer_2;
     QLabel *label_5;
-    QLineEdit *paradigmNamelineEdit;
+    QLineEdit *paradigmNameLineEdit;
     QWidget *layoutWidget_2;
     QGridLayout *gridLayout_4;
     QSpacerItem *horizontalSpacer_4;
@@ -80,11 +80,12 @@ public:
 
         gridLayout_3->addWidget(label_5, 2, 0, 1, 1);
 
-        paradigmNamelineEdit = new QLineEdit(layoutWidget);
-        paradigmNamelineEdit->setObjectName(QStringLiteral("paradigmNamelineEdit"));
-        paradigmNamelineEdit->setFont(font);
+        paradigmNameLineEdit = new QLineEdit(layoutWidget);
+        paradigmNameLineEdit->setObjectName(QStringLiteral("paradigmNameLineEdit"));
+        paradigmNameLineEdit->setFont(font);
+        paradigmNameLineEdit->setReadOnly(true);
 
-        gridLayout_3->addWidget(paradigmNamelineEdit, 2, 1, 1, 1);
+        gridLayout_3->addWidget(paradigmNameLineEdit, 2, 1, 1, 1);
 
         layoutWidget_2 = new QWidget(ExperimentManager);
         layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));

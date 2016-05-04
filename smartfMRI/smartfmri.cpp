@@ -73,3 +73,12 @@ int SmartfMRI::addExperiment() {
 	return 1;
 }
 
+int SmartfMRI::runExperiment() {
+
+	return 1;
+}
+
+int SmartfMRI::updateExperiment()
+{
+	return 0;
+}

@@ -173,6 +173,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="qcopydirrecursively.cpp" />
     <ClCompile Include="scanparametersmodel.cpp" />
     <ClCompile Include="smartfmri.cpp" />
   </ItemGroup>
@@ -217,6 +218,8 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_experimentmanager.h" />
+    <ClInclude Include="qcopydirrecursively.h" />
     <ClInclude Include="scanparametersmodel.h" />
     <CustomBuild Include="experiment.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -263,7 +266,6 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DQT_NO_DEBUG_OUTPUT -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtWidgets"</Command>
     </CustomBuild>
     <ClInclude Include="experimentmodel.h" />
-    <ClInclude Include="GeneratedFiles\ui_experimentmanager.h" />
     <ClInclude Include="GeneratedFiles\ui_smartfmri.h" />
   </ItemGroup>
   <ItemGroup>
