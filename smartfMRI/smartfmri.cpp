@@ -14,6 +14,8 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 
 	connect(ui.removeButton, SIGNAL(clicked()), this, SLOT(removeExperiment()));
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addExperiment()));
+	connect(ui.runPushButton, SIGNAL(clicked()), this, SLOT(runExperiment()));
+	connect(ui.updataPushButton, SIGNAL(clicked()), this, SLOT(updateExperiment()));
 
 }
 
@@ -31,7 +33,7 @@ int SmartfMRI::removeExperiment()
 		qDebug() << "remove successfully";
 		delete expMod;
 		expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
-		ui.experimentlistView->setModel(new ExperimentModel(this, QDir(dir.path() + "/paradigm")));
+		ui.experimentlistView->setModel(expMod);
 		return 1;
 	}
 	else {
@@ -75,10 +77,15 @@ int SmartfMRI::addExperiment() {
 
 int SmartfMRI::runExperiment() {
 
+	Experiment* e = expMod->getExperiment(ui.experimentlistView->
+		currentIndex().data(Qt::DisplayRole).toString());
+	QDir dirr();
+	qDebug() << "run";
 	return 1;
 }
 
 int SmartfMRI::updateExperiment()
 {
+	qDebug() << "update";
 	return 0;
 }

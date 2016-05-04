@@ -59,10 +59,10 @@ int ExperimentManager::copyParadigm()
 	qDebug() << beforeDir;
 	qDebug() << targetDir;
 	QCopyDirRecursively::copy(beforeDir.absolutePath(), targetDir.absolutePath() + "/" + ui.experimentNameLineEdit->text());
-	QFile experiment(targetDir.entryList(QStringList(ui.paradigmNameLineEdit->text()+".ebs2"))[0]);
-	if (experiment.rename(ui.experimentNameLineEdit->text() + ".ebs2")) {
-		qDebug() << ui.paradigmNameLineEdit->text() << "Rename successful to ." << ui.experimentNameLineEdit->text();
-	}
+	//QFile experiment(targetDir.entryList(QStringList() << ui.paradigmNameLineEdit->text() << ".ebs2")[0]);
+	//if (experiment.rename(ui.experimentNameLineEdit->text() + ".ebs2")) {
+	//	qDebug() << ui.paradigmNameLineEdit->text() << "Rename successful to ." << ui.experimentNameLineEdit->text();
+	//}
 	//QFileInfoList files = beforeDir.entryInfoList();
 	//
 	//for (int i = 0; i < files.size(); ++i) {

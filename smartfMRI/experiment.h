@@ -15,10 +15,10 @@ public:
 	Experiment(const QFileInfo fi, QObject *parent = 0);
 	~Experiment();
 
-	QString getName();
+	QString getName()const;
 	int setName(const QString name);
 
-	QDir getDir();
+	QDir getDir()const;
 	int setDir(const QDir dir);
 
 private:
