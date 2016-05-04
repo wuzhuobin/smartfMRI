@@ -4,7 +4,7 @@ ExperimentManager::ExperimentManager(QWidget * parent) : QDialog(parent) {
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
 	
-	ui.scanParametersTableView->setModel(new ScanParametersModel(this));
+//	ui.scanParametersTableView->setModel(new ScanParametersModel(this));
 	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(copyParadigm()));
 }
 

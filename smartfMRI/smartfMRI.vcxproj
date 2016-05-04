@@ -143,6 +143,7 @@
     </CustomBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\ScanParameters\scanparameters.cpp" />
     <ClCompile Include="experiment.cpp" />
     <ClCompile Include="experimentmanager.cpp" />
     <ClCompile Include="experimentmodel.cpp" />
@@ -218,6 +219,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\ScanParameters\scanparameters.h" />
     <ClInclude Include="GeneratedFiles\ui_experimentmanager.h" />
     <ClInclude Include="qcopydirrecursively.h" />
     <ClInclude Include="scanparametersmodel.h" />

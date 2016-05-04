@@ -18,13 +18,13 @@ Experiment::Experiment(QObject *parent)
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir())
 {
-	tr = 3000.0;
-	controlPeriod = 30000.0;
-	taskPeriod = 30000.0;
-	dummySamples = 2;
-	cycles = 4;
-	taskTrialPeriod = 4000.0;
-	controlTrialPeriod = 8000.0;
+	//tr = 3000.0;
+	//controlPeriod = 30000.0;
+	//taskPeriod = 30000.0;
+	//dummySamples = 2;
+	//cycles = 4;
+	//taskTrialPeriod = 4000.0;
+	//controlTrialPeriod = 8000.0;
 
 	qDebug() << "Experiment construction";
 	qDebug() << this->dir;

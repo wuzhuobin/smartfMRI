@@ -29,13 +29,7 @@ private:
 	QDir dir;
 	QFileInfo fi;
 
-	double tr;
-	double controlPeriod;
-	double taskPeriod;
-	int dummySamples;
-	int cycles;
-	double taskTrialPeriod;
-	double controlTrialPeriod;
+
 	/*
 	more parameter should be insert here
 	following is the parameter
