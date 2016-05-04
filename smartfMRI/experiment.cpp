@@ -16,7 +16,7 @@ Experiment::Experiment(QObject *parent)
 
 
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
-	: QObject(parent), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir())
+	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir())
 {
 	tr = 3000.0;
 	controlPeriod = 30000.0;
@@ -56,6 +56,17 @@ QDir Experiment::getDir() const
 int Experiment::setDir(const QDir dir)
 {
 	this->dir = dir;
+	return 1;
+}
+
+QFileInfo Experiment::getFi() const
+{
+	return this->fi;
+}
+
+int Experiment::setFi(const QFileInfo fi)
+{
+	this->fi = fi;
 	return 1;
 }
 

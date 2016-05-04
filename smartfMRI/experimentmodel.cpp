@@ -12,7 +12,7 @@ ExperimentModel::ExperimentModel(QObject *parent, QDir dir)
 			QStringList("*.ebs2")));
 		if (fil.size() > 0) {
 			qDebug() << fil[0].absoluteFilePath();
-			this->insertRow(this->rowCount(), *new Experiment(fil[0].absoluteFilePath(), this));
+			this->insertRow(this->rowCount(), *new Experiment(QFileInfo(fil[0].absoluteFilePath()), this));
 		}
 	}
 
@@ -64,14 +64,12 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 	if(row > qExpMap.size() || row < 0)
 		return false;
 	qExpMap[e.getName()] = &e;
-	//QDesktopServices::openUrl(e.getUrl());
 
-	QMapIterator<QString, Experiment*> i(qExpMap);
-	while (i.hasNext()) {
-		i.next();
-		qDebug() << i.key() << i.value()->getDir().absolutePath();
-		//qDebug() << i.key() << i.value();
-	}
+	//QMapIterator<QString, Experiment*> i(qExpMap);
+	//while (i.hasNext()) {
+	//	i.next();
+	//	qDebug() << i.key() << i.value()->getDir().absolutePath();
+	//}
 	endInsertRows();
 
 	return  true;

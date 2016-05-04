@@ -79,7 +79,12 @@ int SmartfMRI::runExperiment() {
 
 	Experiment* e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data(Qt::DisplayRole).toString());
-	QDir dirr();
+	if (e == nullptr) {
+		qDebug() << "please select a paradigm";
+
+		return 0;
+	}
+	qDebug() << e->getFi().absoluteFilePath();
 	qDebug() << "run";
 	return 1;
 }
