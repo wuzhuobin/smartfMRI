@@ -16,7 +16,7 @@ Experiment::Experiment(QObject *parent)
 
 
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
-	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir())
+	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir()), sps(fi, this)
 {
 	//tr = 3000.0;
 	//controlPeriod = 30000.0;
@@ -25,7 +25,6 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	//cycles = 4;
 	//taskTrialPeriod = 4000.0;
 	//controlTrialPeriod = 8000.0;
-	sps = new ScanParameters(fi, this);
 	qDebug() << "Experiment construction";
 	qDebug() << this->dir;
 	qDebug() << this->name;

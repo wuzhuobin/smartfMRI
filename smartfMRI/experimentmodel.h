@@ -9,7 +9,7 @@
 class ExperimentModel : public QAbstractListModel
 {
 public:
-	ExperimentModel(QObject *parent = 0, QDir dir = QDir());
+	ExperimentModel(QDir dir = QDir(), QObject *parent = 0);
 	~ExperimentModel();
 
 	int rowCount(const QModelIndex& parent = QModelIndex()) const;

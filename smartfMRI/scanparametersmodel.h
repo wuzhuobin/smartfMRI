@@ -8,6 +8,7 @@ class ScanParametersModel : public QAbstractListModel
 {
 public:
 	ScanParametersModel(QObject *parent);
+	ScanParametersModel(QList<QString>& attributes, QList<QString>& values, QObject *parent);
 	~ScanParametersModel();
 	int rowCount(const QModelIndex &parent) const;
 	QVariant data(const QModelIndex &index, int role) const;
@@ -16,8 +17,9 @@ public:
 	bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
 
 private:
-	QStringList headerList;
-	QList<QVariant> qvl;
+	int length;
+	QList<QString> attributes;
+	QList<QString> values;
 
 };
 

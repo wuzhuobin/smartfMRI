@@ -25,12 +25,14 @@ public:
 	QFileInfo getFi() const;
 	int setFi(const QFileInfo fi);
 
+	ScanParameters sps;
+
 	
 private:
 	QString name;
 	QDir dir;
 	QFileInfo fi;
-	ScanParameters* sps;
+
 
 
 	/*

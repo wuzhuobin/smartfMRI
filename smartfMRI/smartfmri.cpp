@@ -8,7 +8,8 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 	ui.setupUi(this);
 	if (dir.mkdir("paradigm")) 
 		qDebug() << "paradigm directory created";
-	expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
+	expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
+	spMod = new ScanParametersModel(this);
 	ui.experimentlistView->setModel(expMod);
 
 
@@ -33,7 +34,7 @@ int SmartfMRI::removeExperiment()
 	if (ui.experimentlistView->currentIndex().data().isValid() && dirr.removeRecursively()) {
 		qDebug() << "remove successfully";
 		delete expMod;
-		expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
+		expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
 		ui.experimentlistView->setModel(expMod);
 		return 1;
 	}
@@ -62,7 +63,7 @@ int SmartfMRI::addExperiment() {
 	if (expMan.exec() == QDialog::Accepted) {
 		if (expMod != nullptr) {
 			delete expMod;
-			expMod = new ExperimentModel(this, QDir(dir.path() + "/paradigm"));
+			expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
 			ui.experimentlistView->setModel(expMod);
 		}
 		return 1;
@@ -70,13 +71,6 @@ int SmartfMRI::addExperiment() {
 	else {
 		return 0;
 	}
-
-	//Experiment e(url, this);
-	//qDebug() << &e;
-	//qDebug() << e.getUrl().path();
-	//expMod.insertRow(expMod.rowCount(), e);
-	//expMod.insertRow(expMod.rowCount(), *new Experiment(url, this));
-
 
 	return 1;
 }
@@ -89,15 +83,9 @@ int SmartfMRI::runExperiment() {
 	}
 	Experiment* e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data(Qt::DisplayRole).toString());
-	if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
-		qDebug() << "run";
-		return 1;
-	}
-	else {
-		QMessageBox::critical(this, tr("Fail to run"),
-			QString("Cannot open the *.ebs2 file."));
-		return 0;
-	}
+	expSta.runExperiment(e);
+	expSta.exec();
+	return 1;
 
 }
 
@@ -109,6 +97,19 @@ int SmartfMRI::updateExperiment()
 
 int SmartfMRI::selectExperiment(const QModelIndex& index)
 {
-	qDebug() << index.row();
+	Experiment* e = expMod->getExperiment(index.data().toString());
+	if (spMod != nullptr) {
+		delete spMod;
+	}
+	if (ScanParameters::Successful == e->sps.read()) {
+		qDebug() << e->sps.getAttributes();
+		qDebug() << e->sps.getValues();
+
+		spMod = new ScanParametersModel(e->sps.getAttributes(), e->sps.getValues(), this);
+	}
+	else {
+		spMod = new ScanParametersModel(this);
+	}
+	ui.scanParameterTableView->setModel(spMod);
 	return 0;
 }

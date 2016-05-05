@@ -1,6 +1,6 @@
 #include "experimentmodel.h"
 
-ExperimentModel::ExperimentModel(QObject *parent, QDir dir)
+ExperimentModel::ExperimentModel(QDir dir,QObject *parent)
 	: QAbstractListModel(parent), dir(dir)
 {
 	qDebug() << dir;

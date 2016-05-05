@@ -22,14 +22,12 @@ ScanParameters::status ScanParameters::read()
 	if (!attributes.isEmpty()) attributes.clear();
 	if (!values.isEmpty()) values.clear();
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-		qFatal("Could not open the file");
 		return ScanParameters::CannotOpenTheFile;
 	}
 	QStringList parameters(QString(file.readAll()).split("\n"));
 	if (parameters.size() < 2) {
 		parameters = (QString(file.readAll()).split("\n\r"));
 		if (parameters.size() < 2) {
-			qFatal("File incorrect");
 			return ScanParameters::FileIncorrect;
 		}
 
@@ -51,11 +49,6 @@ bool ScanParameters::write()
 ScanParameters::~ScanParameters()
 {
 	qDebug() << "ScanParameters destruct";
-	qDebug() << "";
-	qDebug() << "";
-	qDebug() << "";
-	qDebug() << "";
-
 }
 
 QList<QString> ScanParameters::getAttributes()

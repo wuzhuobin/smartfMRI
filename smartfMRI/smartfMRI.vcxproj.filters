@@ -74,6 +74,18 @@
     <ClCompile Include="scanparameters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="experimentstatus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_experimentstatus.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_experimentstatus.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="statusthread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="smartfmri.h">
@@ -97,6 +109,15 @@
     <CustomBuild Include="scanparameters.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="experimentstatus.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="experimentstatus.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="statusthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_smartfmri.h">
@@ -112,6 +133,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_experimentmanager.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_experimentstatus.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

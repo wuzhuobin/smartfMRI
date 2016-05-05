@@ -10,7 +10,8 @@
 #include "ui_smartfmri.h"
 #include "experimentmodel.h"
 #include "experimentmanager.hpp"
-
+#include "scanparametersmodel.h"
+#include "experimentstatus.h"
 
 
 class SmartfMRI : public QMainWindow
@@ -32,7 +33,9 @@ private:
 	Ui::smartfMRIClass ui;
 	QDir dir;
 	ExperimentModel *expMod;
+	ScanParametersModel *spMod;
 	ExperimentManager expMan;
+	ExperimentStatus expSta;
 
 };
 
