@@ -25,7 +25,8 @@ public:
 	QFileInfo getFi() const;
 	int setFi(const QFileInfo fi);
 
-	ScanParameters sps;
+	ScanParameters sps1;
+	ScanParameters sps2;
 
 	
 private:

@@ -16,7 +16,9 @@ Experiment::Experiment(QObject *parent)
 
 
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
-	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), dir(fi.absoluteDir()), sps(fi, this)
+	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), 
+	dir(fi.absoluteDir()), sps1(fi.absolutePath() + "/myBlockList.txt", this),
+	sps2(fi.absolutePath() + "/myTrialListParameters.txt", this)
 {
 	//tr = 3000.0;
 	//controlPeriod = 30000.0;

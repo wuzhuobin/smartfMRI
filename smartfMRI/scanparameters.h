@@ -12,7 +12,7 @@ class ScanParameters : public QObject
 public:
 
 	ScanParameters(QObject *parent = 0);
-	ScanParameters(QFileInfo fileName, QObject *parent = 0);
+	ScanParameters(QString fileName, QObject *parent = 0);
 	enum status
 	{	CannotOpenTheFile,
 		FileIncorrect,

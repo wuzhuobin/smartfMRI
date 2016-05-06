@@ -7,8 +7,8 @@ ScanParameters::ScanParameters(QObject *parent)
 }
 
 
-ScanParameters::ScanParameters(QFileInfo fileName, QObject * parent):
-	parametersFileName(fileName.absolutePath() + "/" + fileName.baseName() + ".txt")
+ScanParameters::ScanParameters(QString fileName, QObject * parent):
+	parametersFileName(fileName)
 {
 	
 	qDebug() << QFileInfo(parametersFileName).absoluteFilePath ();
@@ -32,8 +32,8 @@ ScanParameters::status ScanParameters::read()
 		}
 
 	}
-	attributes = parameters[0].split(QRegExp("\\s"));
-	values = parameters[1].split(QRegExp("\\s"));
+	attributes = parameters[0].split("\t");
+	values = parameters[1].split("\t");
 
 	//if(attributes.size() != values.size())
 	//	return ScanParameters::FileIncorrect;

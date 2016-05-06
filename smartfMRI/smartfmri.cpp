@@ -72,7 +72,6 @@ int SmartfMRI::addExperiment() {
 		return 0;
 	}
 
-	return 1;
 }
 
 int SmartfMRI::runExperiment() {
@@ -101,12 +100,13 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 	if (spMod != nullptr) {
 		delete spMod;
 	}
-	if (ScanParameters::Successful == e->sps.read()) {
-		qDebug() << e->sps.getAttributes();
-		qDebug() << e->sps.getValues();
+	//if (ScanParameters::Successful == e->sps.read()) {
+	//	qDebug() << e->sps.getAttributes();
+	//	qDebug() << e->sps.getValues();
 
-		spMod = new ScanParametersModel(e->sps.getAttributes(), e->sps.getValues(), this);
-	}
+	//	spMod = new ScanParametersModel(e->sps.getAttributes(), e->sps.getValues(), this);
+	//}
+	if (0) {}
 	else {
 		spMod = new ScanParametersModel(this);
 	}

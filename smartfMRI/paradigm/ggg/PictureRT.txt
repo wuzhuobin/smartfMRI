@@ -1,2 +1,0 @@
-ID	Weight	Procedure	Nested	PracticeMode
-1	10	BlockProc		No
