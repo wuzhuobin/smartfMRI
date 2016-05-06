@@ -34,7 +34,9 @@ ScanParameters::status ScanParameters::read()
 	}
 	attributes = parameters[0].split("\t");
 	values = parameters[1].split("\t");
-
+	while (values.size() < attributes.size()) {
+		values += QString('0');
+	}
 	//if(attributes.size() != values.size())
 	//	return ScanParameters::FileIncorrect;
 	file.close();

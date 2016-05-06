@@ -56,12 +56,13 @@ int SmartfMRI::addExperiment() {
 		QString(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
 	if (fileName.isEmpty())
 		return 0;
-	expMan.setUpdataFlag(false);
-	expMan.setBeforePath(fileName);
+	expMan.setBeforeFilePath(fileName);
+	expMan.loadParadigm();
 	expMan.setParadigmPath(dir.path() + "/paradigm/");
-	qDebug() << expMan.getBeforePath() << "*******" << expMan.getParadigmPath();
+	qDebug() << expMan.getBeforeFilePath() << "*******" << expMan.getParadigmPath();
 	if (expMan.exec() == QDialog::Accepted) {
 		if (expMod != nullptr) {
+			expMan.copyParadigm();
 			delete expMod;
 			expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
 			ui.experimentlistView->setModel(expMod);
@@ -91,7 +92,20 @@ int SmartfMRI::runExperiment() {
 int SmartfMRI::updateExperiment()
 {
 	qDebug() << "update";
-	return 0;
+	Experiment*e = expMod->getExperiment(ui.experimentlistView->
+		currentIndex().data().toString());
+	expMan.setBeforeFilePath(e->getFi().absoluteFilePath());
+	expMan.loadParadigm();
+
+	if (expMan.exec() == QDialog::Accepted) {
+
+		return 1;
+	}
+	else {
+		return 0;
+	}
+
+
 }
 
 int SmartfMRI::selectExperiment(const QModelIndex& index)
@@ -100,13 +114,10 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 	if (spMod != nullptr) {
 		delete spMod;
 	}
-	//if (ScanParameters::Successful == e->sps.read()) {
-	//	qDebug() << e->sps.getAttributes();
-	//	qDebug() << e->sps.getValues();
+	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()) {
 
-	//	spMod = new ScanParametersModel(e->sps.getAttributes(), e->sps.getValues(), this);
-	//}
-	if (0) {}
+		spMod = new ScanParametersModel(*e, false, this);
+	}
 	else {
 		spMod = new ScanParametersModel(this);
 	}

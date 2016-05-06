@@ -1,28 +1,49 @@
 #include "scanparametersmodel.h"
 
 ScanParametersModel::ScanParametersModel(QObject *parent)
-	: QAbstractListModel(parent)
+	: QAbstractListModel(parent) ,length(0)
 {
-	//headerList += QString("TR (ms)");
-	//headerList += QString("Control Period (ms)");
-	//headerList += QString("Task Period (ms)");
-	//headerList += QString("Dummy Samples (sampels)");
-	//headerList += QString("Cycles (cycles)");
-	//headerList += QString("Task Trail Period (ms)");
-	//headerList += QString("Control Trail Period (ms)");
-	//headerList += QString("Scan time (s)");
-
-	//qvl << 3000.0 << 30000.0 << 30000.0 << 2 << 4 << 4000.0 << 8000.0 << "Scan Time";
-	
 	qDebug() << "ScanParametersModel construction";
 }
 
-ScanParametersModel::ScanParametersModel(QList<QString>& attributes, QList<QString>& values, QObject * parent)
-	: QAbstractListModel(parent)
+ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject * parent)
+	: QAbstractListModel(parent), editFlag(editFlag)
 {
-	this->attributes = attributes;
-	this->values = values;
-	this->length = attributes.size() < values.size() ? attributes.size() : values.size();
+	headerList += QString("TR (ms)");
+	headerList += QString("Control Period (ms)");
+	headerList += QString("Task Period (ms)");
+	headerList += QString("Dummy Samples (sampels)");
+	headerList += QString("Cycles (cycles)");
+	headerList += QString("Task Trail Period (ms)");
+	headerList += QString("Control Trail Period (ms)");
+	headerList += QString("Scan time (s)");
+
+	while (values.size() < headerList.size()) {
+		values += 0.0;
+	}
+	
+	if (e.sps1.getAttributes().contains("ControlDuration")) {
+		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")];
+		values[1] = value.toDouble();
+	}
+	if (e.sps1.getAttributes().contains("Weight")) {
+		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("Weight")];
+		values[4] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("StimDuration")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("StimDuration")];
+		values[5] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("FixationDuration")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("FixationDuration")];
+		values[6] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("Weight")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
+		values[2] = value.toDouble()* (values[5]+ values[6]);
+	}
+
+	this->length = headerList.size();
 	qDebug() << "ScanParametersModel construction";
 
 }
@@ -64,7 +85,7 @@ QVariant ScanParametersModel::headerData(int section, Qt::Orientation orientatio
 		return QVariant();
 	}
 	else
-		return attributes[section];
+		return headerList[section];
 		
 }
 
@@ -72,21 +93,27 @@ Qt::ItemFlags ScanParametersModel::flags(const QModelIndex & index) const
 {
 	if (!index.isValid())
 		return Qt::ItemIsEnabled;
-	//if (index.row() == 7)
-	//	return Qt::ItemIsEnabled;
+	else if(editFlag)
+		return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
+	else 
+		return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 
-	return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
 }
 
 bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & value, int role)
 {
-	if (role != Qt::EditRole || index.column() != 0 || index.row() >= values.size())
-		return false;
-	//if (index.row() == 3 || index.row() == 4)
-	//	qvl[index.row()] = value.toInt();
-	else
-		values[index.row()] = value.toString();
-	emit dataChanged(index, index);
+	//if (role != Qt::EditRole || index.column() != 0 || index.row() >= values.size())
+	//	return false;
+	////if (index.row() == 3 || index.row() == 4)
+	////	qvl[index.row()] = value.toInt();
+	//else
+	//	values[index.row()] = value.toString();
+	//emit dataChanged(index, index);
 
 	return true;
+}
+
+QList<double> ScanParametersModel::getValues()
+{
+	return this->values;
 }

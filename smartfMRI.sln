@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smartfMRI", "smartfMRI\smar
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScanParameters", "ScanParameters\ScanParameters.vcxproj", "{48124B70-0953-4084-9640-B064DEDC52F8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|x64 = CD_ROM|x64
@@ -59,26 +57,6 @@ Global
 		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x64.Build.0 = Release
 		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x86.ActiveCfg = Release
 		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x86.Build.0 = Release
-		{48124B70-0953-4084-9640-B064DEDC52F8}.CD_ROM|x64.ActiveCfg = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.CD_ROM|x64.Build.0 = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.CD_ROM|x86.ActiveCfg = Release|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.CD_ROM|x86.Build.0 = Release|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Debug|x64.ActiveCfg = Debug|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Debug|x64.Build.0 = Debug|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Debug|x86.ActiveCfg = Debug|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Debug|x86.Build.0 = Debug|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.DVD-5|x64.ActiveCfg = Debug|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.DVD-5|x64.Build.0 = Debug|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.DVD-5|x86.ActiveCfg = Debug|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.DVD-5|x86.Build.0 = Debug|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Release|x64.ActiveCfg = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Release|x64.Build.0 = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Release|x86.ActiveCfg = Release|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.Release|x86.Build.0 = Release|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.SingleImage|x64.ActiveCfg = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.SingleImage|x64.Build.0 = Release|x64
-		{48124B70-0953-4084-9640-B064DEDC52F8}.SingleImage|x86.ActiveCfg = Release|Win32
-		{48124B70-0953-4084-9640-B064DEDC52F8}.SingleImage|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

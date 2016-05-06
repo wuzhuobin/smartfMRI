@@ -27,6 +27,7 @@ public:
 
 	ScanParameters sps1;
 	ScanParameters sps2;
+	ScanParameters sps3;
 
 	
 private:

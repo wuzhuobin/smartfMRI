@@ -16,19 +16,22 @@ class ExperimentManager : public QDialog {
 public:
 	ExperimentManager(QWidget * parent = Q_NULLPTR);
 	~ExperimentManager();
+	int copyParadigm();
+	int updataParadigm();
 	int setUpdataFlag(bool flag);
 	bool getUpdataFlag();
-	int setBeforePath(QString beforPath);
-	QString getBeforePath();
+	int loadParadigm();
+	int setBeforeFilePath(QString beforFilePath);
+	QString getBeforeFilePath();
 	int setParadigmPath(QString Path);
 	QString getParadigmPath();
-public slots:
-	int copyParadigm();
+
 
 
 private:
 	Ui::ExperimentManager ui;
 	bool updataFlag;
+	ScanParametersModel* spMod;
 	QString paradigmPath;
-	QString beforePath;
+	QString beforeFilePath;
 };

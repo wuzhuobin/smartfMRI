@@ -19,8 +19,8 @@ ExperimentStatus::~ExperimentStatus()
 
 int ExperimentStatus::runExperiment(Experiment * e)
 {
-	if (thread != nullptr) delete thread;
-	thread = new StatusThread(e, true);
+	//if (thread != nullptr) delete thread;
+	thread = &StatusThread(e, true);
 	//if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
 	if (1) {
 		qDebug() << "run";
@@ -39,6 +39,6 @@ void ExperimentStatus::stopThread() {
 	if (thread != nullptr) {
 		thread->setThreadFlag(false);
 		thread->wait();
-		delete thread;
+		//delete thread;
 	}
 }

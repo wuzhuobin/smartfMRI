@@ -3,23 +3,26 @@
 
 #include <QAbstractListModel>
 #include <QDebug>
+#include "experiment.h"
 
 class ScanParametersModel : public QAbstractListModel
 {
 public:
 	ScanParametersModel(QObject *parent);
-	ScanParametersModel(QList<QString>& attributes, QList<QString>& values, QObject *parent);
+	ScanParametersModel(Experiment& e, bool editFlag, QObject *parent);
 	~ScanParametersModel();
 	int rowCount(const QModelIndex &parent) const;
 	QVariant data(const QModelIndex &index, int role) const;
 	QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
 	Qt::ItemFlags flags(const QModelIndex &index) const;
 	bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
+	QList<double> getValues();
 
 private:
+	bool editFlag;
 	int length;
-	QList<QString> attributes;
-	QList<QString> values;
+	QList<QString> headerList;
+	QList<double> values;
 
 };
 
