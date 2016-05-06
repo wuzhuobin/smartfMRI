@@ -32,6 +32,7 @@ private:
 	Ui::ExperimentManager ui;
 	bool updataFlag;
 	ScanParametersModel* spMod;
+	Experiment* e;
 	QString paradigmPath;
 	QString beforeFilePath;
 };

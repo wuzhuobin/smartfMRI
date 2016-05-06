@@ -17,6 +17,7 @@ public:
 	Qt::ItemFlags flags(const QModelIndex &index) const;
 	bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
 	QList<double> getValues();
+	int setValues(Experiment& e);
 
 private:
 	bool editFlag;

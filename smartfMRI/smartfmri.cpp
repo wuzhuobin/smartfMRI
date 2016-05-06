@@ -61,12 +61,12 @@ int SmartfMRI::addExperiment() {
 	expMan.setParadigmPath(dir.path() + "/paradigm/");
 	qDebug() << expMan.getBeforeFilePath() << "*******" << expMan.getParadigmPath();
 	if (expMan.exec() == QDialog::Accepted) {
+		expMan.copyParadigm();
 		if (expMod != nullptr) {
-			expMan.copyParadigm();
 			delete expMod;
-			expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
-			ui.experimentlistView->setModel(expMod);
 		}
+		expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
+		ui.experimentlistView->setModel(expMod);
 		return 1;
 	}
 	else {
@@ -98,7 +98,7 @@ int SmartfMRI::updateExperiment()
 	expMan.loadParadigm();
 
 	if (expMan.exec() == QDialog::Accepted) {
-
+		expMan.updataParadigm();
 		return 1;
 	}
 	else {

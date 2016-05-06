@@ -21,28 +21,7 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	while (values.size() < headerList.size()) {
 		values += 0.0;
 	}
-	
-	if (e.sps1.getAttributes().contains("ControlDuration")) {
-		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")];
-		values[1] = value.toDouble();
-	}
-	if (e.sps1.getAttributes().contains("Weight")) {
-		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("Weight")];
-		values[4] = value.toDouble();
-	}
-	if (e.sps2.getAttributes().contains("StimDuration")) {
-		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("StimDuration")];
-		values[5] = value.toDouble();
-	}
-	if (e.sps2.getAttributes().contains("FixationDuration")) {
-		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("FixationDuration")];
-		values[6] = value.toDouble();
-	}
-	if (e.sps2.getAttributes().contains("Weight")) {
-		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
-		values[2] = value.toDouble()* (values[5]+ values[6]);
-	}
-
+	setValues(e);
 	this->length = headerList.size();
 	qDebug() << "ScanParametersModel construction";
 
@@ -116,4 +95,30 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 QList<double> ScanParametersModel::getValues()
 {
 	return this->values;
+}
+
+int ScanParametersModel::setValues(Experiment& e)
+{
+	if (e.sps1.getAttributes().contains("ControlDuration")) {
+		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")];
+		values[1] = value.toDouble();
+	}
+	if (e.sps1.getAttributes().contains("Weight")) {
+		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("Weight")];
+		values[4] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("StimDuration")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("StimDuration")];
+		values[5] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("FixationDuration")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("FixationDuration")];
+		values[6] = value.toDouble();
+	}
+	if (e.sps2.getAttributes().contains("Weight")) {
+		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
+		values[2] = value.toDouble()* (values[5] + values[6]);
+	}
+
+	return 0;
 }

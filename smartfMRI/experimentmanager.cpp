@@ -1,7 +1,7 @@
 ﻿#include "experimentmanager.hpp"
 
 ExperimentManager::ExperimentManager(QWidget * parent) 
-	: QDialog(parent), spMod() {
+	: QDialog(parent), spMod(), e() {
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
 	
@@ -36,9 +36,9 @@ int ExperimentManager::copyParadigm()
 
 int ExperimentManager::loadParadigm()
 {
-	Experiment* e = new Experiment(QFileInfo(beforeFilePath), this);
 	if (spMod != nullptr) delete spMod;
-
+	if (e != nullptr) delete e;
+	e = new Experiment(QFileInfo(beforeFilePath), this);
 	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()) {
 
 		spMod = new ScanParametersModel(*e, true, this);
@@ -78,7 +78,13 @@ QString ExperimentManager::getParadigmPath()
 
 int ExperimentManager::updataParadigm()
 {
-	return 1;
+	if (e != nullptr) delete e;
+	e = new Experiment(QFileInfo(beforeFilePath), this);
+	if (ScanParameters::Successful == e->sps1.write() && ScanParameters::Successful == e->sps2.write()) {
+		qDebug() << "updataParadigm";
+		return 1;
+	}
+	return 0;
 }
 
 

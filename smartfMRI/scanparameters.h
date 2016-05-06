@@ -16,10 +16,11 @@ public:
 	enum status
 	{	CannotOpenTheFile,
 		FileIncorrect,
-		Successful
+		Successful,
+		ParametersIncorrect
 	};
 	status read();
-	bool write();
+	status write();
 	~ScanParameters();
 	QList<QString> getAttributes();
 	QList<QString> getValues();
