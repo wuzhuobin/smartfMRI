@@ -13,6 +13,8 @@ ScanParameters::ScanParameters(QString fileName, QObject * parent):
 	
 	qDebug() << QFileInfo(parametersFileName).absoluteFilePath ();
 	qDebug() << "ScanParameters construct";
+	if(!QFileInfo(parametersFileName).exists())
+		this->write();
 		
 }
 
@@ -61,12 +63,12 @@ ScanParameters::~ScanParameters()
 	qDebug() << "ScanParameters destruct";
 }
 
-QList<QString> ScanParameters::getAttributes()
+QList<QString>& ScanParameters::getAttributes()
 {
 	return attributes;
 }
 
-QList<QString> ScanParameters::getValues()
+QList<QString>& ScanParameters::getValues()
 {
 	return values;
 }

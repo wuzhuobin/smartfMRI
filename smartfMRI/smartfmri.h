@@ -13,6 +13,11 @@
 #include "scanparametersmodel.h"
 #include "experimentstatus.h"
 
+/**
+ *
+ * The Main window class
+ *
+*/
 
 class SmartfMRI : public QMainWindow
 {

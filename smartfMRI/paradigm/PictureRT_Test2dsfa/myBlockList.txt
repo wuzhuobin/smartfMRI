@@ -1,2 +1,2 @@
 ID	Weight	Procedure	Nested	PracticeMode	ControlDuration
-1	1	BlockProc		No	5000
+1	5	BlockProc		No	5000

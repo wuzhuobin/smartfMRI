@@ -1,11 +1,10 @@
 #include "experimentstatus.h"
 
 ExperimentStatus::ExperimentStatus(QWidget *parent)
-	: QDialog(parent)
+	: QDialog(parent), thread(nullptr)
 {
 	ui.setupUi(this);
 
-	thread = new StatusThread();
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));
 	connect(ui.stopPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));
@@ -19,10 +18,17 @@ ExperimentStatus::~ExperimentStatus()
 
 int ExperimentStatus::runExperiment(Experiment * e)
 {
-	//if (thread != nullptr) delete thread;
-	thread = &StatusThread(e, true);
-	//if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
-	if (1) {
+	QFileInfoList listEDAT2 = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.edat2"), QDir::Files);
+	QFileInfoList listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
+	for (int i = 0 ; i < listEDAT2.size(); ++i) {
+		QFile::remove(listEDAT2[i].absoluteFilePath());
+	}
+	for (int i = 0; i < listTXT.size(); ++i) {
+		QFile::remove(listTXT[i].absoluteFilePath());
+	}
+	thread = new StatusThread(e, true);
+	if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
+	//if (1) {
 		qDebug() << "run";
 		thread->start();
 		return 1;
@@ -36,9 +42,16 @@ int ExperimentStatus::runExperiment(Experiment * e)
 
 
 void ExperimentStatus::stopThread() {
+
 	if (thread != nullptr) {
 		thread->setThreadFlag(false);
 		thread->wait();
-		//delete thread;
+		if (thread->isFinished()) {
+			qDebug() << "is finished";
+			delete thread;
+			thread = nullptr;
+		}
+
 	}
+
 }

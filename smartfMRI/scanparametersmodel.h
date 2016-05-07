@@ -16,8 +16,8 @@ public:
 	QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
 	Qt::ItemFlags flags(const QModelIndex &index) const;
 	bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
-	QList<double> getValues();
-	int setValues(Experiment& e);
+	int setValuesToExperiment(Experiment& e);
+	int setValuesFromExperiment(Experiment& e);
 
 private:
 	bool editFlag;

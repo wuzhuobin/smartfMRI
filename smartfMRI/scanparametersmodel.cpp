@@ -21,7 +21,7 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	while (values.size() < headerList.size()) {
 		values += 0.0;
 	}
-	setValues(e);
+	setValuesFromExperiment(e);
 	this->length = headerList.size();
 	qDebug() << "ScanParametersModel construction";
 
@@ -72,7 +72,7 @@ Qt::ItemFlags ScanParametersModel::flags(const QModelIndex & index) const
 {
 	if (!index.isValid())
 		return Qt::ItemIsEnabled;
-	else if(editFlag)
+	else if(editFlag && index.row()<7)
 		return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
 	else 
 		return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
@@ -81,24 +81,61 @@ Qt::ItemFlags ScanParametersModel::flags(const QModelIndex & index) const
 
 bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & value, int role)
 {
-	//if (role != Qt::EditRole || index.column() != 0 || index.row() >= values.size())
-	//	return false;
-	////if (index.row() == 3 || index.row() == 4)
-	////	qvl[index.row()] = value.toInt();
-	//else
-	//	values[index.row()] = value.toString();
-	//emit dataChanged(index, index);
+	if (role != Qt::EditRole || index.column() != 0 || index.row() >= values.size())
+		return false;
+	else
+		values[index.row()] = value.toDouble();
+	emit dataChanged(index, index);
 
 	return true;
 }
 
-QList<double> ScanParametersModel::getValues()
+int ScanParametersModel::setValuesToExperiment(Experiment& e)
 {
-	return this->values;
+	if (e.sps3.getAttributes().contains("TR")) {
+		e.sps3.getValues()[e.sps3.getAttributes().indexOf("TR")] = QString::number(values[0]);
+	}
+	else {
+		e.sps3.getAttributes() += "TR";
+		e.sps3.getValues() += QString::number(values[0]);
+	}
+	if (e.sps3.getAttributes().contains("DummySamples")) {
+		e.sps3.getValues()[e.sps3.getAttributes().indexOf("DummySamples")] = QString::number(values[3]);
+	}
+	else {
+		e.sps3.getAttributes() += "DummySamples";
+		e.sps3.getValues() += QString::number(values[3]);
+	}
+	if (e.sps1.getAttributes().contains("ControlDuration")) {
+		e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")] = QString::number(values[1]);
+	}
+	if (e.sps1.getAttributes().contains("Weight")) {
+		e.sps1.getValues()[e.sps1.getAttributes().indexOf("Weight")] = QString::number(values[4]);
+	}
+	if (e.sps2.getAttributes().contains("StimDuration")) {
+		e.sps2.getValues()[e.sps2.getAttributes().indexOf("StimDuration")] = QString::number(values[5]);
+	}
+	if (e.sps2.getAttributes().contains("FixationDuration")) {
+		 e.sps2.getValues()[e.sps2.getAttributes().indexOf("FixationDuration")] = QString::number(values[6]);
+	}
+	if (e.sps2.getAttributes().contains("Weight")) {
+		e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")] = QString::number(
+			(values[5] + values[6])==0?0:(values[2])/ (values[5] + values[6]));
+	}
+	return 1;
 }
 
-int ScanParametersModel::setValues(Experiment& e)
+int ScanParametersModel::setValuesFromExperiment(Experiment& e)
 {
+	if (e.sps3.getAttributes().contains("TR")) {
+	//if(true){
+		QString value = e.sps3.getValues()[e.sps3.getAttributes().indexOf("TR")];
+		values[0] = value.toDouble();
+	}
+	if (e.sps3.getAttributes().contains("DummySamples")) {
+		QString value = e.sps3.getValues()[e.sps3.getAttributes().indexOf("DummySamples")];
+		values[3] = value.toDouble();
+	}
 	if (e.sps1.getAttributes().contains("ControlDuration")) {
 		QString value = e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")];
 		values[1] = value.toDouble();
@@ -119,6 +156,7 @@ int ScanParametersModel::setValues(Experiment& e)
 		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
 		values[2] = value.toDouble()* (values[5] + values[6]);
 	}
+	values[7] = (values[3] * values[0] + (values[6] + values[5])*values[4]) / 1000.0;
 
-	return 0;
+	return 1;
 }

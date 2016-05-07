@@ -22,8 +22,8 @@ public:
 	status read();
 	status write();
 	~ScanParameters();
-	QList<QString> getAttributes();
-	QList<QString> getValues();
+	QList<QString>& getAttributes();
+	QList<QString>& getValues();
 
 private:
 	QString parametersFileName;

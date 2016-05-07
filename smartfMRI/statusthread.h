@@ -3,6 +3,7 @@
 
 #include <QThread>
 #include <QDebug>
+#include <QDateTime>
 #include "experiment.h"
 
 class StatusThread : public QThread
@@ -18,6 +19,7 @@ public:
 
 private:
 	Experiment* e;
+	QDir log;
 	bool threadFlag;
 
 };

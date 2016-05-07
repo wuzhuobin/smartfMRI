@@ -21,13 +21,7 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	sps2(fi.absolutePath() + "/myTrialListParameters.txt", this),
 	sps3(fi.absolutePath() + "/otherParameters.txt", this)
 {
-	//tr = 3000.0;
-	//controlPeriod = 30000.0;
-	//taskPeriod = 30000.0;
-	//dummySamples = 2;
-	//cycles = 4;
-	//taskTrialPeriod = 4000.0;
-	//controlTrialPeriod = 8000.0;
+
 	qDebug() << "Experiment construction";
 	qDebug() << this->dir;
 	qDebug() << this->name;

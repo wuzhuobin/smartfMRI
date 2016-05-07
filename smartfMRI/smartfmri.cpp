@@ -32,10 +32,14 @@ int SmartfMRI::removeExperiment()
 		currentIndex().data(Qt::ToolTipRole).toString());
 	dirr.setFilter(QDir::NoDotAndDotDot);
 	if (ui.experimentlistView->currentIndex().data().isValid() && dirr.removeRecursively()) {
-		qDebug() << "remove successfully";
 		delete expMod;
 		expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
 		ui.experimentlistView->setModel(expMod);
+		if (spMod != nullptr) {
+			delete spMod;
+			spMod = new ScanParametersModel(this);
+		}
+		qDebug() << "remove successfully";
 		return 1;
 	}
 	else if (!ui.experimentlistView->currentIndex().data().isValid()) {
@@ -56,10 +60,10 @@ int SmartfMRI::addExperiment() {
 		QString(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
 	if (fileName.isEmpty())
 		return 0;
-	expMan.setBeforeFilePath(fileName);
+	expMan.setBeforeFile(fileName);
 	expMan.loadParadigm();
 	expMan.setParadigmPath(dir.path() + "/paradigm/");
-	qDebug() << expMan.getBeforeFilePath() << "*******" << expMan.getParadigmPath();
+	qDebug() << expMan.getBeforeFile().absoluteFilePath() << "*******" << expMan.getParadigmPath();
 	if (expMan.exec() == QDialog::Accepted) {
 		expMan.copyParadigm();
 		if (expMod != nullptr) {
@@ -91,14 +95,22 @@ int SmartfMRI::runExperiment() {
 
 int SmartfMRI::updateExperiment()
 {
+	if (!ui.experimentlistView->currentIndex().data().isValid()) {
+		QMessageBox::critical(this, tr("Fail to remove"),
+			QString("Please select an item."));
+		return 0;
+	}
 	qDebug() << "update";
 	Experiment*e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data().toString());
-	expMan.setBeforeFilePath(e->getFi().absoluteFilePath());
+	expMan.setBeforeFile(e->getFi().absoluteFilePath());
 	expMan.loadParadigm();
 
 	if (expMan.exec() == QDialog::Accepted) {
 		expMan.updataParadigm();
+		delete expMod;
+		expMod = new ExperimentModel(QDir(dir.path() + "/paradigm"), this);
+		ui.experimentlistView->setModel(expMod);
 		return 1;
 	}
 	else {
@@ -115,7 +127,7 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 		delete spMod;
 	}
 	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()) {
-
+		e->sps3.read();
 		spMod = new ScanParametersModel(*e, false, this);
 	}
 	else {

@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smartfMRI", "smartfMRI\smartfMRI.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|x64 = CD_ROM|x64
@@ -41,22 +39,6 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x64.Build.0 = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.ActiveCfg = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.Build.0 = Release|Win32
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.CD_ROM|x64.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.CD_ROM|x64.Build.0 = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.CD_ROM|x86.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.CD_ROM|x86.Build.0 = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.Debug|x64.ActiveCfg = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.Debug|x86.ActiveCfg = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.DVD-5|x64.ActiveCfg = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.DVD-5|x64.Build.0 = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.DVD-5|x86.ActiveCfg = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.DVD-5|x86.Build.0 = Debug
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.Release|x64.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.Release|x86.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x64.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x64.Build.0 = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x86.ActiveCfg = Release
-		{D52CE4F5-FC1F-40A8-A4B1-FFC0F025A878}.SingleImage|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

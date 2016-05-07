@@ -5,6 +5,7 @@
 #include <QUrl>
 #include <QDir>
 #include <QDirIterator>
+#include <QMessageBox>
 #include "qcopydirrecursively.h"
 #include "experiment.h"
 #include "scanparametersmodel.h"
@@ -21,10 +22,10 @@ public:
 	int setUpdataFlag(bool flag);
 	bool getUpdataFlag();
 	int loadParadigm();
-	int setBeforeFilePath(QString beforFilePath);
-	QString getBeforeFilePath();
-	int setParadigmPath(QString Path);
-	QString getParadigmPath();
+	int setBeforeFile(const QFileInfo beforFile);
+	QFileInfo getBeforeFile() const;
+	int setParadigmPath(const QString Path);
+	QString getParadigmPath() const;
 
 
 
@@ -34,5 +35,5 @@ private:
 	ScanParametersModel* spMod;
 	Experiment* e;
 	QString paradigmPath;
-	QString beforeFilePath;
+	QFileInfo beforeFile;
 };
