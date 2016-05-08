@@ -1,7 +1,8 @@
 ﻿#include "experimentmanager.hpp"
 
-ExperimentManager::ExperimentManager(QWidget * parent) 
-	: QDialog(parent), spMod(nullptr), e(nullptr) {
+ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * parent)
+	: QDialog(parent), paradigmFolder(paradigmFolder)
+{
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
 	
@@ -15,8 +16,8 @@ ExperimentManager::~ExperimentManager() {
 int ExperimentManager::copyParadigm()
 {
 	qDebug() << "Copy Paradigm>>>";
-	QDir beforeDir(beforeFile.absolutePath());
-	QDir targetDir(paradigmPath);
+	QDir beforeDir(paradigmFile.absolutePath());
+	QDir targetDir(paradigmFolder);
 	QString folderName(ui.experimentNameLineEdit->text().remove(' '));
 	if (targetDir.mkdir(folderName))
 		qDebug() << " make directory" << folderName;
@@ -28,7 +29,7 @@ int ExperimentManager::copyParadigm()
 		QStringList("*.ebs2")));
 	if (fil.size() > 0) {
 		qDebug() << fil[0].absoluteFilePath();
-		setBeforeFile(fil[0].absoluteFilePath());
+		setParadigmFile(fil[0].absoluteFilePath());
 		updataParadigm();
 	}
 	return 1;
@@ -36,15 +37,15 @@ int ExperimentManager::copyParadigm()
 
 int ExperimentManager::loadParadigm()
 {
+	ui.paradigmNameLineEdit->setText(paradigmFile.baseName());
+	ui.experimentNameLineEdit->setText(paradigmFile.dir().dirName());
 	if (spMod != nullptr) {
 		delete spMod;
-		spMod = nullptr;
 	} 
 	if (e != nullptr) {
 		delete e;
-		e = nullptr;
 	} 
-	e = new Experiment(beforeFile, this);
+	e = new Experiment(paradigmFile, this);
 	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()
 		) {
 		e->sps3.read();
@@ -59,29 +60,6 @@ int ExperimentManager::loadParadigm()
 	return 1;
 }
 
-int ExperimentManager::setBeforeFile(const QFileInfo beforeFile)
-{
-	this->beforeFile = beforeFile;
-		ui.paradigmNameLineEdit->setText(beforeFile.baseName());
-		ui.experimentNameLineEdit->setText(beforeFile.dir().dirName());
-	return 1;
-}
-
-QFileInfo ExperimentManager::getBeforeFile() const
-{
-	return this->beforeFile;
-}
-
-int ExperimentManager::setParadigmPath(QString paradigmPath)
-{
-	this->paradigmPath = paradigmPath;
-	return 1;
-}
-
-QString ExperimentManager::getParadigmPath() const 
-{
-	return paradigmPath;
-}
 
 int ExperimentManager::updataParadigm()
 {
@@ -89,33 +67,32 @@ int ExperimentManager::updataParadigm()
 		delete e;
 		e = nullptr;
 	}
-	e = new Experiment(beforeFile, this);
-	e->sps1.read(); e->sps2.read(); e->sps3.read();
+	e = new Experiment(paradigmFile, this);
 	spMod->setValuesToExperiment(*e);
 	if (ScanParameters::Successful == e->sps1.write() && ScanParameters::Successful == e->sps2.write() && 
 		ScanParameters::Successful == e->sps3.write()) {
 		qDebug() << "updataParadigm";
 	}
-	QDir dir = beforeFile.dir();
-	if (beforeFile.dir().dirName() == ui.experimentNameLineEdit->text())
+	QDir dir = paradigmFile.dir();
+	if (paradigmFile.dir().dirName() == ui.experimentNameLineEdit->text())
 		return 1;
-	if (dir.cdUp() && !dir.rename(beforeFile.dir().dirName(), ui.experimentNameLineEdit->text())) {
+	if (dir.cdUp() && !dir.rename(paradigmFile.dir().dirName(), ui.experimentNameLineEdit->text())) {
 		QMessageBox::critical(this, tr("Fail to rename experiment name"),
 			QString("name has not been changed."));
 		return 0;
 	}
+	else return 1;
+}
+
+
+int ExperimentManager::setParadigmFile(const QFileInfo paradigmFile)
+{
+	this->paradigmFile = paradigmFile;
+
 	return 1;
 }
 
-int ExperimentManager::setUpdataFlag(bool flag)
+QFileInfo ExperimentManager::getParadigmFile() const
 {
-	this->updataFlag = flag;
-	return 1;
+	return this->paradigmFile;
 }
-
-bool ExperimentManager::getUpdataFlag()
-{
-	return this->updataFlag;
-}
-
-

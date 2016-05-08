@@ -7,9 +7,7 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	sps2(fi.absolutePath() + "/myTrialListParameters.txt", this),
 	sps3(fi.absolutePath() + "/otherParameters.txt", this)
 {
-
 	qDebug() << "Experiment construction";
-	qDebug() << this->dir;
 	qDebug() << this->name;
 }
 

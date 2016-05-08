@@ -29,35 +29,38 @@ public:
 	~Experiment();
 	/**
 	 * get the Experiment's name
-	 * @retrun the Experiment's name	 
+	 * @retrun Experiment's name	 
 	 */
 	QString getName() const;
 	/**
 	 * set the Experiment's name
 	 * @param a Experiment's new name
-	 * @return if succeed, 1. Otherwise 0
+	 * @return 1 if succeed.
+	 *	       0 if fail
 	 */
 	int setName(const QString name);
 	/**
 	 * get the directory of the Experiment
-	 * @return the directory of the Experiment
+	 * @return directory of the Experiment
 	 */
 	QDir getDir() const;
 	/**
 	 * set the directory of the Experiment
 	 * @param the new Experiment's directory
-	 * @return if succeed, 1. Otherwise 0
+	 * @return 1, if succeed
+	 *         0, if fail
 	 */
 	int setDir(const QDir dir);
 	/**
 	 * get the QFileInfo of the *.ebs2 file
-	 * @return the QFileInfo of the *.ebs2 file
+	 * @return QFileInfo of the *.ebs2 file
 	 */
 	QFileInfo getFi() const;
 	/**
 	 * set the QFileInfo of the *.ebs2 file
 	 * @param the QFileInfo of the *.ebs2 file
-	 * @return if succeed, 1. Otherwise, 0
+	 * @return 1, if succeed
+	 *         0, if fail
 	 */
 	int setFi(const QFileInfo fi);
 	/**

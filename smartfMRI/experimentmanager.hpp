@@ -15,25 +15,19 @@ class ExperimentManager : public QDialog {
 	Q_OBJECT
 
 public:
-	ExperimentManager(QWidget * parent = Q_NULLPTR);
+	ExperimentManager(const QString paradigmFolder, QWidget * parent = Q_NULLPTR);
 	~ExperimentManager();
 	int copyParadigm();
 	int updataParadigm();
-	int setUpdataFlag(bool flag);
-	bool getUpdataFlag();
 	int loadParadigm();
-	int setBeforeFile(const QFileInfo beforFile);
-	QFileInfo getBeforeFile() const;
-	int setParadigmPath(const QString Path);
-	QString getParadigmPath() const;
-
+	int setParadigmFile(const QFileInfo beforFile);
+	QFileInfo getParadigmFile() const;
 
 
 private:
 	Ui::ExperimentManager ui;
-	bool updataFlag;
-	ScanParametersModel* spMod;
-	Experiment* e;
-	QString paradigmPath;
-	QFileInfo beforeFile;
+	ScanParametersModel* spMod = nullptr;
+	Experiment* e = nullptr;
+	QString paradigmFolder;
+	QFileInfo paradigmFile;
 };

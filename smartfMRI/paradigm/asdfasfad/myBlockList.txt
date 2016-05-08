@@ -1,2 +1,0 @@
-ID	Weight	Procedure	Nested	PracticeMode	ControlDuration
-1	123	BlockProc		No	123

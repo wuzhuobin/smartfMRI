@@ -10,18 +10,18 @@
 class ScanParameters : public QObject
 {
 public:
-
-	ScanParameters(QObject *parent = 0);
-	ScanParameters(QString fileName, QObject *parent = 0);
 	enum status
-	{	CannotOpenTheFile,
+	{
+		CannotOpenTheFile,
 		FileIncorrect,
 		Successful,
 		ParametersIncorrect
 	};
+	ScanParameters(QString fileName = QString(), QObject *parent = 0);
 	status read();
 	status write();
 	~ScanParameters();
+	
 	QList<QString>& getAttributes();
 	QList<QString>& getValues();
 
