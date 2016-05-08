@@ -1,19 +1,5 @@
 #include "experiment.h"
 
-Experiment::Experiment(QObject *parent)
-	: QObject(parent)
-{
-
-}
-
-//Experiment::Experiment(const Experiment & e)
-//{
-//	this->name = e.name;
-//	this->url = e.url;
-//	qDebug() << "NEW EXPERIMENT";
-//}
-
-
 
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), 
@@ -25,16 +11,12 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	qDebug() << "Experiment construction";
 	qDebug() << this->dir;
 	qDebug() << this->name;
-	//qDebug() << this->dir;
 }
-
 
 Experiment::~Experiment()
 {
 	qDebug() << "Experiment destroied";
 }
-
-
 
 int Experiment::setName(const QString name) {
 	if (this->name == name)

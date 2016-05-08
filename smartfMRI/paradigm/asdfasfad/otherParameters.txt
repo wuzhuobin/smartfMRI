@@ -1,2 +1,2 @@
 TR	DummySamples
-23	123
+123	123

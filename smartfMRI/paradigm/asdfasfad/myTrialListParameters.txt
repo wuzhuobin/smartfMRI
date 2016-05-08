@@ -1,2 +1,2 @@
 ID	Weight	Procedure	Nested	Stimulus	CorrectAnswer	StimDuration	FixationDuration
-1	0.0505133	TrialProc		RedCar.bmp	1	2312	123
+1	0.5	TrialProc		RedCar.bmp	1	123	123
