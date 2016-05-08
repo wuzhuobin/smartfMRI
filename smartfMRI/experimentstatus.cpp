@@ -5,6 +5,7 @@ ExperimentStatus::ExperimentStatus(QWidget *parent)
 {
 	ui.setupUi(this);
 
+	this->setWindowIcon(QIcon("pm.ico"));
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));
 	connect(ui.stopPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));

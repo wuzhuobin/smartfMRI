@@ -303,6 +303,7 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </Command>
     </CustomBuild>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="scanparametersmodel.h" />
     <CustomBuild Include="experiment.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -410,6 +411,12 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="pm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="smartfMRI.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

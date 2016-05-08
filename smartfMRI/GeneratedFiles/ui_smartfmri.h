@@ -162,7 +162,7 @@ public:
 
     void retranslateUi(QMainWindow *smartfMRIClass)
     {
-        smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "smartfMRI", 0));
+        smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Paradigm Manager", 0));
         addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
         removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
         label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));

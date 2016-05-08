@@ -138,5 +138,14 @@
     <ClInclude Include="GeneratedFiles\ui_experimentstatus.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="pm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="smartfMRI.rc" />
   </ItemGroup>
 </Project>

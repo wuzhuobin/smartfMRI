@@ -35,6 +35,9 @@ ScanParametersModel::~ScanParametersModel()
 
 int ScanParametersModel::rowCount(const QModelIndex & parent) const
 {
+	if(editFlag)
+		return this->length-1;
+	else
 	return this->length;
 }
 
@@ -72,7 +75,7 @@ Qt::ItemFlags ScanParametersModel::flags(const QModelIndex & index) const
 {
 	if (!index.isValid())
 		return Qt::ItemIsEnabled;
-	else if(editFlag && index.row()<7)
+	else if(editFlag)
 		return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
 	else 
 		return Qt::ItemIsSelectable | Qt::ItemIsEnabled;

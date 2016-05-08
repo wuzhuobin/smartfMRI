@@ -5,7 +5,7 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 {
 	qDebug() << "set up SmartfMRI UI.";
 	ui.setupUi(this);
-
+	this->setWindowIcon(QIcon("pm.ico"));
 	if (QDir::current().mkdir("paradigm")) 
 		qDebug() << "SmartfMRI construct";
 	expMod = new ExperimentModel(QDir("./paradigm"), this);
