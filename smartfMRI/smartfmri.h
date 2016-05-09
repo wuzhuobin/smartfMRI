@@ -71,6 +71,12 @@ public slots:
 	 *         0 fail
 	 */
 	int selectExperiment(const QModelIndex& index);
+	/**
+	 * connect to Log button, open the Log folder in browser
+	 * @return 1 succeed
+	 *         0 fail
+	 */
+	int openLogFolder();
 
 private:
 	// the UI class

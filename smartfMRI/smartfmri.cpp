@@ -15,6 +15,7 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addExperiment()));
 	connect(ui.runPushButton, SIGNAL(clicked()), this, SLOT(runExperiment()));
 	connect(ui.updataPushButton, SIGNAL(clicked()), this, SLOT(updateExperiment()));
+	connect(ui.logPushButton, SIGNAL(clicked()), this, SLOT(openLogFolder()));
 	connect(ui.experimentlistView, SIGNAL(clicked(const QModelIndex&)), this, SLOT(selectExperiment(const QModelIndex&)));
 
 }
@@ -131,4 +132,19 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 	}
 	ui.scanParameterTableView->setModel(spMod);
 	return 0;
+}
+
+int SmartfMRI::openLogFolder()
+{
+	if (!ui.experimentlistView->currentIndex().data().isValid()) {
+		QMessageBox::critical(this, tr("Fail to open"),
+			QString("Please select an item."));
+		return 0;
+	}
+	else {
+		Experiment* e = expMod->getExperiment(ui.experimentlistView->currentIndex().data().toString());
+		QDesktopServices::openUrl(QUrl(e->getDir().absolutePath() + "/log"));
+		return 1;
+	}
+
 }

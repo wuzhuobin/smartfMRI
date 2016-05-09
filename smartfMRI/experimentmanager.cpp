@@ -38,7 +38,7 @@ int ExperimentManager::copyParadigm()
 
 int ExperimentManager::loadParadigm()
 {
-	ui.paradigmNameLineEdit->setText(paradigmFile.baseName());
+	ui.paradigmNameLineEdit->setText(paradigmFile.fileName());
 	ui.experimentNameLineEdit->setText(paradigmFile.dir().dirName());
 	if (spMod != nullptr) {
 		delete spMod;
@@ -69,6 +69,11 @@ int ExperimentManager::updataParadigm()
 		e = nullptr;
 	}
 	e = new Experiment(paradigmFile, this);
+
+	if (!QDir(e->getDir().absolutePath() + "/log").exists()) {
+		e->getDir().mkdir("log");
+	}
+
 	spMod->setValuesToExperiment(*e);
 	if (ScanParameters::Successful == e->sps1.write() && ScanParameters::Successful == e->sps2.write() && 
 		ScanParameters::Successful == e->sps3.write()) {

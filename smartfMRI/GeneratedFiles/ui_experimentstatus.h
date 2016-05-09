@@ -27,10 +27,12 @@ class Ui_ExperimentStatus
 public:
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QListWidget *statusListWidget;
     QPushButton *stopPushButton;
     QSpacerItem *horizontalSpacer;
+    QListWidget *statusListWidget;
     QPushButton *finishPushButton;
+    QPushButton *logPushButton;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *ExperimentStatus)
     {
@@ -45,11 +47,6 @@ public:
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        statusListWidget = new QListWidget(layoutWidget);
-        statusListWidget->setObjectName(QStringLiteral("statusListWidget"));
-
-        gridLayout->addWidget(statusListWidget, 0, 0, 1, 3);
-
         stopPushButton = new QPushButton(layoutWidget);
         stopPushButton->setObjectName(QStringLiteral("stopPushButton"));
 
@@ -59,10 +56,24 @@ public:
 
         gridLayout->addItem(horizontalSpacer, 1, 1, 1, 1);
 
+        statusListWidget = new QListWidget(layoutWidget);
+        statusListWidget->setObjectName(QStringLiteral("statusListWidget"));
+
+        gridLayout->addWidget(statusListWidget, 0, 0, 1, 5);
+
         finishPushButton = new QPushButton(layoutWidget);
         finishPushButton->setObjectName(QStringLiteral("finishPushButton"));
 
-        gridLayout->addWidget(finishPushButton, 1, 2, 1, 1);
+        gridLayout->addWidget(finishPushButton, 1, 4, 1, 1);
+
+        logPushButton = new QPushButton(layoutWidget);
+        logPushButton->setObjectName(QStringLiteral("logPushButton"));
+
+        gridLayout->addWidget(logPushButton, 1, 2, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_2, 1, 3, 1, 1);
 
 
         retranslateUi(ExperimentStatus);
@@ -75,6 +86,7 @@ public:
         ExperimentStatus->setWindowTitle(QApplication::translate("ExperimentStatus", "ExperimentStatus", 0));
         stopPushButton->setText(QApplication::translate("ExperimentStatus", "Stop", 0));
         finishPushButton->setText(QApplication::translate("ExperimentStatus", "Finish", 0));
+        logPushButton->setText(QApplication::translate("ExperimentStatus", "Log", 0));
     } // retranslateUi
 
 };

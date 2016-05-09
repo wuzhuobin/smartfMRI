@@ -4,13 +4,14 @@
 #include <QThread>
 #include <QDebug>
 #include <QDateTime>
+#include <QListWidget>
 #include "experiment.h"
 
 class StatusThread : public QThread
 {
 
 public:
-	StatusThread(Experiment *e = nullptr, bool threadFlag = true);
+	StatusThread(QListWidget* statusListWidget = nullptr, Experiment *e = nullptr, bool threadFlag = true);
 	~StatusThread();
 	void run();
 
@@ -18,6 +19,7 @@ public:
 	int setThreadFlag(bool threadFlat);
 
 private:
+	QListWidget* statusListWidget;
 	Experiment* e;
 	QDir log;
 	bool threadFlag;

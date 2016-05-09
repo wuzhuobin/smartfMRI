@@ -159,7 +159,7 @@ int ScanParametersModel::setValuesFromExperiment(Experiment& e)
 		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
 		values[2] = value.toDouble()* (values[5] + values[6]);
 	}
-	values[7] = (values[3] * values[0] + (values[6] + values[5])*values[4]) / 1000.0;
+	values[7] = (values[3] * values[0] + (values[2] + values[1])*values[4]) / 1000.0;
 
 	return 1;
 }
