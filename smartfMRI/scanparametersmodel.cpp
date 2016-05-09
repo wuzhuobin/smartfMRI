@@ -16,7 +16,7 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	headerList += QString("Cycles (cycles)");
 	headerList += QString("Task Trail Period (ms)");
 	headerList += QString("Control Trail Period (ms)");
-	headerList += QString("Scan time (s)");
+	headerList += QString("Scan time");
 
 	while (values.size() < headerList.size()) {
 		values += 0.0;
@@ -43,21 +43,24 @@ int ScanParametersModel::rowCount(const QModelIndex & parent) const
 
 QVariant ScanParametersModel::data(const QModelIndex & index, int role) const
 {
-	if (index.row() < 0 ||index.row() >=length)
+	if (index.row() < 0 || index.row() >= length)
 		return QVariant();
-	switch (role)
-	{
-	case Qt::DisplayRole:
-		return values[index.row()];
-		break;
-	case Qt::ToolTipRole:
-		return QVariant();
-		break;
-	default:
-		return QVariant();
-		break;
+	else {
+		switch (role)
+		{
+		case Qt::DisplayRole:
+			if (index.row() == 7)
+				return scanTime;
+			return values[index.row()];
+			break;
+		case Qt::ToolTipRole:
+			return QVariant();
+			break;
+		default:
+			return QVariant();
+			break;
+		}
 	}
-	return QVariant();
 }
 
 QVariant ScanParametersModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -159,7 +162,9 @@ int ScanParametersModel::setValuesFromExperiment(Experiment& e)
 		QString value = e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")];
 		values[2] = value.toDouble()* (values[5] + values[6]);
 	}
-	values[7] = (values[3] * values[0] + (values[2] + values[1])*values[4]) / 1000.0;
+	values[7] = (values[3] * values[0] + (values[2] + values[1])*values[4]);
+	int min = int(values[7] / 1000 / 60);
+	scanTime = QString::number(min) + "min" + QString::number(values[7] / 1000 - min * 60) + "s";
 
 	return 1;
 }

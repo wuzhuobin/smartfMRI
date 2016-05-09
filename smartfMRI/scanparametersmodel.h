@@ -24,6 +24,7 @@ private:
 	int length;
 	QList<QString> headerList;
 	QList<double> values;
+	QString scanTime;
 
 };
 

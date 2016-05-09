@@ -117,6 +117,7 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         logPushButton = new QPushButton(centralWidget);
         logPushButton->setObjectName(QStringLiteral("logPushButton"));
+        logPushButton->setFont(font);
 
         gridLayout_2->addWidget(logPushButton, 3, 2, 1, 1);
 
