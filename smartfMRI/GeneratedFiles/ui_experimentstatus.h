@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
@@ -25,7 +26,8 @@ QT_BEGIN_NAMESPACE
 class Ui_ExperimentStatus
 {
 public:
-    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer_3;
     QGridLayout *gridLayout;
     QPushButton *stopPushButton;
     QSpacerItem *horizontalSpacer;
@@ -33,22 +35,29 @@ public:
     QPushButton *finishPushButton;
     QPushButton *logPushButton;
     QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *horizontalSpacer_4;
 
     void setupUi(QWidget *ExperimentStatus)
     {
         if (ExperimentStatus->objectName().isEmpty())
             ExperimentStatus->setObjectName(QStringLiteral("ExperimentStatus"));
-        ExperimentStatus->resize(978, 412);
-        layoutWidget = new QWidget(ExperimentStatus);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(240, 50, 511, 281));
-        gridLayout = new QGridLayout(layoutWidget);
+        ExperimentStatus->resize(748, 352);
+        horizontalLayout = new QHBoxLayout(ExperimentStatus);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_3);
+
+        gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        stopPushButton = new QPushButton(layoutWidget);
+        stopPushButton = new QPushButton(ExperimentStatus);
         stopPushButton->setObjectName(QStringLiteral("stopPushButton"));
+        QFont font;
+        font.setPointSize(12);
+        stopPushButton->setFont(font);
 
         gridLayout->addWidget(stopPushButton, 1, 0, 1, 1);
 
@@ -56,24 +65,34 @@ public:
 
         gridLayout->addItem(horizontalSpacer, 1, 1, 1, 1);
 
-        statusListWidget = new QListWidget(layoutWidget);
+        statusListWidget = new QListWidget(ExperimentStatus);
         statusListWidget->setObjectName(QStringLiteral("statusListWidget"));
+        statusListWidget->setFont(font);
 
         gridLayout->addWidget(statusListWidget, 0, 0, 1, 5);
 
-        finishPushButton = new QPushButton(layoutWidget);
+        finishPushButton = new QPushButton(ExperimentStatus);
         finishPushButton->setObjectName(QStringLiteral("finishPushButton"));
+        finishPushButton->setFont(font);
 
         gridLayout->addWidget(finishPushButton, 1, 4, 1, 1);
 
-        logPushButton = new QPushButton(layoutWidget);
+        logPushButton = new QPushButton(ExperimentStatus);
         logPushButton->setObjectName(QStringLiteral("logPushButton"));
+        logPushButton->setFont(font);
 
         gridLayout->addWidget(logPushButton, 1, 2, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer_2, 1, 3, 1, 1);
+
+
+        horizontalLayout->addLayout(gridLayout);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_4);
 
 
         retranslateUi(ExperimentStatus);
