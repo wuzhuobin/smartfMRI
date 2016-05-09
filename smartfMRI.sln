@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smartfMRI", "smartfMRI\smartfMRI.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Paradigm Manager", "Paradigm Manager\Paradigm Manager.vdproj", "{B1407769-19B7-4A23-85AB-C0162F51089B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|x64 = CD_ROM|x64
@@ -39,6 +41,16 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x64.Build.0 = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.ActiveCfg = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.Build.0 = Release|Win32
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.CD_ROM|x64.ActiveCfg = Release
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.CD_ROM|x86.ActiveCfg = Release
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.Debug|x64.ActiveCfg = Debug
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.Debug|x86.ActiveCfg = Debug
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.DVD-5|x64.ActiveCfg = Debug
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.DVD-5|x86.ActiveCfg = Debug
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.Release|x64.ActiveCfg = Release
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.Release|x86.ActiveCfg = Release
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.SingleImage|x64.ActiveCfg = Release
+		{B1407769-19B7-4A23-85AB-C0162F51089B}.SingleImage|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
