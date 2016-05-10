@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="smartfMRI">
+    <qresource prefix="/smartfMRI">
+        <file>pm.ico</file>
     </qresource>
 </RCC>

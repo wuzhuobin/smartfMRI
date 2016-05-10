@@ -6,7 +6,7 @@ ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * par
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
 	
-	this->setWindowIcon(QIcon("pm.ico"));
+	this->setWindowIcon(QIcon(":/smartfMRI/pm.ico"));
 	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 }
 

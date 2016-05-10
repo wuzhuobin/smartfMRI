@@ -59,8 +59,8 @@ private:
 	StatusThread* thread = nullptr;
 	// UI
 	Ui::ExperimentStatus ui;
-	// Log folder URL
-	QUrl url;
+	// Log folder path
+	QString log;
 
 
 };

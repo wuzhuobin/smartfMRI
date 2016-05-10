@@ -1,12 +1,12 @@
 #include "experimentstatus.h"
 
 ExperimentStatus::ExperimentStatus(QWidget *parent)
-	: QDialog(parent), thread(nullptr), url()
+	: QDialog(parent), thread(nullptr), log()
 {
 	ui.setupUi(this);
 	qDebug() << "ExperimentStatus constructor";
 
-	this->setWindowIcon(QIcon("pm.ico"));
+	this->setWindowIcon(QIcon(":/smartfMRI/pm.ico"));
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(ui.finishPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));
 	connect(ui.stopPushButton, SIGNAL(clicked()), this, SLOT(stopThread()));
@@ -24,7 +24,7 @@ int ExperimentStatus::runExperiment(Experiment * e)
 {
 	QFileInfoList listEDAT2 = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.edat2"), QDir::Files);
 	QFileInfoList listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
-	url = QUrl(e->getDir().absolutePath() + "/log");
+	log = e->getDir().absolutePath() + "/log";
 	for (int i = 0 ; i < listEDAT2.size(); ++i) {
 		QFile::remove(listEDAT2[i].absoluteFilePath());
 	}
@@ -32,7 +32,7 @@ int ExperimentStatus::runExperiment(Experiment * e)
 		QFile::remove(listTXT[i].absoluteFilePath());
 	}
 	thread = new StatusThread(ui.statusListWidget, e, true);
-	if (QDesktopServices::openUrl(QUrl(e->getFi().absoluteFilePath()))) {
+	if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
 		qDebug() << "run";
 		thread->start();
 		return 1;
@@ -47,7 +47,7 @@ int ExperimentStatus::runExperiment(Experiment * e)
 void ExperimentStatus::openLogFolder()
 {
 	qDebug() << "Open log folder";
-	if (!QDesktopServices::openUrl(url)) {
+	if (!QDesktopServices::openUrl(QUrl::fromLocalFile(log))) {
 		QMessageBox::critical(this, tr("Fail to open"),
 			QString("No Log files has been created yet"));
 	}

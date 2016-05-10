@@ -5,7 +5,7 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 {
 	qDebug() << "set up SmartfMRI UI.";
 	ui.setupUi(this);
-	this->setWindowIcon(QIcon("pm.ico"));
+	this->setWindowIcon(QIcon(":/smartfMRI/pm.ico"));
 	if (QDir::current().mkdir("paradigm")) 
 		qDebug() << "SmartfMRI construct";
 	expMod = new ExperimentModel(QDir("./paradigm"), this);
@@ -93,7 +93,7 @@ int SmartfMRI::runExperiment() {
 int SmartfMRI::updateExperiment()
 {
 	if (!ui.experimentlistView->currentIndex().data().isValid()) {
-		QMessageBox::critical(this, tr("Fail to remove"),
+		QMessageBox::critical(this, tr("Fail to update"),
 			QString("Please select an item."));
 		return 0;
 	}
@@ -143,7 +143,7 @@ int SmartfMRI::openLogFolder()
 	}
 	else {
 		Experiment* e = expMod->getExperiment(ui.experimentlistView->currentIndex().data().toString());
-		QDesktopServices::openUrl(QUrl(e->getDir().absolutePath() + "/log"));
+		QDesktopServices::openUrl(QUrl::fromLocalFile(e->getDir().absolutePath() + "/log"));
 		return 1;
 	}
 
