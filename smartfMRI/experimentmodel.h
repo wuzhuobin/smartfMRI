@@ -26,16 +26,47 @@ public:
 	 */
 	~ExperimentModel();
 	/**
-	 *
+	 * the row number of experimentModel
+	 * @override
+	 * @param parent 
+	 * @return row number
 	 */
 	int rowCount(const QModelIndex& parent = QModelIndex()) const;
+	/**
+	 * data display in the experimentmodel
+	 * 
+	 */
 	QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-	bool insertRow(int row, Experiment& e,const QModelIndex& parent = QModelIndex());
+	/**
+	 * insert an Experiment e into the ExperimentModel
+	 * invoked in the construcotr
+	 * @param row which row to insert
+	 * @param e Experiment objcect to insert
+	 * @param parent parent Object
+	 * @return true succeed
+	 *         false fail
+	 */
+	bool insertRow(int row, Experiment& e, const QModelIndex& parent = QModelIndex());
+	/**
+	 * Not implemented yet
+	 * @override
+	 * @param row
+	 * @param count
+	 * @param parent
+	 */
 	bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex());
+	/**
+	 * get Experiment pointer of qExpMap with a corresponding key
+	 * @param key key to find corresponding key in qExpMap
+	 * @return pointer of an Experiment im qExpMap whose key is key
+	 */
 	Experiment* getExperiment(const QString key) const;
 
 private:
+	//the content to display, key is an experiment name, value is the pointer of 
+	// an experiment
 	QMap<QString, Experiment*> qExpMap;
+	// the directory where all experiments are saved.
 	QDir dir;
 
 };

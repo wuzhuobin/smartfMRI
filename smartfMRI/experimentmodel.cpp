@@ -31,8 +31,6 @@ int ExperimentModel::rowCount(const QModelIndex &parnet) const
 }
 
 
-
-
 QVariant ExperimentModel::data(const QModelIndex &index, int role) const 
 {
 	if (qExpMap.isEmpty())
@@ -45,11 +43,9 @@ QVariant ExperimentModel::data(const QModelIndex &index, int role) const
 	{
 	case Qt::DisplayRole:
 		return key;
-		//return qExpMap.keys()[index.row()];
 		break;
 	case Qt::ToolTipRole:
 		return path;
-		//return QString(qExpMap.values()[index.row()]->getUrl().path());
 		break;
 	default:
 		return QVariant();
@@ -64,12 +60,6 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 	if(row > qExpMap.size() || row < 0)
 		return false;
 	qExpMap[e.getName()] = &e;
-
-	//QMapIterator<QString, Experiment*> i(qExpMap);
-	//while (i.hasNext()) {
-	//	i.next();
-	//	qDebug() << i.key() << i.value()->getDir().absolutePath();
-	//}
 	endInsertRows();
 
 	return  true;
@@ -78,10 +68,10 @@ bool ExperimentModel::insertRow(int row, Experiment& e, const QModelIndex & pare
 bool ExperimentModel::insertRows(int row, int count, const QModelIndex & parent)
 {
 
-	beginInsertRows(parent, row, row);
+	beginInsertRows(parent, row, row + count);
 
 	endInsertRows();
-	return false;
+	return true;
 }
 
 Experiment* ExperimentModel::getExperiment(const QString key) const
