@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>942</width>
-    <height>446</height>
+    <width>1011</width>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Paradigm Manager</string>
+   <string>Smart fMRI</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">

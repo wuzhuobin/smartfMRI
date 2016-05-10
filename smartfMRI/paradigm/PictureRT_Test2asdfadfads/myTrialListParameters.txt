@@ -1,2 +1,0 @@
-ID	Weight	Procedure	Nested	Stimulus	CorrectAnswer	StimDuration	FixationDuration
-1	15	TrialProc		RedCar.bmp	1	1000	1000

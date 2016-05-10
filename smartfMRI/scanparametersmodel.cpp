@@ -21,6 +21,7 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	while (values.size() < headerList.size()) {
 		values += 0.0;
 	}
+	values[0] = 3000; values[3] = 2;
 	setValuesFromExperiment(e);
 	this->length = headerList.size();
 	qDebug() << "ScanParametersModel construction";

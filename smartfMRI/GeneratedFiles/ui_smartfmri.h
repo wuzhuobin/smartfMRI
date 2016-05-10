@@ -57,7 +57,7 @@ public:
     {
         if (smartfMRIClass->objectName().isEmpty())
             smartfMRIClass->setObjectName(QStringLiteral("smartfMRIClass"));
-        smartfMRIClass->resize(942, 446);
+        smartfMRIClass->resize(1011, 645);
         centralWidget = new QWidget(smartfMRIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
@@ -182,7 +182,7 @@ public:
 
     void retranslateUi(QMainWindow *smartfMRIClass)
     {
-        smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Paradigm Manager", 0));
+        smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Smart fMRI", 0));
         addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
         removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
         label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));
