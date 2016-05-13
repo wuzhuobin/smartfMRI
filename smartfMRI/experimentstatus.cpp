@@ -32,7 +32,8 @@ int ExperimentStatus::runExperiment(Experiment * e)
 		QFile::remove(listTXT[i].absoluteFilePath());
 	}
 	thread = new StatusThread(ui.statusListWidget, e, true);
-	if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
+	//if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
+	if(1){
 		qDebug() << "run";
 		thread->start();
 		return 1;
