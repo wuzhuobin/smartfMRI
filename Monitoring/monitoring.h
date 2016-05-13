@@ -1,28 +1,19 @@
 #ifndef MONITORING_H
 #define MONITORING_H
 
-#include <QThread>
-#include <QDebug>
-#include <QFileInfo>
-#include <QFile>
-#include <QDateTime>
+#include <QtWidgets/QMainWindow>
+#include "ui_monitoring.h"
 
-
-class Monitoring : public QThread
+class Monitoring : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	Monitoring(QString filePath = QString(), QObject *parent = 0);
+	Monitoring(QWidget *parent = 0);
 	~Monitoring();
 
-	void run();
-public slots:
-	void stop();
-
 private:
-	bool stopFlag = false;
-	QString filePath;
+	Ui::MonitoringClass ui;
 };
 
 #endif // MONITORING_H

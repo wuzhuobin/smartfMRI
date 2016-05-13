@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QDateTime>
 #include <QListWidget>
+#include <QMutex>
 #include "experiment.h"
 
 class StatusThread : public QThread
@@ -15,6 +16,8 @@ public:
 	~StatusThread();
 	void run();
 
+	bool copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> listTXT);
+	bool updateLog();
 	bool getThreadFlag();
 	int setThreadFlag(bool threadFlat);
 
@@ -22,6 +25,7 @@ private:
 	QListWidget* statusListWidget;
 	Experiment* e;
 	QDir log;
+	QMutex mutex;
 	bool threadFlag;
 
 };

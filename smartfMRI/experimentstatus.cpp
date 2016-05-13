@@ -32,8 +32,8 @@ int ExperimentStatus::runExperiment(Experiment * e)
 		QFile::remove(listTXT[i].absoluteFilePath());
 	}
 	thread = new StatusThread(ui.statusListWidget, e, true);
-	//if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
-	if(1){
+	if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
+	//if(1){
 		qDebug() << "run";
 		thread->start();
 		return 1;
@@ -59,11 +59,10 @@ void ExperimentStatus::stopThread() {
 
 	if (thread != nullptr) {
 		if (thread->getThreadFlag()) {
-			QMessageBox::critical(this, "Monitoring STOP!",
+			QMessageBox::critical(this, "Paradigm abortion!",
 				"Log files will not be saved!");
 		}
 		thread->setThreadFlag(false);
-		thread->wait();
 		if (thread->isFinished()) {
 			qDebug() << "is finished";
 			delete thread;

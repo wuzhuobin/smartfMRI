@@ -1,14 +1,10 @@
-
-#include <QtCore/QCoreApplication>
 #include "monitoring.h"
+#include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
-	QCoreApplication a(argc, argv);
-
-	QString file("D:/smart fMRI/PictureRT_Test2/PictureRT-1-1.txt");
-	Monitoring m(file, 0);
-	m.start();
-
+	QApplication a(argc, argv);
+	Monitoring w;
+	w.show();
 	return a.exec();
 }
