@@ -6,9 +6,6 @@
 #include <QDateTime>
 #include <QListWidget>
 #include <QMutex>
-#include <QFileInfo>
-#include <QDataStream>
-#include <QFile>
 #include "experiment.h"
 
 class StatusThread : public QThread
@@ -20,7 +17,7 @@ public:
 	void run();
 
 	bool copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> listTXT);
-	bool updateLog(QList<QFileInfo> listTXT, QDateTime& time);
+	bool updateLog();
 	bool getThreadFlag();
 	int setThreadFlag(bool threadFlat);
 

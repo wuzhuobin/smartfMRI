@@ -41,7 +41,7 @@ public:
     {
         if (ExperimentStatus->objectName().isEmpty())
             ExperimentStatus->setObjectName(QStringLiteral("ExperimentStatus"));
-        ExperimentStatus->resize(1246, 900);
+        ExperimentStatus->resize(799, 863);
         horizontalLayout = new QHBoxLayout(ExperimentStatus);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
