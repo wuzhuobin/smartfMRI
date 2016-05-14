@@ -8,6 +8,7 @@
 #include <QFileInfo>
 #include <QDateTime>
 #include <QTextStream>
+#include <QTextEdit>
 
 class MThread : public QThread
 {
@@ -16,15 +17,19 @@ class MThread : public QThread
 public:
 	MThread(QString path = QString() , QObject *parent = nullptr);
 	~MThread();
+	QTextEdit* te = nullptr;
 
 	void run();
 	public slots:
 	void stop();
+signals:
+	void textChange(const QString&);
 
 
 private:
 	QMutex mutex;
 	QString path;
+
 	bool stopFlag = false;
 };
 

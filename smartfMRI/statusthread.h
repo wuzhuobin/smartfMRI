@@ -9,13 +9,14 @@
 #include <QFileInfo>
 #include <QDataStream>
 #include <QFile>
+#include <QTextEdit>
 #include "experiment.h"
 
 class StatusThread : public QThread
 {
-
+	Q_OBJECT
 public:
-	StatusThread(QListWidget* statusListWidget = nullptr, Experiment *e = nullptr, bool threadFlag = true);
+	StatusThread(Experiment *e = nullptr, bool threadFlag = true);
 	~StatusThread();
 	void run();
 
@@ -24,12 +25,16 @@ public:
 	bool getThreadFlag();
 	int setThreadFlag(bool threadFlat);
 
+signals:
+	void textAppend1(const QString&);
+	void textAppend2(const QString&);
+
 private:
-	QListWidget* statusListWidget;
 	Experiment* e;
 	QDir log;
 	QMutex mutex;
 	bool threadFlag;
+	int i = 0;
 
 };
 

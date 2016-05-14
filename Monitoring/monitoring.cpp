@@ -5,9 +5,10 @@ Monitoring::Monitoring(QWidget *parent)
 	thread(QFileInfo(path).absolutePath())
 {
 	ui.setupUi(this);
-
+	thread.te = ui.textEdit;
 	QObject::connect(ui.runPushButton, SIGNAL(clicked()), this, SLOT(runThread()));
 	QObject::connect(ui.stopPushButton, SIGNAL(clicked()), &thread, SLOT(stop()));
+	QObject::connect(&thread, SIGNAL(textChange(const QString&)), ui.textEdit, SLOT(append(const QString&)));
 
 }
 

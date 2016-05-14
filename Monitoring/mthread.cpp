@@ -19,17 +19,18 @@ void MThread::run()
 
 	stopFlag = false;
 	qDebug() << "run";
+	int i = 0;
 	while (1) {
 		if (file.exists()) {
 			qDebug() << "exist";
 			QDateTime time2 = QFileInfo(path + "/PictureRT-1-1.txt").lastModified();
 			QMutexLocker locker(&mutex);
-			qDebug() << time1;
 			qDebug() << time2;
 			if (time1 != time2 && file.open(QFile::ReadOnly | QFile::Text)) {
-				QTextStream out(&file);
-				qDebug() << "*******************";
-				qDebug() << out.readAll();
+					QTextStream out(&file);
+				qDebug() << ++i;
+				emit textChange("*************************");
+				emit textChange( out.readAll());
 				file.close();
 				time1 = time2;
 			}

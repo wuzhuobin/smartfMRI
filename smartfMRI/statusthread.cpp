@@ -1,7 +1,7 @@
 #include "statusthread.h"
 
-StatusThread::StatusThread(QListWidget* statusListWidget, Experiment* e, bool threadFlag)
-	: QThread(), statusListWidget(statusListWidget), e(e) ,threadFlag(threadFlag), 
+StatusThread::StatusThread(Experiment* e, bool threadFlag)
+	: QThread(), e(e) ,threadFlag(threadFlag),
 	log(e->getDir().absolutePath() + "/log")
 {
 	if (!QDir(e->getDir().absolutePath() + "/log").exists()) {
@@ -18,14 +18,13 @@ StatusThread::~StatusThread()
 
 void StatusThread::run()
 {
-	statusListWidget->clear();
-	statusListWidget->addItem("Paradigm begins");
-	statusListWidget->addItem("...");
+	emit textAppend1("Paradigm begins");
+	emit textAppend1("...");
 	QDateTime time;
-	while (1) {
+	while (true) {
 		QList<QFileInfo> listEDAT2 = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.edat2"), QDir::Files);
 		QList<QFileInfo> listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
-		msleep(500);
+		msleep(1000);
 		QMutexLocker locker(&mutex);
 		if (!threadFlag)	break;
 		qDebug() << "keep Monitoring";
@@ -38,13 +37,14 @@ void StatusThread::run()
 
 		}
 		if (listTXT.size() != 0) {
+			qDebug() << listTXT[0].lastModified();
 			if(updateLog(listTXT, time))
 				qDebug() << time;
 		}
 
 	}
 
-	statusListWidget->addItem("Paradigm ends");
+	emit textAppend1("Paradigm ends");
 }
 
 bool StatusThread::copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> listTXT)
@@ -55,8 +55,8 @@ bool StatusThread::copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> lis
 			QFile::copy(listEDAT2[i].absoluteFilePath(), log.absolutePath() + "/" + folderName + "/" +
 				folderName + ".edat2");
 			QFileInfo edat2(log.absolutePath() + "/" + folderName + "/" + folderName + ".edat2");
-			statusListWidget->addItem("Log file: " + edat2.fileName());
-			statusListWidget->addItem("Location: " + edat2.absolutePath());
+			emit textAppend1("Log file: " + edat2.fileName());
+			emit textAppend1("Location: " + edat2.absolutePath());
 			qDebug() << "copy " << log.absolutePath() + "/" + folderName + "/" +
 				folderName + ".edat2";
 		}
@@ -64,8 +64,8 @@ bool StatusThread::copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> lis
 			QFile::copy(listTXT[i].absoluteFilePath(), log.absolutePath() + "/" + folderName + "/" +
 				folderName + ".txt");
 			QFileInfo txt(log.absolutePath() + "/" + folderName + "/" + folderName + ".txt");
-			statusListWidget->addItem("Log file: " + txt.fileName());
-			statusListWidget->addItem("Location: " + txt.absolutePath());
+			emit textAppend1("Log file: " + txt.fileName());
+			emit textAppend1("Location: " + txt.absolutePath());
 			qDebug() << "copy " << log.absolutePath() + "/" + folderName + "/" +
 				folderName + ".txt";
 		}
@@ -78,13 +78,21 @@ bool StatusThread::copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> lis
 
 bool StatusThread::updateLog(QList<QFileInfo> listTXT, QDateTime& time)
 {
-	QDateTime timeNew = listTXT[0].lastModified();
+	QDateTime timeNew = QFileInfo(listTXT[0].absoluteFilePath()).lastModified();
 	if (timeNew == time)	return false; 
+	qDebug() << ++i;
 	time = timeNew;
 	QFile file(listTXT[0].absoluteFilePath());
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))	return false;
 	QTextStream out(&file);
-	statusListWidget->addItem(out.readAll());
+	QString fileContent(out.readAll());
+	emit textAppend2(fileContent);
+	emit textAppend2("\n");
+	emit textAppend2("*************************************************");
+	emit textAppend2("*********************UPDATE**********************");
+	emit textAppend2("*************************************************");
+	emit textAppend2("\n");
+
 	file.close();
 	return true;
 

@@ -18,6 +18,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -29,6 +30,7 @@ public:
     QWidget *centralWidget;
     QPushButton *runPushButton;
     QPushButton *stopPushButton;
+    QTextEdit *textEdit;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -37,19 +39,22 @@ public:
     {
         if (MonitoringClass->objectName().isEmpty())
             MonitoringClass->setObjectName(QStringLiteral("MonitoringClass"));
-        MonitoringClass->resize(600, 400);
+        MonitoringClass->resize(1218, 860);
         centralWidget = new QWidget(MonitoringClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         runPushButton = new QPushButton(centralWidget);
         runPushButton->setObjectName(QStringLiteral("runPushButton"));
-        runPushButton->setGeometry(QRect(60, 260, 93, 28));
+        runPushButton->setGeometry(QRect(1010, 760, 93, 28));
         stopPushButton = new QPushButton(centralWidget);
         stopPushButton->setObjectName(QStringLiteral("stopPushButton"));
-        stopPushButton->setGeometry(QRect(400, 250, 93, 28));
+        stopPushButton->setGeometry(QRect(1110, 760, 93, 28));
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(60, 40, 931, 741));
         MonitoringClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MonitoringClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 26));
+        menuBar->setGeometry(QRect(0, 0, 1218, 26));
         MonitoringClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MonitoringClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
