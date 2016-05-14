@@ -21,13 +21,14 @@ void StatusThread::run()
 	statusListWidget->clear();
 	statusListWidget->addItem("Paradigm begins");
 	statusListWidget->addItem("...");
+	QDateTime time;
 	while (1) {
 		QList<QFileInfo> listEDAT2 = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.edat2"), QDir::Files);
 		QList<QFileInfo> listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
+		msleep(500);
 		QMutexLocker locker(&mutex);
 		if (!threadFlag)	break;
 		qDebug() << "keep Monitoring";
-		msleep(500);
 		if (listEDAT2.size() != 0) {
 			threadFlag = false;
 			if (copyLogFiles(listEDAT2, listTXT))
@@ -35,6 +36,10 @@ void StatusThread::run()
 			else
 				qDebug() << "log copied failed";
 
+		}
+		if (listTXT.size() != 0) {
+			if(updateLog(listTXT, time))
+				qDebug() << time;
 		}
 
 	}
@@ -71,9 +76,20 @@ bool StatusThread::copyLogFiles(QList<QFileInfo> listEDAT2, QList<QFileInfo> lis
 	}
 }
 
-bool StatusThread::updateLog()
+bool StatusThread::updateLog(QList<QFileInfo> listTXT, QDateTime& time)
 {
-	return false;
+	QDateTime timeNew = listTXT[0].lastModified();
+	if (timeNew == time)	return false; 
+	time = timeNew;
+	QFile file(listTXT[0].absoluteFilePath());
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))	return false;
+	QTextStream out(&file);
+	statusListWidget->addItem(out.readAll());
+	file.close();
+	return true;
+
+	
+
 }
 
 bool StatusThread::getThreadFlag()
