@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScanParameters", "ScanParam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Monitoring", "Monitoring\Monitoring.vcxproj", "{CE13B6A4-093B-4FC4-BD36-BB4A04A0F862}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogFileDataWin", "LogFileDataWin\LogFileDataWin.vcxproj", "{384FA735-754B-4BC5-996A-682EAEED7504}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|x64 = CD_ROM|x64
@@ -83,6 +85,26 @@ Global
 		{CE13B6A4-093B-4FC4-BD36-BB4A04A0F862}.SingleImage|x64.Build.0 = Release|x64
 		{CE13B6A4-093B-4FC4-BD36-BB4A04A0F862}.SingleImage|x86.ActiveCfg = Release|Win32
 		{CE13B6A4-093B-4FC4-BD36-BB4A04A0F862}.SingleImage|x86.Build.0 = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.CD_ROM|x64.ActiveCfg = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.CD_ROM|x64.Build.0 = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.CD_ROM|x86.ActiveCfg = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.CD_ROM|x86.Build.0 = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Debug|x64.ActiveCfg = Debug|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Debug|x64.Build.0 = Debug|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Debug|x86.ActiveCfg = Debug|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Debug|x86.Build.0 = Debug|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.DVD-5|x64.ActiveCfg = Debug|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.DVD-5|x64.Build.0 = Debug|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.DVD-5|x86.ActiveCfg = Debug|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.DVD-5|x86.Build.0 = Debug|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Release|x64.ActiveCfg = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Release|x64.Build.0 = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Release|x86.ActiveCfg = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.Release|x86.Build.0 = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.SingleImage|x64.ActiveCfg = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.SingleImage|x64.Build.0 = Release|x64
+		{384FA735-754B-4BC5-996A-682EAEED7504}.SingleImage|x86.ActiveCfg = Release|Win32
+		{384FA735-754B-4BC5-996A-682EAEED7504}.SingleImage|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

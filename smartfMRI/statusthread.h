@@ -10,6 +10,7 @@
 #include <QDataStream>
 #include <QFile>
 #include <QTextEdit>
+#include "logfiledata.h"
 #include "experiment.h"
 
 class StatusThread : public QThread

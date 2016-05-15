@@ -86,12 +86,19 @@ bool StatusThread::updateLog(QList<QFileInfo> listTXT, QDateTime& time)
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))	return false;
 	QTextStream out(&file);
 	QString fileContent(out.readAll());
-	emit textAppend2(fileContent);
 	emit textAppend2("\n");
 	emit textAppend2("*************************************************");
 	emit textAppend2("*********************UPDATE**********************");
 	emit textAppend2("*************************************************");
 	emit textAppend2("\n");
+	emit textAppend2(fileContent);
+
+	emit textAppend1(LogFileData::change(fileContent).join("\n"));
+	emit textAppend1("\n");
+	emit textAppend1("*************************************************");
+	emit textAppend1("*********************UPDATE**********************");
+	emit textAppend1("*************************************************");
+	emit textAppend1("\n");
 
 	file.close();
 	return true;
