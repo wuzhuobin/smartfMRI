@@ -28,7 +28,7 @@ int ExperimentStatus::runExperiment(Experiment * e)
 	QFileInfoList listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
 	log = e->getDir().absolutePath() + "/log";
 	ui.statusTextEdit1->clear();
-	ui.statusTextEdit2->clear();
+	//ui.statusTextEdit2->clear();
 	for (int i = 0 ; i < listEDAT2.size(); ++i) {
 		QFile::remove(listEDAT2[i].absoluteFilePath());
 	}
@@ -38,7 +38,7 @@ int ExperimentStatus::runExperiment(Experiment * e)
 	thread = new StatusThread(e, true);
 
 	connect(thread, SIGNAL(textAppend1(const QString&)), ui.statusTextEdit1, SLOT(append(const QString&)));
-	connect(thread, SIGNAL(textAppend2(const QString&)), ui.statusTextEdit2, SLOT(append(const QString&)));
+	//connect(thread, SIGNAL(textAppend2(const QString&)), ui.statusTextEdit2, SLOT(append(const QString&)));
 
 	if (QDesktopServices::openUrl(QUrl::fromLocalFile(e->getFi().absoluteFilePath()))) {
 	//if(1){

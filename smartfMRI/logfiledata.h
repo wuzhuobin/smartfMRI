@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QFile>
 #include <QDebug>
+#include <QDateTime>
 
 class LogFileData : public QObject
 {
