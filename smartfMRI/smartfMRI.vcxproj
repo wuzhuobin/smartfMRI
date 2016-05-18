@@ -416,10 +416,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="pm.ico" />
+    <ResourceCompile Include="smartfMRI.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="smartfMRI.rc" />
+    <Image Include="pm.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
