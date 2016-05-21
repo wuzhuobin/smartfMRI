@@ -11,7 +11,7 @@
 #include "statusthread.h"
 #include <QMessageBox>
 /**
- * Experiment status
+ * @class ExperimentStatus
  * UI for supervising the running paradigm with a StatusThread.
  * If the paradigm ends, the generated files will be copied to the log folder.
  * If the paradigm is interrupted, the thread needs to be ended by clicked 
@@ -28,7 +28,7 @@ class ExperimentStatus : public QDialog
 public:
 	/**
 	 * constructor
-	 * @param QWidget parent object
+	 * @param parent parent object
 	 */
 	ExperimentStatus(QWidget *parent = 0);
 	/**
@@ -37,19 +37,19 @@ public:
 	~ExperimentStatus();
 	/**
 	 * run an experiment e and monitor it by a StatusThread
-	 * delete all the old log files generated from the last experiment
+	 * delete all the old log files generated from the last run
 	 * if the experiment ends, copy all the generated log files to the log folder
 	 * @param e the pointer of an experiment
 	 */
 	int runExperiment(Experiment* e);
 public slots:
 	/**
-	 * slots connects to a Stop button, a Finish button and rejected signal
+	 * slots, connects to a Stop button, a Finish button and rejected signal
 	 * stop the running thread and release it
 	 */
 	void stopThread();
 	/**
-	 * connect to Log button, open the Log folder in browser
+	 * slots, connect to Log button, open the Log folder in browser
 	 * 
 	 */
 	void openLogFolder();

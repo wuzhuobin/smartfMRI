@@ -11,6 +11,7 @@
 #include "scanparametersmodel.h"
 #include "ui_experimentmanager.h"
 /**
+ * @class ExperimentManager
  * UI for the seting experiment name and scan parameters
  * @author
  * @version

@@ -17,7 +17,7 @@ class LogFileData : public QObject
 public:
 	/**
 	 * static function
-	 * doing format transformation
+	 * doing format transformation from all content from a log file
 	 * @param fileContent all file content of a log
 	 * @retrun each item of QList is a row QString
 	 */

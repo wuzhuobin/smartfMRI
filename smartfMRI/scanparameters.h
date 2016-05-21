@@ -8,6 +8,7 @@
 #include <QFile>
 
 /**
+ * @class ScanParameters
  * read Scan Parameters of *.txt files
  * read & write methods are used to read and write the *.txt files content
  * attributes and values are null, if read is not invoked

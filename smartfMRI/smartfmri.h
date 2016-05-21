@@ -14,8 +14,8 @@
 #include "experimentstatus.h"
 
 /**
+ * @class SmartfMRI
  * The Main window class
- * 
  * @author
  * @version
  * 
@@ -29,7 +29,7 @@ class SmartfMRI : public QMainWindow
 public:
 	/**
 	 * constructor
-	 * @param *parent parent QWideget
+	 * @param parent parent QWideget
 	 */
 	SmartfMRI(QWidget *parent = Q_NULLPTR);
 	/**
@@ -39,40 +39,45 @@ public:
 
 public slots:
 	/**
-	 * slots, when click the Add button, this method will be triger
+	 * slots, connect to the Add button, this method will be triger
 	 * adding a new experiment, select an *.ebs2 file in a browser
+	 * setting the Scan parameters of a new experiment
 	 * @return 1 succeed
 	 *         0 fail
 	 */
 	int addExperiment();
 	/**
-	 * slots, when click the Remove button, this method will be triger
+	 * slots, connect to the Remove button, this method will be triger
 	 * when an experiment is highlight, it will be removed form the list
-	 * and directory
+	 * and directory without a warning
 	 * @return 1 succeed
 	 *         0 fail
 	 */
 	int removeExperiment();
 	/**
-	 * run the *.ebs2 file and a superizing thread
+	 * slots, connect to the Run button, this method will be triger by when 
+	 * an experiment is hightlighted, run the *.ebs2 file and a superizing thread
 	 * @return 1 succeed
 	 *         0 fail
 	 */
 	int runExperiment();
 	/**
-	 * pop up the experimentManger for updating scanParameters
+	 * slots, connect to Update button pop up the experimentManger, this method will 
+	 * be trigger by an experiment is hightlighted. expMan will pop up
+	 * for updating scanParameters
 	 * return 1 succeed
 	 *        0 fail
 	 */
 	int updateExperiment();
 	/**
-	 * when an exeperiment is highlighted, display its scanParameters in a list
+	 * slots, when an exeperiment is highlighted, display its scanParameters in the Scan Parameters
+	 * list, and the spMod is updated to the related experiment
 	 * @return 1 succeed
 	 *         0 fail
 	 */
 	int selectExperiment(const QModelIndex& index);
 	/**
-	 * connect to Log button, open the Log folder in browser
+	 * slots, connect to Log button, open the Log folder in browser
 	 * @return 1 succeed
 	 *         0 fail
 	 */

@@ -6,6 +6,7 @@
 #include <QDir>
 #include "experiment.h"
 /**
+ * @class ExperimentModel
  * ListModel for displaying all the experiments in the dir (./paradigm) folder
  * if this folder does not exist, it will make one
  * @author
@@ -16,13 +17,15 @@ class ExperimentModel : public QAbstractListModel
 {
 public:
 	/**
-	 * constructor of ExperimentModel
+	 * constructor
+	 * loading all the Experiment in the dir (./paradigm) and insert them into
+	 * the model
 	 * @param dir the folder where to read experiments
 	 * @param *parent parent QObject
 	 */
 	ExperimentModel(QDir dir = QDir(), QObject *parent = 0);
 	/**
-	 * destructor of Experiment 
+	 * destructor
 	 */
 	~ExperimentModel();
 	/**
@@ -34,7 +37,10 @@ public:
 	int rowCount(const QModelIndex& parent = QModelIndex()) const;
 	/**
 	 * data display in the experimentmodel
-	 * 
+	 * @override
+	 * @param index index of the data in the model
+	 * @param role display in which role
+	 * @return the data to display
 	 */
 	QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
 	/**
@@ -49,6 +55,7 @@ public:
 	bool insertRow(int row, Experiment& e, const QModelIndex& parent = QModelIndex());
 	/**
 	 * Not implemented yet
+	 * @deprecated
 	 * @override
 	 * @param row
 	 * @param count

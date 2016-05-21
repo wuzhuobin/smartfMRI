@@ -7,7 +7,7 @@
 #include <QDebug>
 #include "scanparameters.h"
 /**
- * class Experiment 
+ * @class Experiment 
  * containing a single Experiment
  * @author 
  * @version
@@ -64,15 +64,25 @@ public:
 	 */
 	int setFi(const QFileInfo fi);
 	/**
-	 * three ScanParameters *.txt file
+	 * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
 	 * filePaths have been settled as following
 	 * sps1: fi.absolutePath() + "/myBlockList.txt"
-	 * sps2: fi.absolutePath() + "/myTrialListParameters.txt"
-	 * sps3: fi.absolutePath() + "/otherParameters.txt"
 	 */
 	ScanParameters sps1;
+	/**
+	 * ScanParameters *.txt file
+	 * loading the essential parameter of the Experiment
+	 * filePaths have been settled as following
+	 * sps2: fi.absolutePath() + "/myTrialListParameters.txt"
+	 */
 	ScanParameters sps2;
+	/**
+     * ScanParameters *.txt file
+	 * loading the essential parameter of the Experiment
+	 * filePaths have been settled as following
+	 * sps3: fi.absolutePath() + "/otherParameters.txt"
+	 */
 	ScanParameters sps3;
 
 	
