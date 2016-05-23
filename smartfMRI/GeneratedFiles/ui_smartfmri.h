@@ -34,11 +34,11 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer;
+    QLabel *label;
+    QPushButton *removeButton;
     QPushButton *addButton;
     QSpacerItem *horizontalSpacer;
-    QPushButton *removeButton;
-    QLabel *label;
+    QSpacerItem *verticalSpacer;
     QListView *experimentlistView;
     QSpacerItem *horizontalSpacer_4;
     QGridLayout *gridLayout_2;
@@ -57,7 +57,7 @@ public:
     {
         if (smartfMRIClass->objectName().isEmpty())
             smartfMRIClass->setObjectName(QStringLiteral("smartfMRIClass"));
-        smartfMRIClass->resize(1011, 645);
+        smartfMRIClass->resize(638, 477);
         centralWidget = new QWidget(smartfMRIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
@@ -71,14 +71,22 @@ public:
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Preferred);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        QFont font;
+        font.setPointSize(12);
+        label->setFont(font);
 
-        gridLayout->addItem(verticalSpacer, 2, 1, 1, 1);
+        gridLayout->addWidget(label, 0, 0, 1, 3);
+
+        removeButton = new QPushButton(centralWidget);
+        removeButton->setObjectName(QStringLiteral("removeButton"));
+        removeButton->setFont(font);
+
+        gridLayout->addWidget(removeButton, 3, 2, 1, 1);
 
         addButton = new QPushButton(centralWidget);
         addButton->setObjectName(QStringLiteral("addButton"));
-        QFont font;
-        font.setPointSize(12);
         addButton->setFont(font);
 
         gridLayout->addWidget(addButton, 3, 0, 1, 1);
@@ -87,17 +95,9 @@ public:
 
         gridLayout->addItem(horizontalSpacer, 3, 1, 1, 1);
 
-        removeButton = new QPushButton(centralWidget);
-        removeButton->setObjectName(QStringLiteral("removeButton"));
-        removeButton->setFont(font);
+        verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout->addWidget(removeButton, 3, 2, 1, 1);
-
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setFont(font);
-
-        gridLayout->addWidget(label, 0, 0, 1, 3);
+        gridLayout->addItem(verticalSpacer, 2, 1, 1, 1);
 
         experimentlistView = new QListView(centralWidget);
         experimentlistView->setObjectName(QStringLiteral("experimentlistView"));
@@ -183,9 +183,9 @@ public:
     void retranslateUi(QMainWindow *smartfMRIClass)
     {
         smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Smart fMRI", 0));
-        addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
-        removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
         label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));
+        removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
+        addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
         logPushButton->setText(QApplication::translate("smartfMRIClass", "Log", 0));
         label_2->setText(QApplication::translate("smartfMRIClass", "Scan Parameters", 0));
         updataPushButton->setText(QApplication::translate("smartfMRIClass", "Update", 0));
