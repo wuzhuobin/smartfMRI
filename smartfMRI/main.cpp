@@ -1,4 +1,5 @@
 #include "smartfmri.h"
+#include "keyconfirm.hpp"
 #include <QStyleFactory>
 #include <QtWidgets/QApplication>
 
@@ -38,7 +39,15 @@ int main(int argc, char *argv[])
 
 	qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
+	keyConfirm k;
 	SmartfMRI w;
-	w.show();
+	if (k.checkLicence()) {
+		w.show();
+	}
+	else {
+		k.show();
+	}
+
+
 	return qApp->exec();
 }

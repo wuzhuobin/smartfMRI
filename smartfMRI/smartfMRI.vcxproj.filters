@@ -59,12 +59,6 @@
     <ClCompile Include="experimentmanager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_experimentmanager.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_experimentmanager.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="scanparametersmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -95,6 +89,24 @@
     <ClCompile Include="logfiledata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="keyconfirm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_keyconfirm.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_keyconfirm.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_experimentmanager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_experimentmanager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="MacEncoding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="smartfmri.h">
@@ -107,9 +119,6 @@
       <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="experiment.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="experimentmanager.hpp">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="experimentmanager.ui">
@@ -125,6 +134,15 @@
       <Filter>Form Files</Filter>
     </CustomBuild>
     <CustomBuild Include="statusthread.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="keyconfirm.hpp">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="keyconfirm.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="experimentmanager.hpp">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -151,6 +169,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="logfiledata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_keyconfirm.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MacEncoding.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
