@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 2.8.11)
 project(SmartfMRI)
 
-find_package(Qt5Widgets
+find_package(Qt5 COMPONENTS Widgets
 )
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
+
 set(SOURCES 
 	main.cpp
+	keyconfirm.cpp
+	MacEncoding.cpp
+	iphelper/getmacadd.cpp
 	smartfmri.cpp
 	experiment.cpp
 	experimentmanager.cpp
@@ -21,12 +25,13 @@ set(SOURCES
 	smartfMRI.rc
 )
 
-
+#qt5_wrap_cpp( WC ${SOURCES})
 
 qt5_wrap_ui(WRAP_UI
 	experimentstatus.ui
 	experimentmanager.ui
 	smartfmri.ui
+	keyconfirm.ui
 )
 qt5_add_resources(RESOUCES smartfmri.qrc)
 
@@ -34,68 +39,35 @@ qt5_add_resources(RESOUCES smartfmri.qrc)
 include_directories(${Qt5Widgets_INCLUDES})
 add_definitions(${Qt5Widgets_DEFINITIONS})
 
-add_executable(SmartfMRI ${SOURCES} ${WRAP_UI} ${RESOUCES})
+add_executable(SmartfMRI WIN32 ${SOURCES} ${WRAP_UI} ${RESOUCES})
 
-target_link_libraries(SmartfMRI ${Qt5Widgets_LIBRARIES})
+target_link_libraries(SmartfMRI
+	${Qt5Widgets_LIBRARIES}
+	IPHLPAPI.LIB
+	)
+	
+IF(WIN32) # Check if we are on Windows
+  if(MSVC) # Check if we are using the Visual Studio compiler
+   set_target_properties(SmartfMRI PROPERTIES LINK_FLAGS_DEBUG "/SUBSYSTEM:CONSOLE")
+   set_target_properties(SmartfMRI PROPERTIES COMPILE_DEFINITIONS_DEBUG "_CONSOLE")
+   set_target_properties(SmartfMRI PROPERTIES LINK_FLAGS_RELWITHDEBINFO "/SUBSYSTEM:CONSOLE")
+   set_target_properties(SmartfMRI PROPERTIES COMPILE_DEFINITIONS_RELWITHDEBINFO "_CONSOLE")
+   set_target_properties(SmartfMRI PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
+   set_target_properties(SmartfMRI PROPERTIES LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:WINDOWS")
+  elseif(CMAKE_COMPILER_IS_GNUCXX)
+    # SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mwindows") # Not tested
+  else()
+    message(SEND_ERROR "You are using an unsupported Windows compiler! (Not MSVC or GCC)")
+  endif()
+elseif(UNIX)
+  # Nothing special required
+else()
+  message(SEND_ERROR "You are on an unsupported platform! (Not Win32 or Unix)")
+ENDIF()
+	
+	
+#get_cmake_property(_variableNames VARIABLES)
+#foreach (_variableName ${_variableNames})
+#    message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()
 
-MACRO(GetQtDLLs DEBUG_NAME RELEASE_NAME)
-
- FOREACH(module QT3SUPPORT QTOPENGL QTASSISTANT QTDESIGNER QTMOTIF
- QTNSPLUGIN
-                QAXSERVER QAXCONTAINER QTDECLARATIVE QTSCRIPT QTSVG
- QTUITOOLS QTHELP
-                QTWEBKIT PHONON QTSCRIPTTOOLS QTMULTIMEDIA QTGUI QTTEST
- QTDBUS QTXML QTSQL
-                QTXMLPATTERNS QTNETWORK QTCORE)
-
-         if (QT_USE_${module} OR QT_USE_${module}_DEPENDS)
-
-                 string(REPLACE ".lib" ".dll" QT_${module}_DLL
- "${QT_${module}_LIBRARY_DEBUG}")
-                 set (${DEBUG_NAME} ${${DEBUG_NAME}} ${QT_${module}_DLL})
-
-                 string(REPLACE ".lib" ".dll" QT_${module}_DLL
- "${QT_${module}_LIBRARY_RELEASE}")
-                 set (${RELEASE_NAME} ${${RELEASE_NAME}}
- ${QT_${module}_DLL})
-
-         endif()
-
- ENDFOREACH(module)
-
- ENDMACRO()
-
- if (WIN32)
-         GetQtDLLs(DEBUG_DLLS RELEASE_DLLS)
-
-         if (${CMAKE_GENERATOR} MATCHES "Visual Studio 11")
-                 # visual studio 12 expects the DLLs in the executable folder.
-                 # but not the resources!
-                 # can be changed into the environment property of the project to include the project's directory
-                 set (DLL_TO_DBG ${CMAKE_CURRENT_BINARY_DIR}/Debug)
-                 set (DLL_TO_RELEASE ${CMAKE_CURRENT_BINARY_DIR}/Release)
-         else()
-                 # for other version of visual studio the DLLs are expected into the project folder
-                 set (DLL_TO_DBG ${CMAKE_CURRENT_BINARY_DIR})
-                 set (DLL_TO_RELEASE ${CMAKE_CURRENT_BINARY_DIR})
-         endif()
-
-         foreach(dll ${DEBUG_DLLS})
-                 file(COPY ${dll} DESTINATION ${DLL_TO_DBG})
-         endforeach()
-
-         foreach(dll ${RELEASE_DLLS})
-                 file(COPY ${dll} DESTINATION ${DLL_TO_RELEASE})
-         endforeach()
-
-         install(FILES ${RELEASE_DLLS} DESTINATION
- ${INSTALL_FELIXPARAMGUI_PATH} CONFIGURATIONS Release)
-
-         #
-         # this is disabled for debug only (so signal/slots connect failures are seen)!
-         #
-         # this property is used to remove the prompt window when running the GUI from the explorer on WIN32
-         # doesn't have effect on linux
-         #
-         set_target_properties(FelixParamGui PROPERTIES WIN32_EXECUTABLE ${FELIXPARAMGUI_WIN32EXE})
- endif()

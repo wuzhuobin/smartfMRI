@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-//#include<getmacadd.h>
+#include"iphelper\getmacadd.h"
 #define MACENCODING_N 6
 class MacEncoding
 {

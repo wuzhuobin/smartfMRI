@@ -4,8 +4,8 @@ keyConfirm::keyConfirm(QWidget * parent) : QWidget(parent) {
 	ui.setupUi(this);
 
 	this->connect(this->ui.exitPushButton, SIGNAL(clicked()), this, SLOT(close()));
-	char mac[18]="5c-e0-c5-80-84-e1";
-	//getMacAdd(mac);
+	char mac[18];
+	getMacAdd(mac);
 
 	this->ui.macLineEdit->setText(mac);
 }
@@ -21,8 +21,9 @@ bool keyConfirm::checkLicence()
 	if (!licence.open(QIODevice::ReadOnly | QIODevice::Text)) return false;
 	QString key = licence.readLine();
 	key.remove("\n");
+	qDebug() << ui.macLineEdit->text();
+	qDebug() << key;
 	MacEncoding mac( ui.macLineEdit->text().toStdString());
 	if (key == QString::fromStdString(mac.encodeString())) return true;
-	qDebug() << key;
 	return false;
 }

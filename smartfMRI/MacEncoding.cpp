@@ -5,7 +5,7 @@
 MacEncoding::MacEncoding()
 {
 	char* ch = new char[18];
-	//getMacAdd(ch);
+	getMacAdd(ch);
 	MAC = ch;
 	delete ch;
 }

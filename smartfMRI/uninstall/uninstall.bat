@@ -1,0 +1,2 @@
+echo off
+C:\Windows\SysWOW64\msiexec /x {D7736502-4172-496F-AE3A-8ED739550664}

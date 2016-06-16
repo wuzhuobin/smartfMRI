@@ -13,7 +13,6 @@
  *
  */
 
-
 int main(int argc, char *argv[])
 {
 	QApplication q(argc, argv);
@@ -41,13 +40,12 @@ int main(int argc, char *argv[])
 
 	keyConfirm k;
 	SmartfMRI w;
+	// checkLicece, if the licence is correct, the main window will show up
 	if (k.checkLicence()) {
 		w.show();
 	}
 	else {
 		k.show();
 	}
-
-
 	return qApp->exec();
 }

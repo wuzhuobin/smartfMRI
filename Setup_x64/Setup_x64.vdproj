@@ -15,7 +15,25 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0826EF9BDF254C93BD9A7733A855A516"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1EF65E9732514955B058196761856D4E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_29C19BD9822B4E80A02CC6630A4735F5"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2E8B4724F51B4BF0985E3110540EC3ED"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,7 +45,49 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_87EC5C411E0D4FFCA70240E331B654C5"
+        "MsmKey" = "8:_53F123E463C34B2186A0E46860AABC2D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5E94EC9AE8B745C38571DC49958315C1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6A26707BF1764FD69225B2F6D79B8C85"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7350FF783D1142B9AABB88B80FA82D6A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_74EBF186292E4EB8AC9E411DD8318A2C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_77C235C9FB6B4FB4B7C4C54A16663BAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_887CEDBCEB934CC3BD06D2D192C06AB3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_96FB8B9133A64ECF93C4FA0C35917ED1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,6 +111,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ACE690F86D5A45E88EF432FC01801404"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C2E38A4A8EF14D5CB009EB24DEC08DF4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C969A79FAE2A4DBAA559EF67ACAB1B3F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CDE00FE1D8A7462EBB0CFDC45336A01C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -58,6 +136,12 @@
         "Entry"
         {
         "MsmKey" = "8:_CFC4A180182E4A9390677B3C1202DABA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E6BBADBC346347D1B1701F410114B258"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -92,6 +176,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -146,6 +238,66 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0826EF9BDF254C93BD9A7733A855A516"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT-1-1.edat2"
+            "TargetName" = "8:PictureRT-1-1.edat2"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_29C19BD9822B4E80A02CC6630A4735F5"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\RedCar.bmp"
+            "TargetName" = "8:RedCar.bmp"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2E8B4724F51B4BF0985E3110540EC3ED"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT.wndpos"
+            "TargetName" = "8:PictureRT.wndpos"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39A3EEDD52D14D76BE98D15F732BE887"
             {
             "SourcePath" = "8:..\\x64\\Release\\Qt5Widgets.dll"
@@ -166,12 +318,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87EC5C411E0D4FFCA70240E331B654C5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_53F123E463C34B2186A0E46860AABC2D"
             {
-            "SourcePath" = "8:C:\\Windows\\SysWOW64\\msiexec.exe"
-            "TargetName" = "8:unstall.exe"
+            "SourcePath" = "8:..\\smartfMRI\\uninstall\\uninstall.bat"
+            "TargetName" = "8:uninstall.bat"
             "Tag" = "8:"
-            "Folder" = "8:_5F80A58053DA4AE7ACCD32B9E7A462EF"
+            "Folder" = "8:_B9E3F5008E304747B7812EB5794217A5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -179,7 +331,147 @@
             "Hidden" = "11:FALSE"
             "System" = "11:FALSE"
             "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E94EC9AE8B745C38571DC49958315C1"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\myBlockList.txt"
+            "TargetName" = "8:myBlockList.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A26707BF1764FD69225B2F6D79B8C85"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT.es2"
+            "TargetName" = "8:PictureRT.es2"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7350FF783D1142B9AABB88B80FA82D6A"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT-1-1-ExperimentAdvisorReport.xml"
+            "TargetName" = "8:PictureRT-1-1-ExperimentAdvisorReport.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_74EBF186292E4EB8AC9E411DD8318A2C"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT.ebs2"
+            "TargetName" = "8:PictureRT.ebs2"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_77C235C9FB6B4FB4B7C4C54A16663BAC"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\otherParameters.txt"
+            "TargetName" = "8:otherParameters.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_887CEDBCEB934CC3BD06D2D192C06AB3"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\myTrialListParameters.txt"
+            "TargetName" = "8:myTrialListParameters.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_96FB8B9133A64ECF93C4FA0C35917ED1"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\Smart fMRI\\Smart fMRI manual.pdf"
+            "TargetName" = "8:Smart fMRI manual.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_B9E3F5008E304747B7812EB5794217A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
@@ -246,12 +538,92 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ACE690F86D5A45E88EF432FC01801404"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\BlueCar.bmp"
+            "TargetName" = "8:BlueCar.bmp"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2E38A4A8EF14D5CB009EB24DEC08DF4"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\Smart fMRI\\vc_redist.x64.exe"
+            "TargetName" = "8:vc_redist.x64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_B9E3F5008E304747B7812EB5794217A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C969A79FAE2A4DBAA559EF67ACAB1B3F"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\advisor.xsl"
+            "TargetName" = "8:advisor.xsl"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CDE00FE1D8A7462EBB0CFDC45336A01C"
             {
             "SourcePath" = "8:..\\x64\\Release\\Qt5Core.dll"
             "TargetName" = "8:Qt5Core.dll"
             "Tag" = "8:"
             "Folder" = "8:_B9E3F5008E304747B7812EB5794217A5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E6BBADBC346347D1B1701F410114B258"
+            {
+            "SourcePath" = "8:D:\\smart fMRI\\PictureRT_Test2\\PictureRT-1-1.txt"
+            "TargetName" = "8:PictureRT-1-1.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_3BA876B376E44B8C8494CFC3BC5D1A74"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -311,6 +683,17 @@
                     "Property" = "8:_553DD572B009461E8B158374E4CAD7CB"
                         "Folders"
                         {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_3BA876B376E44B8C8494CFC3BC5D1A74"
+                            {
+                            "Name" = "8:PictureRT_example"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_932ED9691DEC4E6689C788BC65DA9D2A"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_20DEC6AC347B41DD84C5B7340FD7ED61"
@@ -331,17 +714,6 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_4E0D336D2913443C809FE88CB267694C"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5F80A58053DA4AE7ACCD32B9E7A462EF"
-                    {
-                    "Name" = "8:bin"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_68B624A8B11343C08D2F86776FB4217B"
                         "Folders"
                         {
                         }
@@ -376,7 +748,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Smart fMRI"
         "ProductCode" = "8:{D7736502-4172-496F-AE3A-8ED739550664}"
-        "PackageCode" = "8:{DA6F5DFA-EB4E-488E-88A4-3E9F456543A1}"
+        "PackageCode" = "8:{8C479815-3E45-4785-84C3-CD587F747D5B}"
         "UpgradeCode" = "8:{75316525-FB0B-4CF1-9A09-62AF6C69CC98}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -496,20 +868,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_31E807BA5B784187AECD682C40FB8C2E"
-            {
-            "Name" = "8:unstall.exe"
-            "Arguments" = "8:/x {D7736502-4172-496F-AE3A-8ED739550664}"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_87EC5C411E0D4FFCA70240E331B654C5"
-            "Folder" = "8:_B9E3F5008E304747B7812EB5794217A5"
-            "WorkingFolder" = "8:_5F80A58053DA4AE7ACCD32B9E7A462EF"
-            "Icon" = "8:"
-            "Feature" = "8:"
-            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_92834E3E65F349C8A70C41FE1441CE6F"
             {
             "Name" = "8:Smart fMRI"
