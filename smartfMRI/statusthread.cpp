@@ -24,9 +24,10 @@ void StatusThread::run()
 	while (true) {
 		QList<QFileInfo> listEDAT2 = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.edat2"), QDir::Files);
 		QList<QFileInfo> listTXT = e->getDir().entryInfoList(QStringList(e->getFi().baseName() + "-*-*.txt"), QDir::Files);
+		qDebug() << QStringList(e->getFi().baseName() + "-*-*.edat2").size();
+		qDebug() << QStringList(e->getFi().baseName() + "-*-*.txt").size();
 		msleep(1000);
 		QMutexLocker locker(&mutex);
-		if (!threadFlag)	break;
 		qDebug() << "keep Monitoring";
 		if (listEDAT2.size() != 0) {
 			threadFlag = false;
@@ -41,6 +42,7 @@ void StatusThread::run()
 			if(updateLog(listTXT, time))
 				qDebug() << time;
 		}
+		if (!threadFlag)	break;
 
 	}
 
@@ -83,6 +85,7 @@ bool StatusThread::updateLog(QList<QFileInfo> listTXT, QDateTime& time)
 	qDebug() << ++i;
 	time = timeNew;
 	QFile file(listTXT[0].absoluteFilePath());
+	qDebug() << file.fileName();
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))	return false;
 	QTextStream out(&file);
 	QString fileContent(out.readAll());
@@ -92,7 +95,7 @@ bool StatusThread::updateLog(QList<QFileInfo> listTXT, QDateTime& time)
 	//emit textAppend2("*************************************************");
 	//emit textAppend2("\n");
 	//emit textAppend2(fileContent);
-
+	//emit textAppend1(fileContent);
 	emit textAppend1(LogFileData::change(fileContent).join("\n"));
 	emit textAppend1("\n");
 	emit textAppend1("*************************************************");

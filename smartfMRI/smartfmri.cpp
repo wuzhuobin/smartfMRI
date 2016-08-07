@@ -1,5 +1,7 @@
 #include "smartfmri.h"
 
+#include <QMessageBox>
+
 SmartfMRI::SmartfMRI(QWidget *parent)
 	: QMainWindow(parent), expMan("./paradigm", parent)
 {
@@ -30,27 +32,37 @@ int SmartfMRI::removeExperiment()
 	QDir dirToBeDeleted(ui.experimentlistView->
 		currentIndex().data(Qt::ToolTipRole).toString());
 	dirToBeDeleted.setFilter(QDir::NoDotAndDotDot);
-	if (ui.experimentlistView->currentIndex().data().isValid() 
-		&& dirToBeDeleted.removeRecursively()) {
-		if (expMod != nullptr) {
-			delete expMod;
-		}
-		expMod = new ExperimentModel(QDir("./paradigm"), this);
-		ui.experimentlistView->setModel(expMod);
+	QMessageBox sureToDelete;
+	sureToDelete.setText("Are you sure to remove this Experiment?\n"
+		"It will remove all data(including paradigm, parameters, log, etc)"
+		" in this experiment folder and cannot be recovered!");
+	sureToDelete.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+	sureToDelete.setDefaultButton(QMessageBox::No);
+	
+	if (sureToDelete.exec() == QMessageBox::Yes) {
+		if (ui.experimentlistView->currentIndex().data().isValid()
+			&& dirToBeDeleted.removeRecursively()) {
+			if (expMod != nullptr) {
+				delete expMod;
+			}
+			expMod = new ExperimentModel(QDir("./paradigm"), this);
+			ui.experimentlistView->setModel(expMod);
 
-		qDebug() << "remove successfully";
-		return 1;
+			qDebug() << "remove successfully";
+			return 1;
+		}
+		else if (!ui.experimentlistView->currentIndex().data().isValid()) {
+			QMessageBox::critical(this, tr("Fail to remove"),
+				QString("Please select an item."));
+			return 0;
+		}
+		else {
+			QMessageBox::critical(this, tr("Fail to remove"),
+				QString("Please remove ") + dirToBeDeleted.absolutePath() + " by yourself");
+			return 0;
+		}
 	}
-	else if (!ui.experimentlistView->currentIndex().data().isValid()) {
-		QMessageBox::critical(this, tr("Fail to remove"),
-			QString("Please select an item."));
-		return 0;
-	}
-	else {
-		QMessageBox::critical(this, tr("Fail to remove"),
-			QString("Please remove ") + dirToBeDeleted.absolutePath() + " by yourself");
-		return 0;
-	}
+	return 0;
 }
 
 int SmartfMRI::addExperiment() {
@@ -143,7 +155,12 @@ int SmartfMRI::openLogFolder()
 	}
 	else {
 		Experiment* e = expMod->getExperiment(ui.experimentlistView->currentIndex().data().toString());
-		QDesktopServices::openUrl(QUrl::fromLocalFile(e->getDir().absolutePath() + "/log"));
+		qDebug() << "Open log folder";
+		if (!QDesktopServices::openUrl(
+			QUrl::fromLocalFile(e->getDir().absolutePath() + "/log"))) {
+			QMessageBox::critical(this, tr("Fail to open"),
+				QString("No Log files has been created yet"));
+		}
 		return 1;
 	}
 

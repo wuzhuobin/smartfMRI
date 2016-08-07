@@ -5,6 +5,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QDebug>
+
 /**
  * an utility class for copying files recursively
  * @author

@@ -1,5 +1,7 @@
 #include "qcopydirrecursively.h"
 
+
+
 QCopyDirRecursively::QCopyDirRecursively(QObject *parent)
 	: QObject(parent)
 {
@@ -22,7 +24,6 @@ bool QCopyDirRecursively::copy(QString oldPath, QString newPath)
 		else if (qfi[i].isDir()) {
 			QDir(newPath).mkdir(qfi[i].fileName());
 			result = copy(qfi[i].absoluteFilePath(), newPath + "/" + qfi[i].fileName());
-			if (!result) break;
 		}
 		else {
 			result = QFile::copy(qfi[i].absoluteFilePath(), newPath + "/" + qfi[i].fileName());
