@@ -1,7 +1,7 @@
 ﻿#include "experimentmanager.hpp"
 
 ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * parent)
-	: QDialog(parent), paradigmFolder(paradigmFolder)
+	: QDialog(parent, Qt::Window), paradigmFolder(paradigmFolder)
 {
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);

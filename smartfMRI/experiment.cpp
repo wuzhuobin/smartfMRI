@@ -3,9 +3,11 @@
 
 Experiment::Experiment(const QFileInfo fi, QObject * parent)
 	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), 
-	dir(fi.absoluteDir()), sps1(fi.absolutePath() + "/myBlockList.txt", this),
-	sps2(fi.absolutePath() + "/myTrialListParameters.txt", this),
-	sps3(fi.absolutePath() + "/otherParameters.txt", this)
+	dir(fi.absoluteDir()), sps1(fi.absolutePath() + "/myDummy.txt", this),
+	sps2(fi.absolutePath() + "/myCycleList.txt", this),
+	sps3(fi.absolutePath() + "/myBlockList.txt", this),
+	sps4(fi.absolutePath() + "/myParameters.txt", this)
+
 {
 	qDebug() << "Experiment construction";
 	qDebug() << this->name;

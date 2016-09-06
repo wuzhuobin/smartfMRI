@@ -21,11 +21,12 @@ ScanParameters::status ScanParameters::read()
 	if (parameters.size() < 2) {
 		return ScanParameters::FileIncorrect;
 	}
+	for (int i = 1; i < parameters.size(); ++i) {
+		values[i] = parameters[i].split("\t");
+		while (values[i].size() < attributes.size()) {
+			values[i] += QString('0');
 
-	attributes = parameters[0].split("\t");
-	values = parameters[1].split("\t");
-	while (values.size() < attributes.size()) {
-		values += QString('0');
+		}
 	}
 	file.close();
 	return ScanParameters::Successful;
@@ -34,14 +35,17 @@ ScanParameters::status ScanParameters::read()
 ScanParameters::status ScanParameters::write()
 {
 	QFile file(parametersFileName);
+	QTextStream in(&file);
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
 		return ScanParameters::CannotOpenTheFile;
 	}
-	if (attributes.isEmpty() || values.isEmpty() || attributes.size() != values.size())
+	if (attributes.isEmpty() || values.isEmpty())
 		return ScanParameters::ParametersIncorrect;
 	QString line1 = attributes.join('\t') + "\n";
-	QString line2 = values.join('\t');
-	QTextStream(&file) << line1 << line2;
+	in << line1;
+	for (int i = 0; i < values.size(); ++i) {
+		in << values[i].join('\t') << "\n";
+	}
 	file.close();
 	return ScanParameters::Successful;
 }
@@ -51,12 +55,12 @@ ScanParameters::~ScanParameters()
 	qDebug() << "ScanParameters destruct";
 }
 
-QList<QString>& ScanParameters::getAttributes()
+QStringList& ScanParameters::getAttributes()
 {
 	return attributes;
 }
 
-QList<QString>& ScanParameters::getValues()
+QList<QStringList>& ScanParameters::getValues()
 {
 	return values;
 }

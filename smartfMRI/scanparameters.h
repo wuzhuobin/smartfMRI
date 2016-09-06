@@ -54,21 +54,22 @@ public:
 	 * can change it directly, then use write method for writing it to *.txt files
 	 * @return referenc of attibutes
 	 */
-	QList<QString>& getAttributes();
+	QStringList& getAttributes();
 	/**
 	 * get the reference of values
 	 * can chage it directly, then use write mothod for writing it to *.txt files
 	 * @return referenc of values
 	 */
-	QList<QString>& getValues();
+	QList<QStringList>& getValues();
 
 private:
 	//the file name of *.txt file
 	QString parametersFileName;
-	// the first row of the *.txt file, every attribute should be seperated by '/t'
-	QList<QString> attributes;
-	// the first second of the *.txt file, every value should be seperated by '/t'
-	QList<QString> values;
+	// the first row of the *.txt file, every attribute should be seperated by '\t'
+	QStringList attributes;
+	// the remain rows of the *.txt file, every value should be seperated by '\t'
+	// very row should be seperated by '\n'
+	QList<QStringList> values;
 };
 
 #endif // SCANPARAMETERS_H

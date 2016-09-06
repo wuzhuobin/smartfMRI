@@ -20,6 +20,9 @@ public:
 	 * Constructor
 	 * @param fi a *.ebs2 file
 	 * @param parent the parent 
+	 * sps1: fi.absolutePath() + "/myDummy.txt"
+	 * sps2: fi.absolutePath() + "/myCycleList.txt"
+	 * sps3: fi.absolutePath() + "/myBlockList.txt"
 	 *
 	 */
 	Experiment(const QFileInfo fi = QFileInfo(), QObject *parent = 0);
@@ -67,23 +70,30 @@ public:
 	 * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
 	 * filePaths have been settled as following
-	 * sps1: fi.absolutePath() + "/myBlockList.txt"
+	 * sps1: fi.absolutePath() + "/myDummy.txt"
 	 */
 	ScanParameters sps1;
 	/**
 	 * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
 	 * filePaths have been settled as following
-	 * sps2: fi.absolutePath() + "/myTrialListParameters.txt"
+	 * sps2: fi.absolutePath() + "/myCycleList.txt"
 	 */
 	ScanParameters sps2;
 	/**
      * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
 	 * filePaths have been settled as following
-	 * sps3: fi.absolutePath() + "/otherParameters.txt"
+	 * sps3: fi.absolutePath() + "/myBlockList.txt"
 	 */
 	ScanParameters sps3;
+	/**
+	* ScanParameters *.txt file
+	* loading the essential parameter of the Experiment
+	* filePaths have been settled as following
+	* sps3: fi.absolutePath() + "/myParameters.txt"
+	*/
+	ScanParameters sps4;
 
 	
 private:

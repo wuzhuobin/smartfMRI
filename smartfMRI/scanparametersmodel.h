@@ -8,6 +8,21 @@
  * @class ScanParamtersModel
  * display and manage to alter the scan parameters of the selected experiment 
  * parameters of experiment e will be loaded into this list
+ * <Scan parameters>
+ * 1. TR (default: 3000ms)
+ * 2. number of dummy scans  (default: 2 dynamics)
+ * 3. number of cycles (default: 5 cycles)
+ * 4. number of dynamics per task block (default: 10 dynamics)
+ * 5. duration of task trial (default: 3000 ms)
+ * 6. number of dynamics per rest block (default: 10 dynamics)
+ * 7. duration of rest trial (default: 3000 ms)
+ *
+ * The 7 input will control 4 value in 3 text files.
+ * In "myDummy.txt", the value of "Duration" is equal to TR*number of dummy scans. 
+ * In "myCycle.txt", the value of "Weight" is equal to number of cycles
+ * In "myBlock.txt", the value of "Weight" in 1st row is equal to number of dynamics per task block*TR/duration of task trial.
+ * The value of "Weight" in 2nd row is equal to number of dynamics per rest block*TR/duration of rest trial.
+ * SmartFMRI should give an error message when user add paradigm or modify parameters if one or multiple value of Weight is/are not integer.
  * @author
  * @version
  */

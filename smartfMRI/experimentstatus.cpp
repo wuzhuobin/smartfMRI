@@ -1,7 +1,7 @@
 #include "experimentstatus.h"
 
 ExperimentStatus::ExperimentStatus(QWidget *parent)
-	: QDialog(parent), thread(nullptr), log()
+	: QDialog(parent, Qt::Window), thread(nullptr), log()
 {
 	ui.setupUi(this);
 	qDebug() << "ExperimentStatus constructor";

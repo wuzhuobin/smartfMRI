@@ -10,18 +10,24 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	: QAbstractListModel(parent), editFlag(editFlag)
 {
 	headerList += QString("TR (ms)");
-	headerList += QString("Control Period (ms)");
-	headerList += QString("Task Period (ms)");
-	headerList += QString("Dummy Samples (sampels)");
-	headerList += QString("Cycles (cycles)");
-	headerList += QString("Task Trail Period (ms)");
-	headerList += QString("Control Trail Period (ms)");
+	headerList += QString("number of dummy scans (dynamics)");
+	headerList += QString("number of cycles (cycles)");
+	headerList += QString("number of dynamics per task block (dynamics)");
+	headerList += QString("duration of task trial (ms)");
+	headerList += QString("number of dynamics per rest block (dynamics)");
+	headerList += QString("duration of rest trial (dynamics)");
 	headerList += QString("Scan time");
 
 	while (values.size() < headerList.size()) {
 		values += 0.0;
 	}
-	values[0] = 3000; values[3] = 2;
+	values[0] = 3000;
+	values[1] = 2;
+	values[2] = 5;
+	values[3] = 10;
+	values[4] = 3000;
+	values[5] = 10;
+	values[6] = 3000;
 	setValuesFromExperiment(e);
 	this->length = headerList.size();
 	qDebug() << "ScanParametersModel construction";
@@ -99,20 +105,34 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 
 int ScanParametersModel::setValuesToExperiment(Experiment& e)
 {
-	if (e.sps3.getAttributes().contains("TR")) {
-		e.sps3.getValues()[e.sps3.getAttributes().indexOf("TR")] = QString::number(values[0]);
+	// TR (default: 3000ms)
+	if (e.sps4.getAttributes().contains("TR")) {
+		e.sps4.getValues()[e.sps4.getAttributes().indexOf("TR")] =
+			QStringList(QString::number(values[0]));
 	}
 	else {
-		e.sps3.getAttributes() += "TR";
-		e.sps3.getValues() += QString::number(values[0]);
+		e.sps4.getAttributes() += "TR";
+		e.sps4.getValues() += QStringList(QString::number(values[0]));
 	}
-	if (e.sps3.getAttributes().contains("DummySamples")) {
-		e.sps3.getValues()[e.sps3.getAttributes().indexOf("DummySamples")] = QString::number(values[3]);
+	// number of dummy scans  (default: 2 dynamics)
+	if (e.sps4.getAttributes().contains("number of dummy scans")) {
+		e.sps4.getValues()[e.sps4.getAttributes().indexOf("DummySamples")] = 
+			QStringList(QString::number(values[1]));
 	}
 	else {
-		e.sps3.getAttributes() += "DummySamples";
-		e.sps3.getValues() += QString::number(values[3]);
+		e.sps4.getAttributes() += "number of dummy scans";
+		e.sps4.getValues() += QStringList(QString::number(values[1]));
 	}
+	//  number of cycles (default: 5 cycles)
+	if (e.sps4.getAttributes().contains("number of cycles")) {
+		e.sps4.getValues()[e.sps4.getAttributes().indexOf("number of cycles")] =
+			QStringList(QString::number(values[2]));
+	}
+	else {
+		e.sps4.getAttributes() += "number of cycles";
+		e.sps4.getValues() += QStringList(QString::number(values[2]));
+	}
+	// number of dynamics per task block (default: 10 dynamics)
 	if (e.sps1.getAttributes().contains("ControlDuration")) {
 		e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")] = QString::number(values[1]);
 	}
