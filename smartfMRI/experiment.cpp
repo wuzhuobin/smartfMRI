@@ -1,8 +1,8 @@
 #include "experiment.h"
 
 
-Experiment::Experiment(const QFileInfo fi, QObject * parent)
-	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), 
+Experiment::Experiment(const QFileInfo fi, QObject * parent, EXPERIMENT_TYPE type)
+	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), type(type),
 	dir(fi.absoluteDir()), sps1(fi.absolutePath() + "/myDummy.txt", this),
 	sps2(fi.absolutePath() + "/myCycleList.txt", this),
 	sps3(fi.absolutePath() + "/myBlockList.txt", this),

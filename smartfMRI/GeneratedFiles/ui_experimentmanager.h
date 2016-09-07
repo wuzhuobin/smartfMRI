@@ -52,7 +52,7 @@ public:
     {
         if (ExperimentManager->objectName().isEmpty())
             ExperimentManager->setObjectName(QStringLiteral("ExperimentManager"));
-        ExperimentManager->resize(629, 290);
+        ExperimentManager->resize(1009, 294);
         horizontalLayout = new QHBoxLayout(ExperimentManager);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);

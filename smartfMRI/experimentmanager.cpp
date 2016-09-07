@@ -7,6 +7,30 @@ ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * par
 	ui.setupUi(this);
 	
 	this->setWindowIcon(QIcon(":/smartfMRI/pm.ico"));
+
+	//Set correct dialog size
+	//ui.scanParametersTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	//ui.scanParametersTableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	//ui.scanParametersTableView->adjustSize();
+	//ui.scanParametersTableView->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+	//ui.scanParametersTableView->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+	//ui.scanParametersTableView->resizeColumnsToContents();
+	//ui.scanParametersTableView->resizeRowsToContents();
+
+	//int w = ui.scanParametersTableView->verticalHeader()->width() + 145; // +4 seems to be needed
+	//for (int i = 0; i < ui.scanParametersTableView->columnCount(); i++)
+	//	w += ui.scanParametersTableView->columnWidth(i); // seems to include gridline (on my machine)
+
+	//int h = ui.scanParametersTableView->horizontalHeader()->height();
+	//for (int i = 0; i < ui.scanParametersTableView->rowCount(); i++)
+	//	h += ui.scanParametersTableView->rowHeight(i);
+
+	//w += ui.scanParametersTableView->contentsMargins().left() + ui.scanParametersTableView->contentsMargins().right();
+	//h += ui.scanParametersTableView->contentsMargins().top() + ui.scanParametersTableView->contentsMargins().bottom();
+
+	//ui.scanParametersTableView->setMaximumSize(QSize(w, h));
+	//ui.scanParametersTableView->setMinimumSize(QSize(w, h));
+
 	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 }
 
@@ -14,7 +38,7 @@ ExperimentManager::~ExperimentManager() {
 	qDebug() << " Close ExperimentManager";
 }
 
-int ExperimentManager::copyParadigm()
+int ExperimentManager::copyParadigm(bool updateFlag)
 {
 	qDebug() << "Copy Paradigm>>>";
 	QDir beforeDir(paradigmFile.absolutePath());
@@ -28,7 +52,7 @@ int ExperimentManager::copyParadigm()
 
 	QFileInfoList fil(QDir(targetDir.absolutePath() + "/" + folderName).entryInfoList(
 		QStringList("*.ebs2")));
-	if (fil.size() > 0) {
+	if (fil.size() > 0 && updateFlag) {
 		qDebug() << fil[0].absoluteFilePath();
 		setParadigmFile(fil[0].absoluteFilePath());
 		updataParadigm();
@@ -47,9 +71,11 @@ int ExperimentManager::loadParadigm()
 		delete e;
 	} 
 	e = new Experiment(paradigmFile, this);
-	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()
+	if (ScanParameters::Successful == e->sps1.read() && 
+		ScanParameters::Successful == e->sps2.read() && 
+		ScanParameters::Successful == e->sps3.read()
 		) {
-		e->sps3.read();
+		e->sps4.read();
 		spMod = new ScanParametersModel(*e, true, this);
 	}
 	else {

@@ -74,7 +74,7 @@ int SmartfMRI::addExperiment() {
 	expMan.setParadigmFile(QFileInfo(filePath));
 	expMan.loadParadigm();
 	if (expMan.exec() == QDialog::Accepted) {
-		expMan.copyParadigm();
+		expMan.copyParadigm(true);
 		if (expMod != nullptr) {
 			delete expMod;
 		}

@@ -34,10 +34,11 @@ public:
 	/**
 	 * copy all files in selected *.ebs2 file's folder to paradigmFolder 
 	 * this method will call updateParadigm() to save the changed scanParameters
+	 * @param updateFlag if updateFlag == true, update the ScanParameters
 	 * @return 1 succeed
 	 *         0 fail
 	 */
-	int copyParadigm();
+	int copyParadigm(bool updateFlag);
 	/**
 	 * updataParadigm updata the scan parameters of *e
 	 * updata the Experiment name of *e and change its directory name

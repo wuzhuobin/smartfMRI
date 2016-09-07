@@ -17,6 +17,16 @@ class Experiment : public QObject
 	
 public:
 	/**
+	* research and clinical paradigms
+	* research paradigms are not allowed to update parameters value
+	* clinical paradigms are allowed to update
+	*/
+	enum EXPERIMENT_TYPE
+	{
+		RESEARCH = 0,
+		CLINICAL = 1
+	};
+	/**
 	 * Constructor
 	 * @param fi a *.ebs2 file
 	 * @param parent the parent 
@@ -25,7 +35,8 @@ public:
 	 * sps3: fi.absolutePath() + "/myBlockList.txt"
 	 * sps4: fi.absolutePath() + "/myParameters.txt"
 	 */
-	Experiment(const QFileInfo fi = QFileInfo(), QObject *parent = 0);
+	Experiment(const QFileInfo fi = QFileInfo(), QObject *parent = 0,
+		EXPERIMENT_TYPE type = CLINICAL);
 	/**
 	 * Destructor
 	 */
@@ -103,7 +114,8 @@ private:
 	QDir dir;
 	// QFileInfo of the *.ebs2 file
 	QFileInfo fi;
-
+	// Type of the experiment 
+	EXPERIMENT_TYPE type;
 };
 
 #endif // EXPERIMENT_H

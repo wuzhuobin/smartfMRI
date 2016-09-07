@@ -94,10 +94,15 @@ Qt::ItemFlags ScanParametersModel::flags(const QModelIndex & index) const
 
 bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & value, int role)
 {
-	if (role != Qt::EditRole || index.column() != 0 || index.row() >= values.size())
+	if (role != Qt::EditRole || 
+		index.column() != 0 || 
+		index.row() >= values.size() || 
+		value.toDouble() < 0)
 		return false;
-	else
-		values[index.row()] = value.toDouble();
+	else {
+		values[index.row()] = (int)value.toDouble();
+
+	}
 	emit dataChanged(index, index);
 
 	return true;

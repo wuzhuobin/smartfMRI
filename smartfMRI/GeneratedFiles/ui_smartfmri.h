@@ -57,7 +57,7 @@ public:
     {
         if (smartfMRIClass->objectName().isEmpty())
             smartfMRIClass->setObjectName(QStringLiteral("smartfMRIClass"));
-        smartfMRIClass->resize(638, 477);
+        smartfMRIClass->resize(903, 360);
         centralWidget = new QWidget(smartfMRIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
