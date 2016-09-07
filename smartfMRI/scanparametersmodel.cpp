@@ -115,26 +115,26 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 		e.sps4.getValues() += QStringList(QString::number(values[0]));
 	}
 	// number of dummy scans  (default: 2 dynamics)
-	if (e.sps4.getAttributes().contains("number of dummy scans")) {
-		e.sps4.getValues()[e.sps4.getAttributes().indexOf("DummySamples")] = 
-			QStringList(QString::number(values[1]));
+	if (e.sps1.getAttributes().contains("Duration")) {
+		e.sps1.getValues()[e.sps4.getAttributes().indexOf("Duration")] = 
+			QStringList(QString::number(values[1]/values[0]));
 	}
 	else {
-		e.sps4.getAttributes() += "number of dummy scans";
-		e.sps4.getValues() += QStringList(QString::number(values[1]));
+		e.sps4.getAttributes() += "Duration";
+		e.sps4.getValues() += QStringList(QString::number(values[1] / values[0]));
 	}
 	//  number of cycles (default: 5 cycles)
-	if (e.sps4.getAttributes().contains("number of cycles")) {
-		e.sps4.getValues()[e.sps4.getAttributes().indexOf("number of cycles")] =
+	if (e.sps2.getAttributes().contains("Weight")) {
+		e.sps2.getValues()[e.sps2.getAttributes().indexOf("Weight")] =
 			QStringList(QString::number(values[2]));
 	}
 	else {
-		e.sps4.getAttributes() += "number of cycles";
-		e.sps4.getValues() += QStringList(QString::number(values[2]));
+		e.sps2.getAttributes() += "Weight";
+		e.sps2.getValues() += QStringList(QString::number(values[2]));
 	}
 	// number of dynamics per task block (default: 10 dynamics)
-	if (e.sps1.getAttributes().contains("ControlDuration")) {
-		e.sps1.getValues()[e.sps1.getAttributes().indexOf("ControlDuration")] = QString::number(values[1]);
+	if (e.sps1.getAttributes().contains("number of dynamics per task block")) {
+		e.sps1.getValues()[e.sps1.getAttributes().indexOf("number of dynamics per task block")] = QString::number(values[1]);
 	}
 	if (e.sps1.getAttributes().contains("Weight")) {
 		e.sps1.getValues()[e.sps1.getAttributes().indexOf("Weight")] = QString::number(values[4]);

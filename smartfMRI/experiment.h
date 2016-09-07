@@ -23,7 +23,7 @@ public:
 	 * sps1: fi.absolutePath() + "/myDummy.txt"
 	 * sps2: fi.absolutePath() + "/myCycleList.txt"
 	 * sps3: fi.absolutePath() + "/myBlockList.txt"
-	 *
+	 * sps4: fi.absolutePath() + "/myParameters.txt"
 	 */
 	Experiment(const QFileInfo fi = QFileInfo(), QObject *parent = 0);
 	/**
