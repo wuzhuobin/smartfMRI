@@ -75,8 +75,10 @@ int ExperimentManager::updataParadigm()
 	}
 
 	spMod->setValuesToExperiment(*e);
-	if (ScanParameters::Successful == e->sps1.write() && ScanParameters::Successful == e->sps2.write() && 
-		ScanParameters::Successful == e->sps3.write()) {
+	if (ScanParameters::Successful == e->sps1.write() &&
+		ScanParameters::Successful == e->sps2.write() && 
+		ScanParameters::Successful == e->sps3.write() &&
+		ScanParameters::Successful == e->sps4.write()) {
 		qDebug() << "updataParadigm";
 	}
 	QDir dir = paradigmFile.dir();

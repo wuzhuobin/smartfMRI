@@ -1,2 +1,0 @@
-ID	Weight	Procedure	Nested	Stimulus	CorrectAnswer	StimDuration	FixationDuration
-1	300	TrialProc		Slide3	 	100	100

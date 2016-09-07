@@ -61,6 +61,14 @@ public:
 	 * @return referenc of values
 	 */
 	QList<QStringList>& getValues();
+	/**
+	 * get the reference of row th values 
+	 * if the row is bigger than values.size(), create StringList
+	 * can change it directly, than use write method for writing it to *.txt files
+	 * @return refernece of the row th values
+	 */
+	QStringList& getValue(int row);
+
 
 private:
 	//the file name of *.txt file

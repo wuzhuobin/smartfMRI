@@ -21,10 +21,12 @@ ScanParameters::status ScanParameters::read()
 	if (parameters.size() < 2) {
 		return ScanParameters::FileIncorrect;
 	}
+	// the frist row is attributes valuses begin at the second row
+	attributes = parameters[0].split("\t");
 	for (int i = 1; i < parameters.size(); ++i) {
-		values[i] = parameters[i].split("\t");
-		while (values[i].size() < attributes.size()) {
-			values[i] += QString('0');
+		values += parameters[i].split("\t");
+		while (values[i -1].size() < attributes.size()) {
+			values[i - 1] += QString('0');
 
 		}
 	}
@@ -63,4 +65,13 @@ QStringList& ScanParameters::getAttributes()
 QList<QStringList>& ScanParameters::getValues()
 {
 	return values;
+}
+
+QStringList & ScanParameters::getValue(int row)
+{
+	while (values.size() <= row) {
+		values += QStringList();
+	}
+	return values[row];
+	// TODO: 在此处插入 return 语句
 }
