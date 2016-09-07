@@ -71,6 +71,9 @@ int SmartfMRI::addExperiment() {
 		QString(), tr("E-Run Script File (*.ebs2);; All files (*.*)"));
 	if (filePath.isEmpty())
 		return 0;
+	QMessageBox experimentTypeQuestionBox;
+	QPushButton *connectButton = msgBox.addButton(tr("Connect"), QMessageBox::ActionRole);
+	QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
 	expMan.setParadigmFile(QFileInfo(filePath));
 	expMan.loadParadigm();
 	if (expMan.exec() == QDialog::Accepted) {
