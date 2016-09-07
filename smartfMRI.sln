@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartfMRI", "smartfMRI\smartfMRI.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_x64", "Setup_x64\Setup_x64.vdproj", "{600D750E-2773-47E7-A5DE-BD39BAA2302C}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_x64", "Setup_x64\Setup_x64.vdproj", "{229974E3-3579-4423-B152-7E72AEA20B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,16 +41,16 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x64.Build.0 = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.ActiveCfg = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.SingleImage|x86.Build.0 = Release|Win32
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.CD_ROM|x64.ActiveCfg = Release
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.CD_ROM|x86.ActiveCfg = Release
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.Debug|x64.ActiveCfg = Debug
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.Debug|x86.ActiveCfg = Debug
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.DVD-5|x64.ActiveCfg = Debug
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.DVD-5|x86.ActiveCfg = Debug
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.Release|x64.ActiveCfg = Release
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.Release|x86.ActiveCfg = Release
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.SingleImage|x64.ActiveCfg = Release
-		{600D750E-2773-47E7-A5DE-BD39BAA2302C}.SingleImage|x86.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.CD_ROM|x64.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.CD_ROM|x86.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.Debug|x64.ActiveCfg = Debug
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.Debug|x86.ActiveCfg = Debug
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.DVD-5|x64.ActiveCfg = Debug
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.DVD-5|x86.ActiveCfg = Debug
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.Release|x64.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.Release|x86.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.SingleImage|x64.ActiveCfg = Release
+		{229974E3-3579-4423-B152-7E72AEA20B6A}.SingleImage|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,8 +5,8 @@ ScanParameters::ScanParameters(QString parametersFileName, QObject * parent)
 {
 	qDebug() << QFileInfo(parametersFileName).absoluteFilePath ();
 	qDebug() << "ScanParameters construct";
-	if(!QFileInfo(parametersFileName).exists())
-		this->write();
+	//if(!QFileInfo(parametersFileName).exists())
+	//	this->write();
 	this->read();
 }
 
@@ -25,10 +25,10 @@ ScanParameters::status ScanParameters::read()
 	attributes = parameters[0].split("\t");
 	for (int i = 1; i < parameters.size(); ++i) {
 		values += parameters[i].split("\t");
-		while (values[i -1].size() < attributes.size()) {
-			values[i - 1] += QString('0');
+		//while (values[i -1].size() < attributes.size()) {
+		//	values[i - 1] += QString('0');
 
-		}
+		//}
 	}
 	file.close();
 	return ScanParameters::Successful;
@@ -46,7 +46,10 @@ ScanParameters::status ScanParameters::write()
 	QString line1 = attributes.join('\t') + "\n";
 	in << line1;
 	for (int i = 0; i < values.size(); ++i) {
-		in << values[i].join('\t') << "\n";
+		in << values[i].join('\t');
+		if (i != values.size() - 1) {
+			in << '\n';
+		}
 	}
 	file.close();
 	return ScanParameters::Successful;

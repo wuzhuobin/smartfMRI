@@ -107,7 +107,7 @@ public:
 	 * @return 1 success
 	 *         0 fail
 	 */
-	int setValuesFromExperiment(Experiment& e);
+	int getValuesFromExperiment(Experiment& e);
 
 private:
 	// whether data is alterable

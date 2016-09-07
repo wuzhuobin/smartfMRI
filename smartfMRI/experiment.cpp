@@ -9,6 +9,23 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent, EXPERIMENT_TYPE typ
 	sps4(fi.absolutePath() + "/myParameters.txt", this)
 
 {
+	if (sps4.getAttributes().contains("experiment type")) {
+		if (sps4.getValue(0)[sps4.getAttributes().indexOf("experiment type")] == "clinical") {
+			this->type = CLINICAL;
+		}
+		else {
+			this->type = RESEARCH;
+		}
+	}
+	else {
+		sps4.getAttributes() += "experiment type";
+		if (type == CLINICAL) {
+			sps4.getValue(0) += "clinical";
+		}
+		else {
+			sps4.getValue(0) += "research";
+		}
+	}
 	qDebug() << "Experiment construction";
 	qDebug() << this->name;
 }
@@ -46,6 +63,11 @@ int Experiment::setFi(const QFileInfo fi)
 {
 	this->fi = fi;
 	return 1;
+}
+
+Experiment::EXPERIMENT_TYPE Experiment::getType()
+{
+	return this->type;
 }
 
 QString Experiment::getName() const

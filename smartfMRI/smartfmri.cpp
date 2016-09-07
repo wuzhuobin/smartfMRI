@@ -72,12 +72,30 @@ int SmartfMRI::addExperiment() {
 	if (filePath.isEmpty())
 		return 0;
 	QMessageBox experimentTypeQuestionBox;
-	QPushButton *connectButton = msgBox.addButton(tr("Connect"), QMessageBox::ActionRole);
-	QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
+	experimentTypeQuestionBox.setText("Please select your paradigm type."
+		"Clinical or Research\n");
+	experimentTypeQuestionBox.setInformativeText(
+		"Research paradigm: parameters are alterable\n"
+		"Clinical paradigm: parameters are unchagngeable\n");
+	QPushButton *clinicalButton = experimentTypeQuestionBox.addButton(tr("Clinical"), QMessageBox::YesRole);
+	QPushButton *reserachButton = experimentTypeQuestionBox.addButton(tr("Research"), QMessageBox::NoRole);
+	experimentTypeQuestionBox.exec();
+	// clinical paradigm
+	bool clinicalFlag = true;
+	// research paradigm
+	if (experimentTypeQuestionBox.clickedButton() == clinicalButton) {
+		clinicalFlag = true;
+	}
+	else if (experimentTypeQuestionBox.clickedButton() == reserachButton) {
+		clinicalFlag = false;
+	}
+	else {
+		return 0;
+	}
 	expMan.setParadigmFile(QFileInfo(filePath));
-	expMan.loadParadigm();
+	expMan.loadParadigm(clinicalFlag);
 	if (expMan.exec() == QDialog::Accepted) {
-		expMan.copyParadigm(true);
+		expMan.copyParadigm(clinicalFlag);
 		if (expMod != nullptr) {
 			delete expMod;
 		}
@@ -88,6 +106,7 @@ int SmartfMRI::addExperiment() {
 	else {
 		return 0;
 	}
+
 
 }
 
@@ -116,10 +135,14 @@ int SmartfMRI::updateExperiment()
 	Experiment*e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data().toString());
 	expMan.setParadigmFile(e->getFi().absoluteFilePath());
-	expMan.loadParadigm();
+	bool clinicalFlag = true;
+	if (e->getType() != Experiment::CLINICAL) {
+		clinicalFlag = false;
+	}
+	expMan.loadParadigm(clinicalFlag);
 
 	if (expMan.exec() == QDialog::Accepted) {
-		expMan.updataParadigm();
+		expMan.updataParadigm(clinicalFlag);
 		delete expMod;
 		expMod = new ExperimentModel(QDir("./paradigm"), this);
 		ui.experimentlistView->setModel(expMod);

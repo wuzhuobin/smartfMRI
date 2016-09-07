@@ -30,6 +30,9 @@ public:
 	 * Constructor
 	 * @param fi a *.ebs2 file
 	 * @param parent the parent 
+	 * @param type if in sps4, it has been defined its type, the @member type is the same as 
+	 *             sps, otherwise, @member type is the same as this parameter, and it also 
+	 *			   create a new value and attribute in sps4
 	 * sps1: fi.absolutePath() + "/myDummy.txt"
 	 * sps2: fi.absolutePath() + "/myCycleList.txt"
 	 * sps3: fi.absolutePath() + "/myBlockList.txt"
@@ -77,6 +80,11 @@ public:
 	 *         0, if fail
 	 */
 	int setFi(const QFileInfo fi);
+	/**
+	 * return type of this experiment 
+	 * @return type
+	 */
+	EXPERIMENT_TYPE getType();
 	/**
 	 * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
