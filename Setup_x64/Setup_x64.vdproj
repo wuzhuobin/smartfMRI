@@ -105,12 +105,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_12566F7BF35D4A82845DC179AE6C7457"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_13BE1857D33E4FB1A9261C641F47E882"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -772,6 +766,12 @@
         "Entry"
         {
         "MsmKey" = "8:_89DAEB805C2248DFA92F17C1D96948A6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8A4FC8DC68D3473BAD04123E595E6A10"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1465,6 +1465,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -1481,6 +1489,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -1767,27 +1791,7 @@
             "SourcePath" = "8:..\\x64\\Release\\uninstall.bat"
             "TargetName" = "8:uninstall.bat"
             "Tag" = "8:"
-            "Folder" = "8:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_12566F7BF35D4A82845DC179AE6C7457"
-            {
-            "SourcePath" = "8:..\\..\\..\\blood_vessel\\resources\\icons\\win-uninstall.ico"
-            "TargetName" = "8:win-uninstall.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
+            "Folder" = "8:_B7A879E64C5D4A1E8E667B5E227AD1D9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1867,7 +1871,7 @@
             "SourcePath" = "8:..\\smartfMRI\\pm.ico"
             "TargetName" = "8:pm.ico"
             "Tag" = "8:"
-            "Folder" = "8:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
+            "Folder" = "8:_B7A879E64C5D4A1E8E667B5E227AD1D9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2307,7 +2311,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qico.dll"
             "TargetName" = "8:qico.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2827,7 +2831,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qicns.dll"
             "TargetName" = "8:qicns.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3547,7 +3551,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qgif.dll"
             "TargetName" = "8:qgif.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4002,6 +4006,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A4FC8DC68D3473BAD04123E595E6A10"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\win-uninstall.ico"
+            "TargetName" = "8:win-uninstall.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_B7A879E64C5D4A1E8E667B5E227AD1D9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A844BE58B9A4A97AC536918505F7517"
             {
             "SourcePath" = "8:..\\..\\paradigm20160825\\paradigm\\6_PictureNaming\\PictureNaming\\Slide8.JPG"
@@ -4047,7 +4071,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qwebp.dll"
             "TargetName" = "8:qwebp.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4367,7 +4391,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qtiff.dll"
             "TargetName" = "8:qtiff.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4987,7 +5011,7 @@
             "SourcePath" = "8:..\\x64\\Release\\uninstall.vbs"
             "TargetName" = "8:uninstall.vbs"
             "Tag" = "8:"
-            "Folder" = "8:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
+            "Folder" = "8:_B7A879E64C5D4A1E8E667B5E227AD1D9"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5407,7 +5431,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qtga.dll"
             "TargetName" = "8:qtga.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5987,7 +6011,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qjpeg.dll"
             "TargetName" = "8:qjpeg.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6027,7 +6051,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qdds.dll"
             "TargetName" = "8:qdds.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6107,7 +6131,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qsvg.dll"
             "TargetName" = "8:qsvg.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6187,7 +6211,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qwbmp.dll"
             "TargetName" = "8:qwbmp.dll"
             "Tag" = "8:"
-            "Folder" = "8:_A1B57C4D9360492DB7CFA032C29640FF"
+            "Folder" = "8:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6230,7 +6254,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_396E767000B04B48B2AB96955CBE7054"
             {
-            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[AppDataFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -6238,7 +6262,7 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A1B57C4D9360492DB7CFA032C29640FF"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_04A5CB3FF6A445C99B2CB89B6B1FEFD5"
                     {
                     "Name" = "8:imageformats"
                     "AlwaysCreate" = "11:FALSE"
@@ -6249,18 +6273,7 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
-                    {
-                    "Name" = "8:bin"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_E29EB739BD5F41E5A95A064471882379"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_DD269A15EFDD4587A3AE3802BD08295E"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_92F7434C3A834965A206C5917B689734"
                     {
                     "Name" = "8:paradigm"
                     "AlwaysCreate" = "11:FALSE"
@@ -6403,6 +6416,17 @@
                             }
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_B7A879E64C5D4A1E8E667B5E227AD1D9"
+                    {
+                    "Name" = "8:bin"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_E29EB739BD5F41E5A95A064471882379"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_6BBAEFE325AB49B6991C73F789F552D4"
@@ -6444,7 +6468,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{A65C4AB3-4674-4541-BD53-60D3C395107F}"
-        "PackageCode" = "8:{3ED60CE1-6983-4F08-A960-C9E38E9F8ED2}"
+        "PackageCode" = "8:{C161CFCF-F7CE-46E1-B4AE-A62988DD7F23}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -6578,7 +6602,7 @@
             "Icon" = "8:_188786E401FA43F4AC0551E050EF39D5"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_7B99452121984D5B97814D64E453C7E5"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_ADF37D80C1CC4EC39594799E9D8BEEBD"
             {
             "Name" = "8:uninstall"
             "Arguments" = "8:"
@@ -6588,8 +6612,8 @@
             "Transitive" = "11:FALSE"
             "Target" = "8:_C47A57CBB8804766875E76DBFD15CA9C"
             "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
-            "WorkingFolder" = "8:_C0868A3CFF4C457BB3E98B7FCDC1DED9"
-            "Icon" = "8:_12566F7BF35D4A82845DC179AE6C7457"
+            "WorkingFolder" = "8:_B7A879E64C5D4A1E8E667B5E227AD1D9"
+            "Icon" = "8:_8A4FC8DC68D3473BAD04123E595E6A10"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EFAD8AD74CEB46CCAE8557F3438C724F"

@@ -208,8 +208,8 @@ public:
         label_5->setText(QApplication::translate("ExperimentManager", "Paradigm Name:", 0));
         label_7->setText(QApplication::translate("ExperimentManager", "Experiment Type:", 0));
         label_4->setText(QApplication::translate("ExperimentManager", "Experiment Name:", 0));
-        label->setText(QApplication::translate("ExperimentManager", "Research paradigm: parameters are alterable\n"
-"Clinical paradigm: parameters are unchagngeable\n"
+        label->setText(QApplication::translate("ExperimentManager", "Research paradigm: parameters are unchangeable\n"
+"Clinical paradigm: parameters are alterable\n"
 "", 0));
         label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
         confirmPushButton->setText(QApplication::translate("ExperimentManager", "Confirm", 0));

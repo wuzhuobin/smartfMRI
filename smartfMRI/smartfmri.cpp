@@ -75,8 +75,8 @@ int SmartfMRI::addExperiment() {
 	experimentTypeQuestionBox.setText("Please select your paradigm type."
 		"Clinical or Research\n");
 	experimentTypeQuestionBox.setInformativeText(
-		"Research paradigm: parameters are alterable\n"
-		"Clinical paradigm: parameters are unchagngeable\n");
+		"Research paradigm: parameters are unchagngeable alterable\n"
+		"Clinical paradigm: parameters are alterable\n");
 	QPushButton *clinicalButton = experimentTypeQuestionBox.addButton(tr("Clinical"), QMessageBox::YesRole);
 	QPushButton *reserachButton = experimentTypeQuestionBox.addButton(tr("Research"), QMessageBox::NoRole);
 	experimentTypeQuestionBox.exec();

@@ -147,8 +147,8 @@
           </font>
          </property>
          <property name="text">
-          <string>Research paradigm: parameters are alterable
-Clinical paradigm: parameters are unchagngeable
+          <string>Research paradigm: parameters are unchangeable
+Clinical paradigm: parameters are alterable
 </string>
          </property>
          <property name="alignment">
