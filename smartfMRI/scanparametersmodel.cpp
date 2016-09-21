@@ -9,14 +9,14 @@ ScanParametersModel::ScanParametersModel(QObject *parent)
 ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject * parent)
 	: QAbstractListModel(parent), editFlag(editFlag)
 {
-	headerList += QString("TR (ms)");
-	headerList += QString("number of dummy scans (dynamics)");
-	headerList += QString("number of cycles (cycles)");
-	headerList += QString("number of dynamics per task block (dynamics)");
-	headerList += QString("duration of task trial (ms)");
-	headerList += QString("number of dynamics per rest block (dynamics)");
-	headerList += QString("duration of rest trial (ms)");
-	headerList += QString("Scan time");
+	headerList += QString(" TR (ms)");
+	headerList += QString(" Number of dummy scans (dynamics)");
+	headerList += QString(" Number of cycles (cycles)");
+	headerList += QString(" Number of dynamics per task block (dynamics)");
+	headerList += QString(" Duration of task trial (ms)");
+	headerList += QString(" Number of dynamics per rest block (dynamics)");
+	headerList += QString(" Furation of rest trial (ms)");
+	headerList += QString(" Scan time");
 
 	while (values.size() < headerList.size()) {
 		values += 0.0;
@@ -184,7 +184,7 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 	}
 	if (e.sps3.getAttributes().contains("Procedure") &&
 		e.sps3.getAttributes().contains("Weight") &&
-		e.sps3.getValues().size() > 2) {
+		e.sps3.getValues().size() >= 2) {
 		for (int i = 0; i < 2; ++i) {
 			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"TaskBlockProc") {
@@ -246,7 +246,7 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 	// duration of rest trial(default: 3000 ms)
 	if (e.sps3.getAttributes().contains("Procedure") &&
 		e.sps3.getAttributes().contains("Weight")
-		&& e.sps3.getValues().size() > 2) {
+		&& e.sps3.getValues().size() >= 2) {
 		for (int i = 0; i < 2; ++i) {
 			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"TaskBlockProc") {

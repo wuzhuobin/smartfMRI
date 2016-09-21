@@ -80,22 +80,22 @@ int SmartfMRI::addExperiment() {
 	QPushButton *clinicalButton = experimentTypeQuestionBox.addButton(tr("Clinical"), QMessageBox::YesRole);
 	QPushButton *reserachButton = experimentTypeQuestionBox.addButton(tr("Research"), QMessageBox::NoRole);
 	experimentTypeQuestionBox.exec();
-	// clinical paradigm
-	bool clinicalFlag = true;
+	
+	int experimentType;
 	// research paradigm
 	if (experimentTypeQuestionBox.clickedButton() == clinicalButton) {
-		clinicalFlag = true;
+		experimentType = Experiment::CLINICAL;
 	}
 	else if (experimentTypeQuestionBox.clickedButton() == reserachButton) {
-		clinicalFlag = false;
+		experimentType = Experiment::RESEARCH;
 	}
 	else {
 		return 0;
 	}
 	expMan.setParadigmFile(QFileInfo(filePath));
-	expMan.loadParadigm(clinicalFlag);
+	expMan.loadParadigm(experimentType);
 	if (expMan.exec() == QDialog::Accepted) {
-		expMan.copyParadigm(clinicalFlag);
+		expMan.copyParadigm(experimentType);
 		if (expMod != nullptr) {
 			delete expMod;
 		}
@@ -135,17 +135,15 @@ int SmartfMRI::updateExperiment()
 	Experiment*e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data().toString());
 	expMan.setParadigmFile(e->getFi().absoluteFilePath());
-	bool clinicalFlag = true;
-	if (e->getType() != Experiment::CLINICAL) {
-		clinicalFlag = false;
-	}
-	expMan.loadParadigm(clinicalFlag);
+	// using its own type
+	expMan.loadParadigm(e->getType());
 
 	if (expMan.exec() == QDialog::Accepted) {
-		expMan.updataParadigm(clinicalFlag);
+		expMan.updataParadigm(e->getType());
 		delete expMod;
 		expMod = new ExperimentModel(QDir("./paradigm"), this);
 		ui.experimentlistView->setModel(expMod);
+		// to be upgrade
 		return 1;
 	}
 	else {

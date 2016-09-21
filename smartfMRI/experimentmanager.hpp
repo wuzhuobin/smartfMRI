@@ -34,31 +34,34 @@ public:
 	/**
 	 * copy all files in selected *.ebs2 file's folder to paradigmFolder 
 	 * this method will call updateParadigm() to save the changed scanParameters
-	 * @param	clinicalFlag if clinicalFlag == true, update the ScanParameters 
-	 *			as a clinical one, otherwise, as a research one, which 
-	 *			means parameters cannot be changed in the future
+	 * @param	exeperimentType Experiment::CLINICAL, the ScanParameterModel is updateable
+	 *			Experiment::RESEARCH, the ScanParameterModel can not be updated
+	 *			Experiment::NOT_DEFINE, depends on its sps4 type
 	 * @return 1 succeed
 	 *         0 fail
 	 */
-	int copyParadigm(bool clinicalFlag);
+	int copyParadigm(int exeperimentType);
 	/**
 	 * updataParadigm updata the scan parameters of *e
 	 * updata the Experiment name of *e and change its directory name
 	 * create a log folder
-	 * @param	clinicalFlag convert to updateParadigm
+	 * @param	exeperimentType Experiment::CLINICAL, the ScanParameterModel is updateable
+	 *			Experiment::RESEARCH, the ScanParameterModel can not be updated
+	 *			Experiment::NOT_DEFINE, depends on its sps4 type
 	 * @return 1 succeed
 	 *         0 fail
 	 */
-	int updataParadigm(bool clinicalFlag);
+	int updataParadigm(int exeperimentType);
 	/**
 	 * read all the scan parameters from the scan parameters from *.txt
 	 * save it in ScanParametersModel for display or manipulate in a listView
-	 * @param	clinicalFlag true the ScanParameterModel is updateable, otherwise
-	 *          it is not updateable
+	 * @param	exeperimentType Experiment::CLINICAL, the ScanParameterModel is updateable
+	 *			Experiment::RESEARCH, the ScanParameterModel can not be updated
+	 *			Experiment::NOT_DEFINE, depends on its sps4 type
 	 * @return 1 succeed
 	 *         0 fail
 	 */
-	int loadParadigm(bool clinicalFlag);
+	int loadParadigm(int exeperimentType);
 	/**
 	 * set the paradigmFile which for reading scanParameters
 	 * should be call before updataParadigm(), and loadParadigm()

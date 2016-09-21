@@ -18,28 +18,31 @@ class Experiment : public QObject
 public:
 	/**
 	* research and clinical paradigms
-	* research paradigms are not allowed to update parameters value
-	* clinical paradigms are allowed to update
+	* RESEARCH paradigms are not allowed to update parameters value
+	* CLINICAL paradigms are allowed to update
+	* NOT_DEFINE paradigms are used as an default parameters for constructor
+	* it will load its own type from sps4, if sps4 has no "exeperiment type" attribute
+	* its type will set to CLINICAL
 	*/
 	enum EXPERIMENT_TYPE
 	{
 		RESEARCH = 0,
-		CLINICAL = 1
+		CLINICAL = 1,
+		NOT_DEFINE = 2
 	};
 	/**
 	 * Constructor
 	 * @param fi a *.ebs2 file
 	 * @param parent the parent 
-	 * @param type if in sps4, it has been defined its type, the @member type is the same as 
-	 *             sps, otherwise, @member type is the same as this parameter, and it also 
-	 *			   create a new value and attribute in sps4
+	 * @param	type if type = NOT_DEFINE, it load in sps4 to find out its type, if sps4 
+	 *			has no "exeperiment type" it will set to CLINICAL.
 	 * sps1: fi.absolutePath() + "/myDummy.txt"
 	 * sps2: fi.absolutePath() + "/myCycleList.txt"
 	 * sps3: fi.absolutePath() + "/myBlockList.txt"
 	 * sps4: fi.absolutePath() + "/myParameters.txt"
 	 */
 	Experiment(const QFileInfo fi = QFileInfo(), QObject *parent = 0,
-		EXPERIMENT_TYPE type = CLINICAL);
+		int type = NOT_DEFINE);
 	/**
 	 * Destructor
 	 */
@@ -84,7 +87,7 @@ public:
 	 * return type of this experiment 
 	 * @return type
 	 */
-	EXPERIMENT_TYPE getType();
+	int getType();
 	/**
 	 * ScanParameters *.txt file
 	 * loading the essential parameter of the Experiment
@@ -123,7 +126,7 @@ private:
 	// QFileInfo of the *.ebs2 file
 	QFileInfo fi;
 	// Type of the experiment 
-	EXPERIMENT_TYPE type;
+	int type;
 };
 
 #endif // EXPERIMENT_H

@@ -38,7 +38,7 @@ ExperimentManager::~ExperimentManager() {
 	qDebug() << " Close ExperimentManager";
 }
 
-int ExperimentManager::copyParadigm(bool clinicalFlag)
+int ExperimentManager::copyParadigm(int exeperimentType)
 {
 	qDebug() << "Copy Paradigm>>>";
 	QDir beforeDir(paradigmFile.absolutePath());
@@ -55,12 +55,12 @@ int ExperimentManager::copyParadigm(bool clinicalFlag)
 	if (fil.size() > 0 ) {
 		qDebug() << fil[0].absoluteFilePath();
 		setParadigmFile(fil[0].absoluteFilePath());
-		updataParadigm(clinicalFlag);
+		updataParadigm(exeperimentType);
 	}
 	return 1;
 }
 
-int ExperimentManager::loadParadigm(bool clinicalFlag)
+int ExperimentManager::loadParadigm(int exeperimentType)
 {
 	ui.paradigmNameLineEdit->setText(paradigmFile.fileName());
 	ui.experimentNameLineEdit->setText(paradigmFile.dir().dirName());
@@ -70,21 +70,21 @@ int ExperimentManager::loadParadigm(bool clinicalFlag)
 	if (e != nullptr) {
 		delete e;
 	} 
-	e = new Experiment(paradigmFile, this);
+	e = new Experiment(paradigmFile, this, exeperimentType);
 	//if (ScanParameters::Successful == e->sps1.read() &&
 	//	ScanParameters::Successful == e->sps2.read() &&
 	//	ScanParameters::Successful == e->sps3.read()
 	//	) {
-		e->sps4.read();
-		spMod = new ScanParametersModel(*e, clinicalFlag, this);
+	spMod = new ScanParametersModel(*e, e->getType(), this);
 
 	//}
 	//else {
 	//	spMod = new ScanParametersModel(this);
 	//}
-	ui.experimentLineEdit->setText("Reserach");
-
-	if(clinicalFlag){
+	if (e->getType() == Experiment::RESEARCH) {
+		ui.experimentLineEdit->setText("Reserach");
+	}
+	else {
 		ui.experimentLineEdit->setText("Clinical");
 	}
 	ui.scanParametersTableView->setModel(spMod);
@@ -93,18 +93,13 @@ int ExperimentManager::loadParadigm(bool clinicalFlag)
 }
 
 
-int ExperimentManager::updataParadigm(bool clinicalFlag)
+int ExperimentManager::updataParadigm(int experimentType)
 {
 	if (e != nullptr) {
 		delete e;
 		e = nullptr;
 	}
-	if (clinicalFlag) {
-		e = new Experiment(paradigmFile, this, Experiment::CLINICAL);
-	}
-	else {
-		e = new Experiment(paradigmFile, this, Experiment::RESEARCH);
-	}
+	e = new Experiment(paradigmFile, this, experimentType);
 
 	if (!QDir(e->getDir().absolutePath() + "/log").exists()) {
 		e->getDir().mkdir("log");

@@ -1,7 +1,7 @@
 #include "experiment.h"
 
 
-Experiment::Experiment(const QFileInfo fi, QObject * parent, EXPERIMENT_TYPE type)
+Experiment::Experiment(const QFileInfo fi, QObject * parent, int type)
 	: QObject(parent),fi(fi), name(fi.absoluteDir().dirName()), type(type),
 	dir(fi.absoluteDir()), sps1(fi.absolutePath() + "/myDummy.txt", this),
 	sps2(fi.absolutePath() + "/myCycleList.txt", this),
@@ -9,22 +9,31 @@ Experiment::Experiment(const QFileInfo fi, QObject * parent, EXPERIMENT_TYPE typ
 	sps4(fi.absolutePath() + "/myParameters.txt", this)
 
 {
-	if (sps4.getAttributes().contains("experiment type")) {
-		if (sps4.getValue(0)[sps4.getAttributes().indexOf("experiment type")] == "clinical") {
-			this->type = CLINICAL;
+	QString typeString;
+	if (this->type == RESEARCH) {
+		typeString = "research";
+	}
+	else if (this->type == CLINICAL) {
+		typeString = "clinical";
+	}
+	else {
+		if (sps4.getAttributes().contains("experiment type") &&
+			sps4.getValue(0)[sps4.getAttributes().indexOf("experiment type")] ==
+			"research") {
+			this->type = RESEARCH;
+			typeString = "research";
 		}
 		else {
-			this->type = RESEARCH;
+			this->type = CLINICAL;
+			typeString = "clinical";
 		}
+	}
+	if (sps4.getAttributes().contains("experiment type")) {
+		sps4.getValue(0)[sps4.getAttributes().indexOf("experiment type")] = typeString;
 	}
 	else {
 		sps4.getAttributes() += "experiment type";
-		if (type == CLINICAL) {
-			sps4.getValue(0) += "clinical";
-		}
-		else {
-			sps4.getValue(0) += "research";
-		}
+		sps4.getValue(0) += typeString;
 	}
 	qDebug() << "Experiment construction";
 	qDebug() << this->name;
@@ -65,7 +74,7 @@ int Experiment::setFi(const QFileInfo fi)
 	return 1;
 }
 
-Experiment::EXPERIMENT_TYPE Experiment::getType()
+int Experiment::Experiment::getType()
 {
 	return this->type;
 }
