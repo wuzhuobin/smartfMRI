@@ -40,6 +40,9 @@ public:
         if (keyConfirm->objectName().isEmpty())
             keyConfirm->setObjectName(QStringLiteral("keyConfirm"));
         keyConfirm->resize(558, 141);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        keyConfirm->setWindowIcon(icon);
         gridLayout_2 = new QGridLayout(keyConfirm);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);

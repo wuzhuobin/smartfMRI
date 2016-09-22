@@ -14,7 +14,6 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListView>
@@ -31,16 +30,15 @@ class Ui_smartfMRIClass
 {
 public:
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout;
+    QGridLayout *gridLayout_3;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout;
-    QLabel *label;
-    QPushButton *removeButton;
-    QPushButton *addButton;
     QSpacerItem *horizontalSpacer;
+    QPushButton *addButton;
+    QPushButton *removeButton;
+    QLabel *label;
     QSpacerItem *verticalSpacer;
     QListView *experimentlistView;
-    QSpacerItem *horizontalSpacer_4;
     QGridLayout *gridLayout_2;
     QPushButton *logPushButton;
     QLabel *label_2;
@@ -51,6 +49,8 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_6;
+    QSpacerItem *horizontalSpacer_4;
+    QPushButton *aboutPushButton;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *smartfMRIClass)
@@ -58,46 +58,51 @@ public:
         if (smartfMRIClass->objectName().isEmpty())
             smartfMRIClass->setObjectName(QStringLiteral("smartfMRIClass"));
         smartfMRIClass->resize(1215, 523);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        smartfMRIClass->setWindowIcon(icon);
         centralWidget = new QWidget(smartfMRIClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout = new QHBoxLayout(centralWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        gridLayout_3 = new QGridLayout(centralWidget);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         horizontalSpacer_5 = new QSpacerItem(20, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer_5);
+        gridLayout_3->addItem(horizontalSpacer_5, 0, 0, 1, 1);
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer, 4, 1, 1, 1);
+
+        addButton = new QPushButton(centralWidget);
+        addButton->setObjectName(QStringLiteral("addButton"));
+        addButton->setMinimumSize(QSize(110, 0));
         QFont font;
         font.setPointSize(12);
+        addButton->setFont(font);
+
+        gridLayout->addWidget(addButton, 4, 0, 1, 1);
+
+        removeButton = new QPushButton(centralWidget);
+        removeButton->setObjectName(QStringLiteral("removeButton"));
+        removeButton->setMinimumSize(QSize(110, 0));
+        removeButton->setFont(font);
+
+        gridLayout->addWidget(removeButton, 4, 2, 1, 1);
+
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
         label->setFont(font);
 
         gridLayout->addWidget(label, 0, 0, 1, 3);
 
-        removeButton = new QPushButton(centralWidget);
-        removeButton->setObjectName(QStringLiteral("removeButton"));
-        removeButton->setFont(font);
-
-        gridLayout->addWidget(removeButton, 3, 2, 1, 1);
-
-        addButton = new QPushButton(centralWidget);
-        addButton->setObjectName(QStringLiteral("addButton"));
-        addButton->setFont(font);
-
-        gridLayout->addWidget(addButton, 3, 0, 1, 1);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(horizontalSpacer, 3, 1, 1, 1);
-
         verticalSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout->addItem(verticalSpacer, 2, 1, 1, 1);
+        gridLayout->addItem(verticalSpacer, 3, 1, 1, 1);
 
         experimentlistView = new QListView(centralWidget);
         experimentlistView->setObjectName(QStringLiteral("experimentlistView"));
@@ -106,17 +111,14 @@ public:
         gridLayout->addWidget(experimentlistView, 1, 0, 1, 3);
 
 
-        horizontalLayout->addLayout(gridLayout);
-
-        horizontalSpacer_4 = new QSpacerItem(60, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_4);
+        gridLayout_3->addLayout(gridLayout, 0, 1, 2, 1);
 
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         logPushButton = new QPushButton(centralWidget);
         logPushButton->setObjectName(QStringLiteral("logPushButton"));
+        logPushButton->setMinimumSize(QSize(110, 0));
         logPushButton->setFont(font);
 
         gridLayout_2->addWidget(logPushButton, 3, 2, 1, 1);
@@ -129,12 +131,14 @@ public:
 
         updataPushButton = new QPushButton(centralWidget);
         updataPushButton->setObjectName(QStringLiteral("updataPushButton"));
+        updataPushButton->setMinimumSize(QSize(110, 0));
         updataPushButton->setFont(font);
 
         gridLayout_2->addWidget(updataPushButton, 3, 0, 1, 1);
 
         runPushButton = new QPushButton(centralWidget);
         runPushButton->setObjectName(QStringLiteral("runPushButton"));
+        runPushButton->setMinimumSize(QSize(110, 0));
         runPushButton->setFont(font);
 
         gridLayout_2->addWidget(runPushButton, 3, 4, 1, 1);
@@ -158,17 +162,26 @@ public:
         gridLayout_2->addItem(horizontalSpacer_3, 3, 3, 1, 1);
 
 
-        horizontalLayout->addLayout(gridLayout_2);
+        gridLayout_3->addLayout(gridLayout_2, 0, 4, 2, 1);
 
         horizontalSpacer_6 = new QSpacerItem(20, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer_6);
+        gridLayout_3->addItem(horizontalSpacer_6, 0, 5, 1, 1);
+
+        horizontalSpacer_4 = new QSpacerItem(148, 450, QSizePolicy::Preferred, QSizePolicy::Minimum);
+
+        gridLayout_3->addItem(horizontalSpacer_4, 0, 2, 1, 2);
+
+        aboutPushButton = new QPushButton(centralWidget);
+        aboutPushButton->setObjectName(QStringLiteral("aboutPushButton"));
+        aboutPushButton->setFont(font);
+
+        gridLayout_3->addWidget(aboutPushButton, 1, 2, 1, 2);
 
         smartfMRIClass->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(smartfMRIClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         smartfMRIClass->setStatusBar(statusBar);
-        QWidget::setTabOrder(experimentlistView, addButton);
         QWidget::setTabOrder(addButton, removeButton);
         QWidget::setTabOrder(removeButton, scanParameterTableView);
         QWidget::setTabOrder(scanParameterTableView, updataPushButton);
@@ -183,13 +196,14 @@ public:
     void retranslateUi(QMainWindow *smartfMRIClass)
     {
         smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Smart fMRI", 0));
-        label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));
-        removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
         addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
+        removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
+        label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));
         logPushButton->setText(QApplication::translate("smartfMRIClass", "Log", 0));
         label_2->setText(QApplication::translate("smartfMRIClass", "Scan Parameters", 0));
         updataPushButton->setText(QApplication::translate("smartfMRIClass", "Update", 0));
         runPushButton->setText(QApplication::translate("smartfMRIClass", "Run", 0));
+        aboutPushButton->setText(QApplication::translate("smartfMRIClass", "About", 0));
     } // retranslateUi
 
 };

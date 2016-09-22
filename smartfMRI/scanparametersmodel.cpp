@@ -97,7 +97,7 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 	if (role != Qt::EditRole || 
 		index.column() != 0 || 
 		index.row() >= values.size() || 
-		value.toDouble() < 0)
+		value.toDouble() < 1)
 		return false;
 	else {
 		values[index.row()] = (int)value.toDouble();
@@ -189,12 +189,12 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"TaskBlockProc") {
 				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
-					QString::number(values[3] * values[0] / values[4]);
+					QString::number(int(values[3] * values[0] / values[4] ));
 			}
 			else if(e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"RestBlockProc") {
 				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
-					QString::number(values[5] * values[0] / values[6]);
+					QString::number(int(values[5] * values[0] / values[6] ));
 			}
 		}
 	}
@@ -203,8 +203,8 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 		e.sps3.getValue(0) += "TaskBlockProc";
 		e.sps3.getValue(1) += "RestBlockProc";
 		e.sps3.getAttributes() += "Weight";
-		e.sps3.getValue(0) += QString::number(values[3] * values[0] / values[4]);
-		e.sps3.getValue(1) += QString::number(values[5] * values[0] / values[6]);
+		e.sps3.getValue(0) += QString::number(int (values[3] * values[0] / values[4] ));
+		e.sps3.getValue(1) += QString::number(int (values[5] * values[0] / values[6] ));
 
 	}
 	return 1;

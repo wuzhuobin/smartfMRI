@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>keyConfirm</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="smartfmri.qrc">
+    <normaloff>:/smartfMRI/pm.ico</normaloff>:/smartfMRI/pm.ico</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="1" column="0" colspan="3">
     <layout class="QGridLayout" name="gridLayout">
@@ -106,6 +110,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="smartfmri.qrc"/>
+ </resources>
  <connections/>
 </ui>

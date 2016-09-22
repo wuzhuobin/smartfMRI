@@ -34,7 +34,6 @@ public:
     QSpacerItem *verticalSpacer;
     QGridLayout *gridLayout_3;
     QLabel *label_5;
-    QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_7;
     QLineEdit *experimentNameLineEdit;
@@ -43,20 +42,26 @@ public:
     QLabel *label_4;
     QLineEdit *experimentLineEdit;
     QLabel *label;
+    QLabel *label_2;
+    QSpacerItem *verticalSpacer_2;
     QSpacerItem *verticalSpacer_3;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout_4;
-    QSpacerItem *horizontalSpacer_3;
-    QSpacerItem *horizontalSpacer_4;
     QLabel *label_6;
     QPushButton *confirmPushButton;
+    QSpacerItem *horizontalSpacer_3;
     QTableView *scanParametersTableView;
+    QSpacerItem *horizontalSpacer_4;
+    QLabel *label_3;
 
     void setupUi(QWidget *ExperimentManager)
     {
         if (ExperimentManager->objectName().isEmpty())
             ExperimentManager->setObjectName(QStringLiteral("ExperimentManager"));
         ExperimentManager->resize(1019, 501);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        ExperimentManager->setWindowIcon(icon);
         horizontalLayout = new QHBoxLayout(ExperimentManager);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -78,10 +83,6 @@ public:
         label_5->setFont(font);
 
         gridLayout_3->addWidget(label_5, 6, 0, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_3->addItem(verticalSpacer_2, 5, 0, 1, 1);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
@@ -136,6 +137,16 @@ public:
 
         gridLayout_3->addWidget(label, 0, 0, 1, 3);
 
+        label_2 = new QLabel(ExperimentManager);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setFont(font);
+
+        gridLayout_3->addWidget(label_2, 5, 1, 1, 2);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_3->addItem(verticalSpacer_2, 5, 0, 1, 1);
+
 
         verticalLayout->addLayout(gridLayout_3);
 
@@ -153,14 +164,6 @@ public:
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_3, 2, 0, 1, 1);
-
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_4, 2, 2, 1, 1);
-
         label_6 = new QLabel(ExperimentManager);
         label_6->setObjectName(QStringLiteral("label_6"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
@@ -174,9 +177,14 @@ public:
 
         confirmPushButton = new QPushButton(ExperimentManager);
         confirmPushButton->setObjectName(QStringLiteral("confirmPushButton"));
+        confirmPushButton->setMinimumSize(QSize(110, 0));
         confirmPushButton->setFont(font);
 
-        gridLayout_4->addWidget(confirmPushButton, 2, 1, 1, 1);
+        gridLayout_4->addWidget(confirmPushButton, 4, 1, 1, 1);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_3, 4, 0, 1, 1);
 
         scanParametersTableView = new QTableView(ExperimentManager);
         scanParametersTableView->setObjectName(QStringLiteral("scanParametersTableView"));
@@ -188,7 +196,19 @@ public:
         scanParametersTableView->setFont(font);
         scanParametersTableView->setTextElideMode(Qt::ElideLeft);
 
-        gridLayout_4->addWidget(scanParametersTableView, 1, 0, 1, 3);
+        gridLayout_4->addWidget(scanParametersTableView, 2, 0, 1, 3);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_4, 4, 2, 1, 1);
+
+        label_3 = new QLabel(ExperimentManager);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+        label_3->setFont(font);
+
+        gridLayout_4->addWidget(label_3, 3, 0, 1, 3);
 
 
         horizontalLayout->addLayout(gridLayout_4);
@@ -211,8 +231,12 @@ public:
         label->setText(QApplication::translate("ExperimentManager", "Research paradigm: parameters are unchangeable\n"
 "Clinical paradigm: parameters are alterable\n"
 "", 0));
+        label_2->setText(QApplication::translate("ExperimentManager", "Please don't use the following characters:\n"
+"][!\"#$%&'()*+,./:;<=>?@^`{|}~-", 0));
         label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
         confirmPushButton->setText(QApplication::translate("ExperimentManager", "Confirm", 0));
+        label_3->setText(QApplication::translate("ExperimentManager", "Parameters are supposed to be integers and not smaller than 1.\n"
+" Non-integer will be floor to integer.", 0));
     } // retranslateUi
 
 };

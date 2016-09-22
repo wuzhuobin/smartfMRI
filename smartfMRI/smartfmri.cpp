@@ -1,5 +1,7 @@
 #include "smartfmri.h"
 
+#include "about.hpp"
+
 #include <QMessageBox>
 
 SmartfMRI::SmartfMRI(QWidget *parent)
@@ -19,7 +21,7 @@ SmartfMRI::SmartfMRI(QWidget *parent)
 	connect(ui.updataPushButton, SIGNAL(clicked()), this, SLOT(updateExperiment()));
 	connect(ui.logPushButton, SIGNAL(clicked()), this, SLOT(openLogFolder()));
 	connect(ui.experimentlistView, SIGNAL(clicked(const QModelIndex&)), this, SLOT(selectExperiment(const QModelIndex&)));
-
+	connect(ui.aboutPushButton, SIGNAL(clicked()), this, SLOT(openAbout()));
 }
 
 SmartfMRI::~SmartfMRI()
@@ -188,4 +190,12 @@ int SmartfMRI::openLogFolder()
 		return 1;
 	}
 
+}
+
+int SmartfMRI::openAbout()
+{
+	About about(this);
+	about.exec();
+
+	return 0;
 }

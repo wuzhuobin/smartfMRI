@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>ExperimentStatus</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="smartfmri.qrc">
+    <normaloff>:/smartfMRI/pm.ico</normaloff>:/smartfMRI/pm.ico</iconset>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <spacer name="horizontalSpacer_3">
@@ -145,6 +149,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="smartfmri.qrc"/>
+ </resources>
  <connections/>
 </ui>

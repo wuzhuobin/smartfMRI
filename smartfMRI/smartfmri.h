@@ -82,6 +82,13 @@ public slots:
 	 *         0 fail
 	 */
 	int openLogFolder();
+	/**
+	 * (put the logo of smartfmri) Smart fMRI¡ªProfessional fMRI paradigm managing and operating program.
+	 * Warning : This computer program is protected by copyright law and international treaties. 
+	 * Unauthorized or distribution of this program, or any portion of it, may result in severe civil
+	 * and criminal penalties, and will be prosecuted to the maximum extent possible under law.
+	 */
+	int openAbout();
 
 private:
 	// the UI class

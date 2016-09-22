@@ -6,7 +6,6 @@ ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * par
 	qDebug() << "set up ExperimentManager UI.";
 	ui.setupUi(this);
 	
-	this->setWindowIcon(QIcon(":/smartfMRI/pm.ico"));
 
 	//Set correct dialog size
 	//ui.scanParametersTableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -115,9 +114,12 @@ int ExperimentManager::updataParadigm(int experimentType)
 	QDir dir = paradigmFile.dir();
 	if (paradigmFile.dir().dirName() == ui.experimentNameLineEdit->text())
 		return 1;
-	if (dir.cdUp() && !dir.rename(paradigmFile.dir().dirName(), ui.experimentNameLineEdit->text())) {
+
+	if (ui.experimentNameLineEdit->text().contains(
+		QRegularExpression("[][!\"#$%&'()*+,./:;<=>?@\\^`{|}~-]")) || 
+		(dir.cdUp() && !dir.rename(paradigmFile.dir().dirName(), ui.experimentNameLineEdit->text()))) {
 		QMessageBox::critical(this, tr("Fail to rename experiment name"),
-			QString("name has not been changed."));
+			QString("Name has not been changed, while scan parameters have all been updated."));
 		return 0;
 	}
 	else return 1;

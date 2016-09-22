@@ -44,6 +44,9 @@ public:
         if (ExperimentStatus->objectName().isEmpty())
             ExperimentStatus->setObjectName(QStringLiteral("ExperimentStatus"));
         ExperimentStatus->resize(671, 655);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        ExperimentStatus->setWindowIcon(icon);
         horizontalLayout = new QHBoxLayout(ExperimentStatus);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
