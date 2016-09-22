@@ -42,10 +42,10 @@ ScanParametersModel::~ScanParametersModel()
 
 int ScanParametersModel::rowCount(const QModelIndex & parent) const
 {
-	if(editFlag)
+	//if(editFlag)
 		return this->length-1;
-	else
-	return this->length;
+	//else
+	//return this->length;
 }
 
 QVariant ScanParametersModel::data(const QModelIndex & index, int role) const
@@ -244,37 +244,39 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 	}
 	// duration of task trial(default: 3000 ms)
 	// duration of rest trial(default: 3000 ms)
+	if (e.sps4.getAttributes().contains("duration of task trial")) {
+		values[4] = e.sps4.getValue(0)
+			[e.sps4.getAttributes().indexOf("duration of task trial")].toDouble();
+	}
+	if (e.sps4.getAttributes().contains("duration of rest trial")) {
+		values[6] = e.sps4.getValue(0)
+			[e.sps4.getAttributes().indexOf("duration of rest trial")].toDouble();
+	}
 	if (e.sps3.getAttributes().contains("Procedure") &&
 		e.sps3.getAttributes().contains("Weight")
 		&& e.sps3.getValues().size() >= 2) {
 		for (int i = 0; i < 2; ++i) {
 			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
-				"TaskBlockProc") {
+				"TaskBlockProc" && 
+				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")].toDouble() !=
+				0) {
 				values[4] = values[3] * values[0] /
 					e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")].toDouble();
 				values[4] = (int)values[4];
 			}
 			else if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
-				"RestBlockProc") {
+				"RestBlockProc" && 
+				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")].toDouble() != 
+				0) {
 				values[6] = values[5] * values[0] /
 					e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")].toDouble();
 				values[6] = (int)values[6];
 			}
 		}
 	}
-	else {
-		if (e.sps4.getAttributes().contains("duration of task trial")) {
-			values[4] = e.sps4.getValue(0)
-				[e.sps4.getAttributes().indexOf("duration of task trial")].toDouble();
-		}
-		if (e.sps4.getAttributes().contains("duration of rest trial")) {
-			values[6] = e.sps4.getValue(0)
-				[e.sps4.getAttributes().indexOf("duration of rest trial")].toDouble();
-		}
-	}
-	values[7] = (values[0] * values[1] + values[3] * values[4] + values[5] * values[6])*values[2];
+	values[7] = (values[3] * values[4] + values[5] * values[6])*values[2] + values[0] * values[1];
 	int min = int(values[7] / 1000 / 60);
-	scanTime = QString::number(min) + "min" + QString::number(values[7] / 1000 - min * 60) + "s";
+	scanTime = QString::number(min) + "min" + QString::number(int(values[7] / 1000 - min * 60)) + "s";
 
 	return 1;
 }

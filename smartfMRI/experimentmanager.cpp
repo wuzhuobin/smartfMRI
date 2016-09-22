@@ -47,6 +47,11 @@ int ExperimentManager::copyParadigm(int exeperimentType)
 		qDebug() << " make directory" << folderName;
 	qDebug() << beforeDir;
 	qDebug() << targetDir;
+	if (beforeDir.absolutePath() == targetDir.absolutePath() + "/" + folderName) {
+		QMessageBox::critical(this, tr("Fail to add experiment"),
+			QString("Experiment name may be repeated."));
+		return 0;
+	}
 	QCopyDirRecursively::copy(beforeDir.absolutePath(), targetDir.absolutePath() + "/" + folderName);
 
 	QFileInfoList fil(QDir(targetDir.absolutePath() + "/" + folderName).entryInfoList(
