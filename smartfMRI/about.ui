@@ -11,8 +11,8 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>pm.ico</normaloff>pm.ico</iconset>
+   <iconset resource="smartfmri.qrc">
+    <normaloff>:/smartfMRI/pm.ico</normaloff>:/smartfMRI/pm.ico</iconset>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
@@ -73,12 +73,8 @@ and will be prosecuted to the maximum extent possible under law.</string>
     </widget>
    </item>
   </layout>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
-  <zorder>label_2</zorder>
-  <zorder>horizontalSpacer</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

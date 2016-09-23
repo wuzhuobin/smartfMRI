@@ -146,6 +146,10 @@ int SmartfMRI::updateExperiment()
 		expMod = new ExperimentModel(QDir("./paradigm"), this);
 		ui.experimentlistView->setModel(expMod);
 		// to be upgrade
+		if (spMod != nullptr) {
+			delete spMod;
+			spMod = nullptr;
+		}
 		return 1;
 	}
 	else {
