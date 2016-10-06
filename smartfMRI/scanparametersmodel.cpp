@@ -1,5 +1,7 @@
 #include "scanparametersmodel.h"
 
+#include "qmessagebox.h"
+
 ScanParametersModel::ScanParametersModel(QObject *parent)
 	: QAbstractListModel(parent) ,length(0)
 {
@@ -15,7 +17,7 @@ ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject *
 	headerList += QString(" Number of dynamics per task block (dynamics)");
 	headerList += QString(" Duration of task trial (ms)");
 	headerList += QString(" Number of dynamics per rest block (dynamics)");
-	headerList += QString(" Furation of rest trial (ms)");
+	headerList += QString(" Duration of rest trial (ms)");
 	headerList += QString(" Scan time");
 
 	while (values.size() < headerList.size()) {
@@ -96,11 +98,19 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 {
 	if (role != Qt::EditRole || 
 		index.column() != 0 || 
-		index.row() >= values.size() || 
-		value.toDouble() < 1)
+		index.row() >= values.size() )
 		return false;
+	else if(value.toDouble() < 1){
+		QMessageBox::critical(0, tr("Parameter is not correct!"),
+			tr("Please input an integer which is not smaller than 1"));
+		return false;
+	}
 	else {
 		values[index.row()] = (int)value.toDouble();
+		if (value.toDouble() != (int)value.toDouble()) {
+			QMessageBox::warning(0, tr("Parameter is not correct!"),
+				tr("Parameter was floored to integer"));
+		}
 
 	}
 	emit dataChanged(index, index);
@@ -190,11 +200,14 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 				"TaskBlockProc") {
 				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
 					QString::number(int(values[3] * values[0] / values[4] ));
+
+
 			}
 			else if(e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"RestBlockProc") {
 				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
 					QString::number(int(values[5] * values[0] / values[6] ));
+
 			}
 		}
 	}
@@ -206,6 +219,21 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 		e.sps3.getValue(0) += QString::number(int (values[3] * values[0] / values[4] ));
 		e.sps3.getValue(1) += QString::number(int (values[5] * values[0] / values[6] ));
 
+	}
+
+	// Warning message for non-integer result
+	if ((values[3] * values[0] / values[4]) !=
+		int(values[3] * values[0] / values[4])) {
+		QMessageBox::warning(0, tr("Task Weight is not correct!"),
+			tr("Please check input value of TR, Number of dynamics per"
+				"task block, Duration of task trial."));
+	}
+
+	if ((values[5] * values[0] / values[6]) !=
+		int(values[5] * values[0] / values[6])) {
+		QMessageBox::warning(0, tr("Rest Weight is not correct!"),
+			tr("Please check input value of TR, Number of dynamics per"
+				"rest block, Duration of rest trial."));
 	}
 	return 1;
 }

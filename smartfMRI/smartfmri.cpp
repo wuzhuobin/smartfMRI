@@ -35,6 +35,7 @@ int SmartfMRI::removeExperiment()
 		currentIndex().data(Qt::ToolTipRole).toString());
 	dirToBeDeleted.setFilter(QDir::NoDotAndDotDot);
 	QMessageBox sureToDelete;
+	sureToDelete.setIcon(QMessageBox::Question);
 	sureToDelete.setText("Are you sure to remove this Experiment?\n"
 		"It will remove all data(including paradigm, parameters, log, etc)"
 		" in this experiment folder and cannot be recovered!");
@@ -74,6 +75,7 @@ int SmartfMRI::addExperiment() {
 	if (filePath.isEmpty())
 		return 0;
 	QMessageBox experimentTypeQuestionBox;
+	experimentTypeQuestionBox.setIcon(QMessageBox::Question);
 	experimentTypeQuestionBox.setText("Please select your paradigm type."
 		"Clinical or Research\n");
 	experimentTypeQuestionBox.setInformativeText(
