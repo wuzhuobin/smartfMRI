@@ -23,11 +23,10 @@ QList<QString> LogFileData::change(QString fileContent)
 
 	int length = B.size();
 	if (T.size() < length)	length = T.size();
-	else if (K.size() < length)	length = K.size();
-	else if (A.size() < length)	length = A.size();
-	else if (RT.size() < length)	length = RT.size();
-	else if (OnsetTime.size() < length) length = OnsetTime.size();
-	else length = B.size();
+	if (K.size() < length)	length = K.size();
+	if (A.size() < length)	length = A.size();
+	if (RT.size() < length)	length = RT.size();
+	if (OnsetTime.size() < length) length = OnsetTime.size();
 	qDebug() << "T" << T.size();
 	qDebug() << "K" << K.size();
 	qDebug() << "A" << A.size();
