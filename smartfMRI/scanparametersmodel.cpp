@@ -44,10 +44,10 @@ ScanParametersModel::~ScanParametersModel()
 
 int ScanParametersModel::rowCount(const QModelIndex & parent) const
 {
-	//if(editFlag)
+	if(editFlag)
 		return this->length-1;
-	//else
-	//return this->length;
+	else
+		return this->length;
 }
 
 QVariant ScanParametersModel::data(const QModelIndex & index, int role) const
@@ -102,14 +102,14 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 		return false;
 	else if(value.toDouble() < 1){
 		QMessageBox::critical(0, tr("Parameter is not correct!"),
-			tr("Please input an integer which is not smaller than 1"));
+			tr("Parameter is not supposed to be smaller than 1"));
 		return false;
 	}
 	else {
 		values[index.row()] = (int)value.toDouble();
 		if (value.toDouble() != (int)value.toDouble()) {
 			QMessageBox::warning(0, tr("Parameter is not correct!"),
-				tr("Parameter was floored to integer"));
+				tr("Parameter is supposed to be an integer and was floored to integer"));
 		}
 
 	}
@@ -123,7 +123,7 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 	// TR (default: 3000ms)
 	if (e.sps4.getAttributes().contains("TR")) {
 		e.sps4.getValue(0)[e.sps4.getAttributes().indexOf("TR")] =
-			QString::number(values[0]);
+			QString::number(values[0]); 
 	}
 	else {
 		e.sps4.getAttributes() += "TR";
@@ -138,22 +138,34 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 		e.sps4.getAttributes() += "number of dummy scans";
 		e.sps4.getValue(0) += (QString::number(values[1]));
 	}
-	if (e.sps1.getAttributes().contains("Duration")) {
-		e.sps1.getValue(0)[e.sps1.getAttributes().indexOf("Duration")] =
-			(QString::number(values[1] * values[0]));
-	}
-	else {
-		e.sps1.getAttributes() += "Duration";
-		e.sps1.getValue(0) += (QString::number(values[1] * values[0]));
+	if (e.getType() == Experiment::CLINICAL) {
+		if (e.sps1.getAttributes().contains("Duration")) {
+			e.sps1.getValue(0)[e.sps1.getAttributes().indexOf("Duration")] =
+				(QString::number(values[1] * values[0]));
+		}
+		else {
+			e.sps1.getAttributes() += "Duration";
+			e.sps1.getValue(0) += (QString::number(values[1] * values[0]));
+		}
 	}
 	//  number of cycles (default: 5 cycles)
-	if (e.sps2.getAttributes().contains("Weight")) {
-		e.sps2.getValue(0)[e.sps2.getAttributes().indexOf("Weight")] =
-			(QString::number(values[2]));
+	if (e.sps4.getAttributes().contains("number of cycles")) {
+		e.sps4.getValue(0)[e.sps4.getAttributes().indexOf("number of cycles")] =
+			QString::number(values[2]);
 	}
 	else {
-		e.sps2.getAttributes() += "Weight";
-		e.sps2.getValue(0) += QStringList(QString::number(values[2]));
+		e.sps4.getAttributes() += "number of cycles";
+		e.sps4.getValue(0) += (QString::number(values[2]));
+	}
+	if (e.getType() == Experiment::CLINICAL) {
+		if (e.sps2.getAttributes().contains("Weight")) {
+			e.sps2.getValue(0)[e.sps2.getAttributes().indexOf("Weight")] =
+				(QString::number(values[2]));
+		}
+		else {
+			e.sps2.getAttributes() += "Weight";
+			e.sps2.getValue(0) += QStringList(QString::number(values[2]));
+		}
 	}
 	// number of dynamics per task block (default: 10 dynamics)
 	// duration of task trial(default: 3000 ms)
@@ -192,33 +204,35 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 		e.sps4.getAttributes() += "duration of rest trial";
 		e.sps4.getValue(0) += QString::number(values[6]);
 	}
-	if (e.sps3.getAttributes().contains("Procedure") &&
-		e.sps3.getAttributes().contains("Weight") &&
-		e.sps3.getValues().size() >= 2) {
-		for (int i = 0; i < 2; ++i) {
-			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
-				"TaskBlockProc") {
-				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
-					QString::number(int(values[3] * values[0] / values[4] ));
+	if (e.getType() == Experiment::CLINICAL) {
+		if (e.sps3.getAttributes().contains("Procedure") &&
+			e.sps3.getAttributes().contains("Weight") &&
+			e.sps3.getValues().size() >= 2) {
+			for (int i = 0; i < 2; ++i) {
+				if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
+					"TaskBlockProc") {
+					e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
+						QString::number(int(values[3] * values[0] / values[4]));
 
 
-			}
-			else if(e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
-				"RestBlockProc") {
-				e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
-					QString::number(int(values[5] * values[0] / values[6] ));
+				}
+				else if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
+					"RestBlockProc") {
+					e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Weight")] =
+						QString::number(int(values[5] * values[0] / values[6]));
 
+				}
 			}
 		}
-	}
-	else {
-		e.sps3.getAttributes() += "Procedure";
-		e.sps3.getValue(0) += "TaskBlockProc";
-		e.sps3.getValue(1) += "RestBlockProc";
-		e.sps3.getAttributes() += "Weight";
-		e.sps3.getValue(0) += QString::number(int (values[3] * values[0] / values[4] ));
-		e.sps3.getValue(1) += QString::number(int (values[5] * values[0] / values[6] ));
+		else {
+			e.sps3.getAttributes() += "Procedure";
+			e.sps3.getValue(0) += "TaskBlockProc";
+			e.sps3.getValue(1) += "RestBlockProc";
+			e.sps3.getAttributes() += "Weight";
+			e.sps3.getValue(0) += QString::number(int(values[3] * values[0] / values[4]));
+			e.sps3.getValue(1) += QString::number(int(values[5] * values[0] / values[6]));
 
+		}
 	}
 
 	// Warning message for non-integer result
@@ -246,7 +260,7 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 			[e.sps4.getAttributes().indexOf("number of dummy scans")].toDouble();
 	}
 	// TR (default: 3000ms)
-	if (e.sps1.getAttributes().contains("Duration")) {
+	if (e.sps1.getAttributes().contains("Duration") && e.getType() == Experiment::CLINICAL) {
 	//if(true){
 		values[0] = e.sps1.getValue(0)
 			[e.sps1.getAttributes().indexOf("Duration")].toDouble() / values[1];
@@ -256,9 +270,13 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 		values[0] = e.sps4.getValue(0)[e.sps4.getAttributes().indexOf("TR")].toDouble();
 	}
 	// number of cycles (default: 5 cycles)
-	if (e.sps2.getAttributes().contains("Weight")) {
+	if (e.sps2.getAttributes().contains("Weight") && e.getType() == Experiment::CLINICAL) {
 		values[2] = e.sps2.getValue(0)
 			[e.sps2.getAttributes().indexOf("Weight")].toDouble();
+	}
+	else if (e.sps4.getAttributes().contains("number of cycles")){
+		values[2] = e.sps4.getValue(0)
+			[e.sps4.getAttributes().indexOf("number of cycles")].toDouble();
 	}
 	// number of dynamics per task block (default: 10 dynamics)
 	if (e.sps4.getAttributes().contains("number of dynamics per task block")) {
@@ -281,8 +299,9 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 			[e.sps4.getAttributes().indexOf("duration of rest trial")].toDouble();
 	}
 	if (e.sps3.getAttributes().contains("Procedure") &&
-		e.sps3.getAttributes().contains("Weight")
-		&& e.sps3.getValues().size() >= 2) {
+		e.sps3.getAttributes().contains("Weight") && 
+		e.sps3.getValues().size() >= 2 && 
+		e.getType() == Experiment::CLINICAL) {
 		for (int i = 0; i < 2; ++i) {
 			if (e.sps3.getValue(i)[e.sps3.getAttributes().indexOf("Procedure")] ==
 				"TaskBlockProc" && 
@@ -302,7 +321,11 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 			}
 		}
 	}
-	values[7] = (values[3] * values[4] + values[5] * values[6])*values[2] + values[0] * values[1];
+	/*
+	Scan time = ((Number of cycles * (Number of dynamics per task block + Number of dynamics per rest block)) + Number of dummy scans) * TR
+	*/
+	values[7] = (values[2] * (values[3] + values[5]) + values[1]) * values[0];
+	//values[7] = (values[3] * values[4] + values[5] * values[6])*values[2] + values[0] * values[1];
 	int min = int(values[7] / 1000 / 60);
 	scanTime = QString::number(min) + "min" + QString::number(int(values[7] / 1000 - min * 60)) + "s";
 

@@ -132,14 +132,16 @@ public:
 
         label = new QLabel(ExperimentManager);
         label->setObjectName(QStringLiteral("label"));
-        label->setFont(font);
+        QFont font2;
+        font2.setPointSize(8);
+        label->setFont(font2);
         label->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label, 0, 0, 1, 3);
 
         label_2 = new QLabel(ExperimentManager);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font);
+        label_2->setFont(font2);
 
         gridLayout_3->addWidget(label_2, 5, 1, 1, 2);
 
@@ -157,7 +159,7 @@ public:
 
         horizontalLayout->addLayout(verticalLayout);
 
-        horizontalSpacer_5 = new QSpacerItem(100, 17, QSizePolicy::Preferred, QSizePolicy::Minimum);
+        horizontalSpacer_5 = new QSpacerItem(30, 17, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_5);
 
@@ -206,7 +208,7 @@ public:
         label_3->setObjectName(QStringLiteral("label_3"));
         sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy);
-        label_3->setFont(font);
+        label_3->setFont(font2);
 
         gridLayout_4->addWidget(label_3, 3, 0, 1, 3);
 

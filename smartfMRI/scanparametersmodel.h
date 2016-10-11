@@ -33,7 +33,7 @@ public:
 	 * default constructor
 	 * param parent parent object
 	 */
-	ScanParametersModel(QObject *parent);
+	ScanParametersModel(QObject *parent = nullptr);
 	/**
 	 * constructor 
 	 * when an experiment is selected, this constructor is invoked to load scan parameters of e 
@@ -43,7 +43,7 @@ public:
 	 * @param editFlag whether the parameters are alterable
 	 * @param parent parent object
 	 */
-	ScanParametersModel(Experiment& e, bool editFlag, QObject *parent);
+	ScanParametersModel(Experiment& e, bool editFlag = true, QObject *parent = nullptr);
 	/**
 	 * destructor
 	 * 
@@ -55,7 +55,7 @@ public:
 	 * param parent 
 	 * @return the row number
 	 */
-	int rowCount(const QModelIndex &parent) const;
+	int rowCount(const QModelIndex &parent = QModelIndex()) const;
 	/**
 	 * return the data to display in the list
 	 * @override

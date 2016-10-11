@@ -79,7 +79,7 @@ int ExperimentManager::loadParadigm(int exeperimentType)
 	//	ScanParameters::Successful == e->sps2.read() &&
 	//	ScanParameters::Successful == e->sps3.read()
 	//	) {
-	spMod = new ScanParametersModel(*e, e->getType(), this);
+	spMod = new ScanParametersModel(*e, true, this);
 
 	//}
 	//else {
@@ -92,6 +92,11 @@ int ExperimentManager::loadParadigm(int exeperimentType)
 		ui.experimentLineEdit->setText("Clinical");
 	}
 	ui.scanParametersTableView->setModel(spMod);
+	// set the width of the input field of Scan Parameters
+	for (int i = 0; i < spMod->rowCount(); ++i) {
+		ui.scanParametersTableView->setColumnWidth(i, 200);
+	}
+
 
 	return 1;
 }

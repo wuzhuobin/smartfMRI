@@ -5,7 +5,7 @@ ScanParameters::ScanParameters(QString parametersFileName, QObject * parent)
 {
 	qDebug() << QFileInfo(parametersFileName).absoluteFilePath ();
 	qDebug() << "ScanParameters construct";
-	//if(!QFileInfo(parametersFileName).exists())
+	//if(!QFileInfo(m_parametersFileName).exists())
 	//	this->write();
 	this->read();
 }

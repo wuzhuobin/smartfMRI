@@ -76,11 +76,12 @@ int SmartfMRI::addExperiment() {
 		return 0;
 	QMessageBox experimentTypeQuestionBox;
 	experimentTypeQuestionBox.setIcon(QMessageBox::Question);
-	experimentTypeQuestionBox.setText("Please select your paradigm type."
-		"Clinical or Research\n");
+	experimentTypeQuestionBox.setText("Please select your paradigm type.Clinical or Research ?\n");
 	experimentTypeQuestionBox.setInformativeText(
-		"Research paradigm: parameters are unchagngeable alterable\n"
-		"Clinical paradigm: parameters are alterable\n");
+		"For research paradigm: Please be noticed that the timing of research paradigms "
+		"are not controlled by Smart fMRI.Scan parameters are used in only instructing MR operator.\n"
+		"For clinical paradigm: The paradigm structure of clinical paradigms need"
+		" to follow Smart fMRI paradigm structure.\n");
 	QPushButton *clinicalButton = experimentTypeQuestionBox.addButton(tr("Clinical"), QMessageBox::YesRole);
 	QPushButton *reserachButton = experimentTypeQuestionBox.addButton(tr("Research"), QMessageBox::NoRole);
 	experimentTypeQuestionBox.exec();
@@ -175,6 +176,12 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 		spMod = new ScanParametersModel(this);
 	}
 	ui.scanParameterTableView->setModel(spMod);
+
+	// set the width of the input field of Scan Parameters
+	for (int i = 0; i < spMod->rowCount(); ++i) {
+		ui.scanParameterTableView->setColumnWidth(i, 200);
+	}
+
 	return 0;
 }
 
