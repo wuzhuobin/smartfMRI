@@ -75,26 +75,24 @@ int ExperimentManager::loadParadigm(int exeperimentType)
 		delete e;
 	} 
 	e = new Experiment(paradigmFile, this, exeperimentType);
-	//if (ScanParameters::Successful == e->sps1.read() &&
-	//	ScanParameters::Successful == e->sps2.read() &&
-	//	ScanParameters::Successful == e->sps3.read()
-	//	) {
+
 	spMod = new ScanParametersModel(*e, true, this);
 
-	//}
-	//else {
-	//	spMod = new ScanParametersModel(this);
-	//}
 	if (e->getType() == Experiment::RESEARCH) {
-		ui.experimentLineEdit->setText("Reserach");
+		ui.experimentLineEdit->setText("Research");
 	}
 	else {
 		ui.experimentLineEdit->setText("Clinical");
 	}
 	ui.scanParametersTableView->setModel(spMod);
-	// set the width of the input field of Scan Parameters
+	// automatically setting the width and height of the input field of Scan Parameters
+	QSize tableSize = ui.scanParametersTableView->size();
+	QSize headerSize = ui.scanParametersTableView->verticalHeader()->size();
+	int columnWidth = tableSize.width() - headerSize.width();
+	int rowHeight = tableSize.height() / spMod->rowCount();
 	for (int i = 0; i < spMod->rowCount(); ++i) {
-		ui.scanParametersTableView->setColumnWidth(i, 200);
+		ui.scanParametersTableView->setColumnWidth(i, columnWidth);
+		ui.scanParametersTableView->setRowHeight(i, rowHeight);
 	}
 
 
@@ -132,7 +130,8 @@ int ExperimentManager::updataParadigm(int experimentType)
 			QString("Name has not been changed, while scan parameters have all been updated."));
 		return 0;
 	}
-	else return 1;
+	else
+		return 1;
 }
 
 

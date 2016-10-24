@@ -39,10 +39,9 @@ public:
     QLineEdit *experimentNameLineEdit;
     QSpacerItem *verticalSpacer_4;
     QLineEdit *paradigmNameLineEdit;
+    QLabel *label_2;
     QLabel *label_4;
     QLineEdit *experimentLineEdit;
-    QLabel *label;
-    QLabel *label_2;
     QSpacerItem *verticalSpacer_2;
     QSpacerItem *verticalSpacer_3;
     QSpacerItem *horizontalSpacer_5;
@@ -50,15 +49,15 @@ public:
     QLabel *label_6;
     QPushButton *confirmPushButton;
     QSpacerItem *horizontalSpacer_3;
-    QTableView *scanParametersTableView;
     QSpacerItem *horizontalSpacer_4;
+    QTableView *scanParametersTableView;
     QLabel *label_3;
 
     void setupUi(QWidget *ExperimentManager)
     {
         if (ExperimentManager->objectName().isEmpty())
             ExperimentManager->setObjectName(QStringLiteral("ExperimentManager"));
-        ExperimentManager->resize(1019, 501);
+        ExperimentManager->resize(1019, 419);
         QIcon icon;
         icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
         ExperimentManager->setWindowIcon(icon);
@@ -82,7 +81,7 @@ public:
         font.setPointSize(12);
         label_5->setFont(font);
 
-        gridLayout_3->addWidget(label_5, 6, 0, 1, 1);
+        gridLayout_3->addWidget(label_5, 5, 0, 1, 1);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
@@ -94,60 +93,53 @@ public:
         horizontalLayout_3->addWidget(label_7);
 
 
-        gridLayout_3->addLayout(horizontalLayout_3, 1, 0, 1, 1);
+        gridLayout_3->addLayout(horizontalLayout_3, 0, 0, 1, 1);
 
         experimentNameLineEdit = new QLineEdit(ExperimentManager);
         experimentNameLineEdit->setObjectName(QStringLiteral("experimentNameLineEdit"));
         experimentNameLineEdit->setFont(font);
 
-        gridLayout_3->addWidget(experimentNameLineEdit, 4, 1, 1, 2);
+        gridLayout_3->addWidget(experimentNameLineEdit, 3, 1, 1, 2);
 
         verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_3->addItem(verticalSpacer_4, 3, 0, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_4, 2, 0, 1, 1);
 
         paradigmNameLineEdit = new QLineEdit(ExperimentManager);
         paradigmNameLineEdit->setObjectName(QStringLiteral("paradigmNameLineEdit"));
         paradigmNameLineEdit->setFont(font);
         paradigmNameLineEdit->setReadOnly(true);
 
-        gridLayout_3->addWidget(paradigmNameLineEdit, 6, 1, 1, 2);
+        gridLayout_3->addWidget(paradigmNameLineEdit, 5, 1, 1, 2);
+
+        label_2 = new QLabel(ExperimentManager);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font1;
+        font1.setPointSize(8);
+        label_2->setFont(font1);
+
+        gridLayout_3->addWidget(label_2, 4, 1, 1, 2);
 
         label_4 = new QLabel(ExperimentManager);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font);
 
-        gridLayout_3->addWidget(label_4, 4, 0, 1, 1);
+        gridLayout_3->addWidget(label_4, 3, 0, 1, 1);
 
         experimentLineEdit = new QLineEdit(ExperimentManager);
         experimentLineEdit->setObjectName(QStringLiteral("experimentLineEdit"));
         experimentLineEdit->setEnabled(true);
-        QFont font1;
-        font1.setFamily(QStringLiteral("ADMUI3Lg"));
-        font1.setPointSize(12);
-        experimentLineEdit->setFont(font1);
+        QFont font2;
+        font2.setFamily(QStringLiteral("ADMUI3Lg"));
+        font2.setPointSize(12);
+        experimentLineEdit->setFont(font2);
         experimentLineEdit->setReadOnly(true);
 
-        gridLayout_3->addWidget(experimentLineEdit, 1, 1, 1, 2);
-
-        label = new QLabel(ExperimentManager);
-        label->setObjectName(QStringLiteral("label"));
-        QFont font2;
-        font2.setPointSize(8);
-        label->setFont(font2);
-        label->setAlignment(Qt::AlignCenter);
-
-        gridLayout_3->addWidget(label, 0, 0, 1, 3);
-
-        label_2 = new QLabel(ExperimentManager);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font2);
-
-        gridLayout_3->addWidget(label_2, 5, 1, 1, 2);
+        gridLayout_3->addWidget(experimentLineEdit, 0, 1, 1, 2);
 
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_3->addItem(verticalSpacer_2, 5, 0, 1, 1);
+        gridLayout_3->addItem(verticalSpacer_2, 4, 0, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout_3);
@@ -188,6 +180,10 @@ public:
 
         gridLayout_4->addItem(horizontalSpacer_3, 4, 0, 1, 1);
 
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer_4, 4, 2, 1, 1);
+
         scanParametersTableView = new QTableView(ExperimentManager);
         scanParametersTableView->setObjectName(QStringLiteral("scanParametersTableView"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -200,15 +196,11 @@ public:
 
         gridLayout_4->addWidget(scanParametersTableView, 2, 0, 1, 3);
 
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_4->addItem(horizontalSpacer_4, 4, 2, 1, 1);
-
         label_3 = new QLabel(ExperimentManager);
         label_3->setObjectName(QStringLiteral("label_3"));
         sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
         label_3->setSizePolicy(sizePolicy);
-        label_3->setFont(font2);
+        label_3->setFont(font1);
 
         gridLayout_4->addWidget(label_3, 3, 0, 1, 3);
 
@@ -229,16 +221,12 @@ public:
         ExperimentManager->setWindowTitle(QApplication::translate("ExperimentManager", "ExperimentManager", 0));
         label_5->setText(QApplication::translate("ExperimentManager", "Paradigm Name:", 0));
         label_7->setText(QApplication::translate("ExperimentManager", "Experiment Type:", 0));
-        label_4->setText(QApplication::translate("ExperimentManager", "Experiment Name:", 0));
-        label->setText(QApplication::translate("ExperimentManager", "Research paradigm: parameters are unchangeable\n"
-"Clinical paradigm: parameters are alterable\n"
-"", 0));
         label_2->setText(QApplication::translate("ExperimentManager", "Please don't use the following characters:\n"
 "][!\"#$%&'()*+,./:;<=>?@^`{|}~-", 0));
+        label_4->setText(QApplication::translate("ExperimentManager", "Experiment Name:", 0));
         label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
         confirmPushButton->setText(QApplication::translate("ExperimentManager", "Confirm", 0));
-        label_3->setText(QApplication::translate("ExperimentManager", "Parameters are supposed to be integers and not smaller than 1.\n"
-" Non-integer will be floor to integer.", 0));
+        label_3->setText(QApplication::translate("ExperimentManager", "Parameters are supposed to be integers and greater than 0.", 0));
     } // retranslateUi
 
 };

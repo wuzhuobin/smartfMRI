@@ -27,12 +27,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_039E1F791C904E7488B167D6BF13F536"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_043D45AC191042869F88C43619898CFC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -58,12 +52,6 @@
         "Entry"
         {
         "MsmKey" = "8:_0652B11D3DE44B1984463F1C6593DFCB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_06541166C60947F98929F1A5DB0D11F6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -99,12 +87,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_0BB98FAB252C4068A93C454E8956577E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_0BEE8E582CF547D6A4939CCA34527842"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,12 +94,6 @@
         "Entry"
         {
         "MsmKey" = "8:_0D5095FEC352431797FA0A26E3001652"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0E1234A4490643F98AB1C27816BAA7D7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -148,12 +124,6 @@
         "Entry"
         {
         "MsmKey" = "8:_160EE725410E4101A5398E7A10CA3642"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_17838E19F8884ED8A245FEF59227CC6F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -261,12 +231,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_28DFD18EF4394D32B864B363F78BCAF8"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2CBAB2E871AF4262B4426D880A742F3A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -297,12 +261,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_380583D517314159A40BB209D51E7A90"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3877B6EB6CCE4061961FB1F3CFC2B465"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -321,7 +279,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_39BA078009A447EFB514F88B84E2A8BA"
+        "MsmKey" = "8:_399D23ED5CE84FC39F8A5D06F51D6A9C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -453,18 +411,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_481B2A055D5F4EE19ACC0E2E316AB498"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_48C5233FB29B4440A8D69803B8FB6FBB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_4A0CA144E61A43A9AD5643B99FD567F5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -490,18 +436,6 @@
         "Entry"
         {
         "MsmKey" = "8:_4B615726F56C4D94BEDE4B4C75D3A343"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4B76905C3AA149FFBEA374524E3617F2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_4BD5BE593ECF407D88F530256B284D97"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -597,19 +531,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5B8EDFD28B844DF58A94DD54D891677E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5D1DB257C76041AD9DDCA117B3923AD5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5D3448CDFA9A4B0A846B38900595F6C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -628,12 +550,6 @@
         "Entry"
         {
         "MsmKey" = "8:_5EF6755AD77F4CB79357F4FE268E008C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5F81FE55FB064D37BD5EAF67F50E57EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -765,19 +681,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_6A6A9DD0EB5345868762F52AC86181CD"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6B5FE64AE47C46E2B4030821A80C0631"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6BEF6E7C34D642CB8EFD41247FD93B78"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -819,12 +723,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_727A0DFE19254700AF8009A12556E097"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_769B33B8D0684D4299E8108C8DC5DEC4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -843,19 +741,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7A9F619DD4D14AE498BFBD34950AE197"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7BBE2B78AB4B4BE1B6B0205D411D0BF7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7C142A6766E14EBFA16D3767CF40723F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -868,12 +754,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7C64762D4D064EE280F70846720074F5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7E62312B9BB6474F99CA761858627F1E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -916,12 +796,6 @@
         "Entry"
         {
         "MsmKey" = "8:_86FC1C98BA854E4CB7BCAF0CF9F930E0"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_87299A5C93364C669BAF3698060CB157"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -988,12 +862,6 @@
         "Entry"
         {
         "MsmKey" = "8:_955111E9B74C42F5A6108036C0A34A24"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_95F697769059400EBC3685E0CE818F32"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1137,19 +1005,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A7BEC2E9974941DAA58867765EC96CDB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_AA099605004349DDBF315F60DC3F3DC6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AABB20A35C8448428A45E32013A856EC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1174,6 +1030,12 @@
         "Entry"
         {
         "MsmKey" = "8:_ABDA8AFBE0264200BC6914804007F4A3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_AC7D86E215904A02896D58CE23E766D7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1216,12 +1078,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B1CF49A2B68444938AB9645CC595A780"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B2BE84BAC5464D258FF859F8333EA97C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1281,12 +1137,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BC359840BB5C4D0CBF41CF7DA3F281E9"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BC582872B9234214B61A7F0120FFD753"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1300,12 +1150,6 @@
         "Entry"
         {
         "MsmKey" = "8:_BE35CB06196E4846B6EC3103DC805CF7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C1F8466400904A878191796FA3CDAC6A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1342,12 +1186,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C806EEB8717A4E1581A1DCB02CAB4AF5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C81FA82989CC4880A4DE08C16FB4352F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1407,19 +1245,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D35E5188CC2B4CFBA9C9F063F6ADFB6A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D3613092292F47978027F78FE653E481"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D592E3C862724DA4B75169E77CCC7BFB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1432,12 +1258,6 @@
         "Entry"
         {
         "MsmKey" = "8:_D95586436996483899CA9DFA20C0A738"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D980DEC8515B417AADC16A47AA9C281B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1545,12 +1365,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EE62F3BF996C43C9BEF1FC94FABB88E2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_EFBA35C3C80B4F5FB6C525EC2A8DED58"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1569,12 +1383,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F3888A79FBBF483498CBA301F14E19C2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F69E0D699BD344AB8ACFA897325E0DAE"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1582,12 +1390,6 @@
         "Entry"
         {
         "MsmKey" = "8:_F72E01AFFA0E4D7F8F9790771331835E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F72EE79B044348E2AC94602A90C05CB8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1754,26 +1556,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_039E1F791C904E7488B167D6BF13F536"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_cs.qm"
-            "TargetName" = "8:qt_cs.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_043D45AC191042869F88C43619898CFC"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\3_Verb\\Verb\\Slide20.JPG"
@@ -1860,26 +1642,6 @@
             "TargetName" = "8:2_HandMovementSmart-1-1.txt"
             "Tag" = "8:"
             "Folder" = "8:_049E771AEA0D49E2A010C65B987D535F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_06541166C60947F98929F1A5DB0D11F6"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_en.qm"
-            "TargetName" = "8:qt_en.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1994,26 +1756,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BB98FAB252C4068A93C454E8956577E"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qico.dll"
-            "TargetName" = "8:qico.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BEE8E582CF547D6A4939CCA34527842"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\myBlockList.txt"
@@ -2040,26 +1782,6 @@
             "TargetName" = "8:Slide5.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E1234A4490643F98AB1C27816BAA7D7"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_fi.qm"
-            "TargetName" = "8:qt_fi.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2160,26 +1882,6 @@
             "TargetName" = "8:Slide32.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_17838E19F8884ED8A245FEF59227CC6F"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_ru.qm"
-            "TargetName" = "8:qt_ru.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2534,26 +2236,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_28DFD18EF4394D32B864B363F78BCAF8"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_he.qm"
-            "TargetName" = "8:qt_he.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CBAB2E871AF4262B4426D880A742F3A"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\3_Verb\\Verb\\Slide10.JPG"
@@ -2654,26 +2336,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_380583D517314159A40BB209D51E7A90"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_ja.qm"
-            "TargetName" = "8:qt_ja.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3877B6EB6CCE4061961FB1F3CFC2B465"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\myDummy.txt"
@@ -2720,26 +2382,6 @@
             "TargetName" = "8:Slide30.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_39BA078009A447EFB514F88B84E2A8BA"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\libEGL.dll"
-            "TargetName" = "8:libEGL.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3174,26 +2816,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_481B2A055D5F4EE19ACC0E2E316AB498"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_sk.qm"
-            "TargetName" = "8:qt_sk.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4A0CA144E61A43A9AD5643B99FD567F5"
             {
             "SourcePath" = "8:..\\x64\\Release\\Qt5Gui.dll"
@@ -3280,46 +2902,6 @@
             "TargetName" = "8:Dummy.JPG"
             "Tag" = "8:"
             "Folder" = "8:_049E771AEA0D49E2A010C65B987D535F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B76905C3AA149FFBEA374524E3617F2"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qwbmp.dll"
-            "TargetName" = "8:qwbmp.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4BD5BE593ECF407D88F530256B284D97"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qtiff.dll"
-            "TargetName" = "8:qtiff.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3634,52 +3216,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5B8EDFD28B844DF58A94DD54D891677E"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_it.qm"
-            "TargetName" = "8:qt_it.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D1DB257C76041AD9DDCA117B3923AD5"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\SentenceCompletion\\Slide2.JPG"
             "TargetName" = "8:Slide2.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5D3448CDFA9A4B0A846B38900595F6C8"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qdds.dll"
-            "TargetName" = "8:qdds.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4174,52 +3716,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A6A9DD0EB5345868762F52AC86181CD"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_de.qm"
-            "TargetName" = "8:qt_de.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6B5FE64AE47C46E2B4030821A80C0631"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\SentenceCompletion\\Slide6.JPG"
             "TargetName" = "8:Slide6.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6BEF6E7C34D642CB8EFD41247FD93B78"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_hu.qm"
-            "TargetName" = "8:qt_hu.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4354,26 +3856,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_727A0DFE19254700AF8009A12556E097"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_uk.qm"
-            "TargetName" = "8:qt_uk.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_769B33B8D0684D4299E8108C8DC5DEC4"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\myParameters.txt"
@@ -4434,52 +3916,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A9F619DD4D14AE498BFBD34950AE197"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_fr.qm"
-            "TargetName" = "8:qt_fr.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7BBE2B78AB4B4BE1B6B0205D411D0BF7"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\SentenceCompletion\\SentenceCompletion.pptx"
             "TargetName" = "8:SentenceCompletion.pptx"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C142A6766E14EBFA16D3767CF40723F"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\libGLESV2.dll"
-            "TargetName" = "8:libGLESV2.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4520,26 +3962,6 @@
             "TargetName" = "8:Slide27.JPG"
             "Tag" = "8:"
             "Folder" = "8:_FCDC494107D4469CB8FC098A558846CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7E62312B9BB6474F99CA761858627F1E"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qsvg.dll"
-            "TargetName" = "8:qsvg.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4680,26 +4102,6 @@
             "TargetName" = "8:Slide4.JPG"
             "Tag" = "8:"
             "Folder" = "8:_EBE2064DC0CD447DB60D0F81E429CE3B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87299A5C93364C669BAF3698060CB157"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qwebp.dll"
-            "TargetName" = "8:qwebp.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5394,52 +4796,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A7BEC2E9974941DAA58867765EC96CDB"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\opengl32sw.dll"
-            "TargetName" = "8:opengl32sw.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AA099605004349DDBF315F60DC3F3DC6"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\1_Visual\\myParameters.txt"
             "TargetName" = "8:myParameters.txt"
             "Tag" = "8:"
             "Folder" = "8:_DC8CA8AA78EB4415AB1ADCF8F911A790"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AABB20A35C8448428A45E32013A856EC"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qjpeg.dll"
-            "TargetName" = "8:qjpeg.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5854,26 +5216,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC359840BB5C4D0CBF41CF7DA3F281E9"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qtga.dll"
-            "TargetName" = "8:qtga.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BC582872B9234214B61A7F0120FFD753"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\4_WordGeneration\\myCycleList.txt"
@@ -5920,26 +5262,6 @@
             "TargetName" = "8:Slide33.JPG"
             "Tag" = "8:"
             "Folder" = "8:_FCDC494107D4469CB8FC098A558846CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C1F8466400904A878191796FA3CDAC6A"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_ko.qm"
-            "TargetName" = "8:qt_ko.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6060,26 +5382,6 @@
             "TargetName" = "8:Slide39.JPG"
             "Tag" = "8:"
             "Folder" = "8:_EBE2064DC0CD447DB60D0F81E429CE3B"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C81FA82989CC4880A4DE08C16FB4352F"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\D3Dcompiler_47.dll"
-            "TargetName" = "8:D3Dcompiler_47.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6274,52 +5576,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D35E5188CC2B4CFBA9C9F063F6ADFB6A"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qgif.dll"
-            "TargetName" = "8:qgif.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D3613092292F47978027F78FE653E481"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\SentenceCompletion\\Slide25.JPG"
             "TargetName" = "8:Slide25.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D592E3C862724DA4B75169E77CCC7BFB"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\iconengines\\qsvgicon.dll"
-            "TargetName" = "8:qsvgicon.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_F5D7945A72804F93B30C4D91553C5527"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6360,26 +5622,6 @@
             "TargetName" = "8:myBlockList.txt"
             "Tag" = "8:"
             "Folder" = "8:_049E771AEA0D49E2A010C65B987D535F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D980DEC8515B417AADC16A47AA9C281B"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_lv.qm"
-            "TargetName" = "8:qt_lv.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6714,26 +5956,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EE62F3BF996C43C9BEF1FC94FABB88E2"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\translations\\qt_ca.qm"
-            "TargetName" = "8:qt_ca.qm"
-            "Tag" = "8:"
-            "Folder" = "8:_37FA04D122FD472F8BDEE7133D8BEF55"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EFBA35C3C80B4F5FB6C525EC2A8DED58"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\5_SentenceCompletion\\5_SentenceCompletionSmart-1-1.txt"
@@ -6794,26 +6016,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3888A79FBBF483498CBA301F14E19C2"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qicns.dll"
-            "TargetName" = "8:qicns.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_6523DF04E9E24EDB801262893D67033F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F69E0D699BD344AB8ACFA897325E0DAE"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\6_PictureNaming\\6_PictureNamingSmart-1-1.txt"
@@ -6840,26 +6042,6 @@
             "TargetName" = "8:4_WordGenerationSmart.ebs2"
             "Tag" = "8:"
             "Folder" = "8:_1B6DD29495CB42EE9FCEC59D40C7CF91"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F72EE79B044348E2AC94602A90C05CB8"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\Qt5Svg.dll"
-            "TargetName" = "8:Qt5Svg.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -7021,17 +6203,6 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_37FA04D122FD472F8BDEE7133D8BEF55"
-                    {
-                    "Name" = "8:translations"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_FA6F6ED143FC4D7CA762792918B1C579"
-                        "Folders"
-                        {
-                        }
-                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_3E0FF8D24C944608AA218225CE58CE11"
                     {
                     "Name" = "8:bin"
@@ -7039,17 +6210,6 @@
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_32321EDAD2CE4CDCA942C70361F4840E"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6523DF04E9E24EDB801262893D67033F"
-                    {
-                    "Name" = "8:imageformats"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_8B250E906D0B44CBA3EF08B2E1E67724"
                         "Folders"
                         {
                         }
@@ -7197,17 +6357,6 @@
                             }
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F5D7945A72804F93B30C4D91553C5527"
-                    {
-                    "Name" = "8:iconengines"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_D3BD7EA840B44E2EB0F774D4F37EEB16"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_6BBAEFE325AB49B6991C73F789F552D4"
@@ -7260,7 +6409,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{374F1909-90EF-4657-A1AA-78CB12935580}"
-        "PackageCode" = "8:{3929040D-0C93-4D78-8EB1-1C0EE7C048A3}"
+        "PackageCode" = "8:{EFB35334-A3D0-4DC9-8514-23A0F9CA0474}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -7832,11 +6981,11 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_48C5233FB29B4440A8D69803B8FB6FBB"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_399D23ED5CE84FC39F8A5D06F51D6A9C"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC140_CXXAMP_x64.msm"
+            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC120_CRT_x64.msm"
                 "Properties"
                 {
                 }
@@ -7846,39 +6995,11 @@
             "Feature" = "8:"
             "IsolateTo" = "8:"
             }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_5F81FE55FB064D37BD5EAF67F50E57EC"
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_AC7D86E215904A02896D58CE23E766D7"
             {
             "UseDynamicProperties" = "11:TRUE"
             "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC140_MFC_x64.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_95F697769059400EBC3685E0CE818F32"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC140_MFCLOC_x64.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_B2BE84BAC5464D258FF859F8333EA97C"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC140_OpenMP_x64.msm"
+            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC110_CRT_x64.msm"
                 "Properties"
                 {
                 }

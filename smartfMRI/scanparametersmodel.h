@@ -116,11 +116,13 @@ private:
 	int length;
 	// QList<QString> to store the header
 	QList<QString> headerList;
-	// Qlist<QString> to store the scanparameter of experiment e
+	// Qlist<double> to store the scanparameter of experiment e
 	QList<double> values;
 	// the scanTime calculate from the scan parameters
 	// it also do a format transform
 	QString scanTime;
+	// current experiment
+	Experiment* e;
 
 };
 

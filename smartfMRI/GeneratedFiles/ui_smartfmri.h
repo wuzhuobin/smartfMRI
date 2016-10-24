@@ -42,21 +42,22 @@ public:
     QLabel *label_2;
     QTableView *scanParameterTableView;
     QGridLayout *gridLayout_3;
-    QPushButton *addButton;
     QPushButton *removeButton;
-    QPushButton *updataPushButton;
-    QPushButton *aboutPushButton;
-    QPushButton *logPushButton;
     QPushButton *runPushButton;
+    QPushButton *logPushButton;
     QSpacerItem *horizontalSpacer_2;
+    QPushButton *updataPushButton;
+    QPushButton *addButton;
+    QPushButton *aboutPushButton;
     QSpacerItem *horizontalSpacer;
+    QSpacerItem *verticalSpacer;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *smartfMRIClass)
     {
         if (smartfMRIClass->objectName().isEmpty())
             smartfMRIClass->setObjectName(QStringLiteral("smartfMRIClass"));
-        smartfMRIClass->resize(1228, 571);
+        smartfMRIClass->resize(1228, 620);
         QIcon icon;
         icon.addFile(QStringLiteral(":/smartfMRI/pm.ico"), QSize(), QIcon::Normal, QIcon::Off);
         smartfMRIClass->setWindowIcon(icon);
@@ -114,53 +115,17 @@ public:
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        addButton = new QPushButton(centralWidget);
-        addButton->setObjectName(QStringLiteral("addButton"));
+        removeButton = new QPushButton(centralWidget);
+        removeButton->setObjectName(QStringLiteral("removeButton"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(addButton->sizePolicy().hasHeightForWidth());
-        addButton->setSizePolicy(sizePolicy);
-        addButton->setMinimumSize(QSize(110, 0));
-        addButton->setFont(font);
-
-        gridLayout_3->addWidget(addButton, 0, 0, 1, 1);
-
-        removeButton = new QPushButton(centralWidget);
-        removeButton->setObjectName(QStringLiteral("removeButton"));
         sizePolicy.setHeightForWidth(removeButton->sizePolicy().hasHeightForWidth());
         removeButton->setSizePolicy(sizePolicy);
         removeButton->setMinimumSize(QSize(110, 0));
         removeButton->setFont(font);
 
-        gridLayout_3->addWidget(removeButton, 0, 2, 1, 1);
-
-        updataPushButton = new QPushButton(centralWidget);
-        updataPushButton->setObjectName(QStringLiteral("updataPushButton"));
-        sizePolicy.setHeightForWidth(updataPushButton->sizePolicy().hasHeightForWidth());
-        updataPushButton->setSizePolicy(sizePolicy);
-        updataPushButton->setMinimumSize(QSize(110, 0));
-        updataPushButton->setFont(font);
-
-        gridLayout_3->addWidget(updataPushButton, 0, 4, 1, 1);
-
-        aboutPushButton = new QPushButton(centralWidget);
-        aboutPushButton->setObjectName(QStringLiteral("aboutPushButton"));
-        sizePolicy.setHeightForWidth(aboutPushButton->sizePolicy().hasHeightForWidth());
-        aboutPushButton->setSizePolicy(sizePolicy);
-        aboutPushButton->setMinimumSize(QSize(110, 0));
-        aboutPushButton->setFont(font);
-
-        gridLayout_3->addWidget(aboutPushButton, 1, 0, 1, 1);
-
-        logPushButton = new QPushButton(centralWidget);
-        logPushButton->setObjectName(QStringLiteral("logPushButton"));
-        sizePolicy.setHeightForWidth(logPushButton->sizePolicy().hasHeightForWidth());
-        logPushButton->setSizePolicy(sizePolicy);
-        logPushButton->setMinimumSize(QSize(110, 0));
-        logPushButton->setFont(font);
-
-        gridLayout_3->addWidget(logPushButton, 1, 2, 1, 1);
+        gridLayout_3->addWidget(removeButton, 1, 2, 1, 1);
 
         runPushButton = new QPushButton(centralWidget);
         runPushButton->setObjectName(QStringLiteral("runPushButton"));
@@ -169,15 +134,55 @@ public:
         runPushButton->setMinimumSize(QSize(110, 0));
         runPushButton->setFont(font);
 
-        gridLayout_3->addWidget(runPushButton, 1, 4, 1, 1);
+        gridLayout_3->addWidget(runPushButton, 2, 4, 1, 1);
+
+        logPushButton = new QPushButton(centralWidget);
+        logPushButton->setObjectName(QStringLiteral("logPushButton"));
+        sizePolicy.setHeightForWidth(logPushButton->sizePolicy().hasHeightForWidth());
+        logPushButton->setSizePolicy(sizePolicy);
+        logPushButton->setMinimumSize(QSize(110, 0));
+        logPushButton->setFont(font);
+
+        gridLayout_3->addWidget(logPushButton, 2, 2, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-        gridLayout_3->addItem(horizontalSpacer_2, 0, 3, 2, 1);
+        gridLayout_3->addItem(horizontalSpacer_2, 1, 3, 2, 1);
+
+        updataPushButton = new QPushButton(centralWidget);
+        updataPushButton->setObjectName(QStringLiteral("updataPushButton"));
+        sizePolicy.setHeightForWidth(updataPushButton->sizePolicy().hasHeightForWidth());
+        updataPushButton->setSizePolicy(sizePolicy);
+        updataPushButton->setMinimumSize(QSize(110, 0));
+        updataPushButton->setFont(font);
+
+        gridLayout_3->addWidget(updataPushButton, 1, 4, 1, 1);
+
+        addButton = new QPushButton(centralWidget);
+        addButton->setObjectName(QStringLiteral("addButton"));
+        sizePolicy.setHeightForWidth(addButton->sizePolicy().hasHeightForWidth());
+        addButton->setSizePolicy(sizePolicy);
+        addButton->setMinimumSize(QSize(110, 0));
+        addButton->setFont(font);
+
+        gridLayout_3->addWidget(addButton, 1, 0, 1, 1);
+
+        aboutPushButton = new QPushButton(centralWidget);
+        aboutPushButton->setObjectName(QStringLiteral("aboutPushButton"));
+        sizePolicy.setHeightForWidth(aboutPushButton->sizePolicy().hasHeightForWidth());
+        aboutPushButton->setSizePolicy(sizePolicy);
+        aboutPushButton->setMinimumSize(QSize(110, 0));
+        aboutPushButton->setFont(font);
+
+        gridLayout_3->addWidget(aboutPushButton, 2, 0, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
 
-        gridLayout_3->addItem(horizontalSpacer, 0, 1, 2, 1);
+        gridLayout_3->addItem(horizontalSpacer, 1, 1, 2, 1);
+
+        verticalSpacer = new QSpacerItem(20, 80, QSizePolicy::Minimum, QSizePolicy::Preferred);
+
+        gridLayout_3->addItem(verticalSpacer, 0, 2, 1, 1);
 
 
         verticalLayout->addLayout(gridLayout_3);
@@ -186,7 +191,6 @@ public:
         horizontalLayout->addLayout(verticalLayout);
 
         smartfMRIClass->setCentralWidget(centralWidget);
-        addButton->raise();
         statusBar = new QStatusBar(smartfMRIClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         smartfMRIClass->setStatusBar(statusBar);
@@ -201,12 +205,12 @@ public:
         smartfMRIClass->setWindowTitle(QApplication::translate("smartfMRIClass", "Smart fMRI", 0));
         label->setText(QApplication::translate("smartfMRIClass", "Experiment List", 0));
         label_2->setText(QApplication::translate("smartfMRIClass", "Scan Parameters", 0));
-        addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
         removeButton->setText(QApplication::translate("smartfMRIClass", "Remove", 0));
-        updataPushButton->setText(QApplication::translate("smartfMRIClass", "Update", 0));
-        aboutPushButton->setText(QApplication::translate("smartfMRIClass", "About", 0));
-        logPushButton->setText(QApplication::translate("smartfMRIClass", "Log", 0));
         runPushButton->setText(QApplication::translate("smartfMRIClass", "Run", 0));
+        logPushButton->setText(QApplication::translate("smartfMRIClass", "Log", 0));
+        updataPushButton->setText(QApplication::translate("smartfMRIClass", "Update", 0));
+        addButton->setText(QApplication::translate("smartfMRIClass", "Add", 0));
+        aboutPushButton->setText(QApplication::translate("smartfMRIClass", "About", 0));
     } // retranslateUi
 
 };

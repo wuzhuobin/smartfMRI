@@ -98,6 +98,9 @@ int SmartfMRI::addExperiment() {
 		return 0;
 	}
 	expMan.setParadigmFile(QFileInfo(filePath));
+	expMan.setModal(true);
+	expMan.show();
+	// for automatically adjusting table' height and width, show it first
 	expMan.loadParadigm(experimentType);
 	if (expMan.exec() == QDialog::Accepted) {
 		expMan.copyParadigm(experimentType);
@@ -140,10 +143,14 @@ int SmartfMRI::updateExperiment()
 	Experiment*e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data().toString());
 	expMan.setParadigmFile(e->getFi().absoluteFilePath());
-	// using its own type
+
+	expMan.setModal(true);
+	expMan.show();
+	// for automatically adjusting table' height and width, show it first
 	expMan.loadParadigm(e->getType());
 
 	if (expMan.exec() == QDialog::Accepted) {
+		// using its own type
 		expMan.updataParadigm(e->getType());
 		delete expMod;
 		expMod = new ExperimentModel(QDir("./paradigm"), this);
@@ -177,9 +184,14 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 	}
 	ui.scanParameterTableView->setModel(spMod);
 
-	// set the width of the input field of Scan Parameters
+	// automatically setting the width and height of the input field of Scan Parameters
+	QSize tableSize = ui.scanParameterTableView->size();
+	QSize headerSize = ui.scanParameterTableView->verticalHeader()->size();
+	int columnWidth = tableSize.width() - headerSize.width();
+	int rowHeight = tableSize.height() / spMod->rowCount();
 	for (int i = 0; i < spMod->rowCount(); ++i) {
-		ui.scanParameterTableView->setColumnWidth(i, 200);
+		ui.scanParameterTableView->setColumnWidth(i, columnWidth);
+		ui.scanParameterTableView->setRowHeight(i, rowHeight);
 	}
 
 	return 0;

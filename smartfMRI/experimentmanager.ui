@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1019</width>
-    <height>501</height>
+    <height>419</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="6" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_5">
          <property name="font">
           <font>
@@ -47,7 +47,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="0" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLabel" name="label_7">
@@ -63,7 +63,7 @@
          </item>
         </layout>
        </item>
-       <item row="4" column="1" colspan="2">
+       <item row="3" column="1" colspan="2">
         <widget class="QLineEdit" name="experimentNameLineEdit">
          <property name="font">
           <font>
@@ -72,7 +72,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="2" column="0">
         <spacer name="verticalSpacer_4">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -85,7 +85,7 @@
          </property>
         </spacer>
        </item>
-       <item row="6" column="1" colspan="2">
+       <item row="5" column="1" colspan="2">
         <widget class="QLineEdit" name="paradigmNameLineEdit">
          <property name="font">
           <font>
@@ -97,7 +97,20 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="4" column="1" colspan="2">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Please don't use the following characters:
+][!&quot;#$%&amp;'()*+,./:;&lt;=&gt;?@^`{|}~-</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
         <widget class="QLabel" name="label_4">
          <property name="font">
           <font>
@@ -109,7 +122,7 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="2">
+       <item row="0" column="1" colspan="2">
         <widget class="QLineEdit" name="experimentLineEdit">
          <property name="enabled">
           <bool>true</bool>
@@ -125,37 +138,7 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0" colspan="3">
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Research paradigm: parameters are unchangeable
-Clinical paradigm: parameters are alterable
-</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1" colspan="2">
-        <widget class="QLabel" name="label_2">
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Please don't use the following characters:
-][!&quot;#$%&amp;'()*+,./:;&lt;=&gt;?@^`{|}~-</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
+       <item row="4" column="0">
         <spacer name="verticalSpacer_2">
          <property name="font">
           <font>
@@ -262,24 +245,6 @@ Clinical paradigm: parameters are alterable
        </property>
       </spacer>
      </item>
-     <item row="2" column="0" colspan="3">
-      <widget class="QTableView" name="scanParametersTableView">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="textElideMode">
-        <enum>Qt::ElideLeft</enum>
-       </property>
-      </widget>
-     </item>
      <item row="4" column="2">
       <spacer name="horizontalSpacer_4">
        <property name="font">
@@ -298,6 +263,24 @@ Clinical paradigm: parameters are alterable
        </property>
       </spacer>
      </item>
+     <item row="2" column="0" colspan="3">
+      <widget class="QTableView" name="scanParametersTableView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="textElideMode">
+        <enum>Qt::ElideLeft</enum>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="0" colspan="3">
       <widget class="QLabel" name="label_3">
        <property name="sizePolicy">
@@ -312,8 +295,7 @@ Clinical paradigm: parameters are alterable
         </font>
        </property>
        <property name="text">
-        <string>Parameters are supposed to be integers and not smaller than 1.
- Non-integer will be floor to integer.</string>
+        <string>Parameters are supposed to be integers and greater than 0.</string>
        </property>
       </widget>
      </item>

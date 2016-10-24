@@ -1,6 +1,7 @@
 #include "scanparametersmodel.h"
 
-#include "qmessagebox.h"
+#include <qmessagebox.h>
+#include <math.h>
 
 ScanParametersModel::ScanParametersModel(QObject *parent)
 	: QAbstractListModel(parent) ,length(0)
@@ -9,7 +10,7 @@ ScanParametersModel::ScanParametersModel(QObject *parent)
 }
 
 ScanParametersModel::ScanParametersModel(Experiment& e, bool editFlag, QObject * parent)
-	: QAbstractListModel(parent), editFlag(editFlag)
+	: QAbstractListModel(parent), editFlag(editFlag), e(&e)
 {
 	headerList += QString(" TR (ms)");
 	headerList += QString(" Number of dummy scans (dynamics)");
@@ -100,19 +101,37 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 		index.column() != 0 || 
 		index.row() >= values.size() )
 		return false;
-	else if(value.toDouble() < 1){
+	else if(value.toDouble() < 1 || 
+		value.toDouble() != value.toInt()){
 		QMessageBox::critical(0, tr("Parameter is not correct!"),
-			tr("Parameter is not supposed to be smaller than 1"));
+			tr("Parameters are supposed to integers and greater than 0"));
 		return false;
 	}
-	else {
-		values[index.row()] = (int)value.toDouble();
-		if (value.toDouble() != (int)value.toDouble()) {
-			QMessageBox::warning(0, tr("Parameter is not correct!"),
-				tr("Parameter is supposed to be an integer and was floored to integer"));
+	else if(e->getType() == Experiment::CLINICAL) {
+		QList<double> newValues = values;
+		newValues[index.row()] = value.toInt();
+		// Warning message for non-integer result
+		if ((newValues[3] * newValues[0] / newValues[4]) !=
+			int(newValues[3] * newValues[0] / newValues[4])) {
+			QMessageBox::critical(0, tr("Task Weight is not correct!"),
+				tr("Please check input value of TR, Number of dynamics per"
+					"task block, Duration of task trial.\n"
+					"Number of dynamics per task block *"
+					" TR/Duration of task trial should be integer."));
+			return false;
 		}
 
+		if ((newValues[5] * newValues[0] / newValues[6]) !=
+			int(newValues[5] * newValues[0] / newValues[6])) {
+			QMessageBox::critical(0, tr("Rest Weight is not correct!"),
+				tr("Please check input value of TR, Number of dynamics per"
+					"rest block, Duration of rest trial."
+					"Number of dynamics per rest block *"
+					" TR/Duration of rest trial should be integer."));
+			return false;
+		}
 	}
+	values[index.row()] = value.toInt();
 	emit dataChanged(index, index);
 
 	return true;
@@ -236,19 +255,19 @@ int ScanParametersModel::setValuesToExperiment(Experiment& e)
 	}
 
 	// Warning message for non-integer result
-	if ((values[3] * values[0] / values[4]) !=
-		int(values[3] * values[0] / values[4])) {
-		QMessageBox::warning(0, tr("Task Weight is not correct!"),
-			tr("Please check input value of TR, Number of dynamics per"
-				"task block, Duration of task trial."));
-	}
+	//if ((values[3] * values[0] / values[4]) !=
+	//	int(values[3] * values[0] / values[4])) {
+	//	QMessageBox::warning(0, tr("Task Weight is not correct!"),
+	//		tr("Please check input value of TR, Number of dynamics per"
+	//			"task block, Duration of task trial."));
+	//}
 
-	if ((values[5] * values[0] / values[6]) !=
-		int(values[5] * values[0] / values[6])) {
-		QMessageBox::warning(0, tr("Rest Weight is not correct!"),
-			tr("Please check input value of TR, Number of dynamics per"
-				"rest block, Duration of rest trial."));
-	}
+	//if ((values[5] * values[0] / values[6]) !=
+	//	int(values[5] * values[0] / values[6])) {
+	//	QMessageBox::warning(0, tr("Rest Weight is not correct!"),
+	//		tr("Please check input value of TR, Number of dynamics per"
+	//			"rest block, Duration of rest trial."));
+	//}
 	return 1;
 }
 
@@ -327,7 +346,7 @@ int ScanParametersModel::getValuesFromExperiment(Experiment& e)
 	values[7] = (values[2] * (values[3] + values[5]) + values[1]) * values[0];
 	//values[7] = (values[3] * values[4] + values[5] * values[6])*values[2] + values[0] * values[1];
 	int min = int(values[7] / 1000 / 60);
-	scanTime = QString::number(min) + "min" + QString::number(int(values[7] / 1000 - min * 60)) + "s";
+	scanTime = QString::number(min) + "min" + QString::number(std::round(values[7] / 1000 - min * 60)) + "s";
 
 	return 1;
 }

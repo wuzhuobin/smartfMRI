@@ -78,7 +78,6 @@ public:
 	 */
 	QFileInfo getParadigmFile() const;
 
-
 private:
 	//UI
 	Ui::ExperimentManager ui;
