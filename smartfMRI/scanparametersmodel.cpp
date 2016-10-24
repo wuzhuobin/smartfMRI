@@ -114,7 +114,7 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 		if ((newValues[3] * newValues[0] / newValues[4]) !=
 			int(newValues[3] * newValues[0] / newValues[4])) {
 			QMessageBox::critical(0, tr("Task Weight is not correct!"),
-				tr("Please check input value of TR, Number of dynamics per"
+				tr("Please check input value of TR, Number of dynamics per "
 					"task block, Duration of task trial.\n"
 					"Number of dynamics per task block *"
 					" TR/Duration of task trial should be integer."));
@@ -124,7 +124,7 @@ bool ScanParametersModel::setData(const QModelIndex & index, const QVariant & va
 		if ((newValues[5] * newValues[0] / newValues[6]) !=
 			int(newValues[5] * newValues[0] / newValues[6])) {
 			QMessageBox::critical(0, tr("Rest Weight is not correct!"),
-				tr("Please check input value of TR, Number of dynamics per"
+				tr("Please check input value of TR, Number of dynamics per "
 					"rest block, Duration of rest trial."
 					"Number of dynamics per rest block *"
 					" TR/Duration of rest trial should be integer."));

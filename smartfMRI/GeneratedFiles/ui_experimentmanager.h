@@ -46,12 +46,13 @@ public:
     QSpacerItem *verticalSpacer_3;
     QSpacerItem *horizontalSpacer_5;
     QGridLayout *gridLayout_4;
+    QLabel *label_3;
     QLabel *label_6;
     QPushButton *confirmPushButton;
     QSpacerItem *horizontalSpacer_3;
     QSpacerItem *horizontalSpacer_4;
     QTableView *scanParametersTableView;
-    QLabel *label_3;
+    QSpacerItem *verticalSpacer_5;
 
     void setupUi(QWidget *ExperimentManager)
     {
@@ -158,11 +159,19 @@ public:
         gridLayout_4 = new QGridLayout();
         gridLayout_4->setSpacing(6);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        label_6 = new QLabel(ExperimentManager);
-        label_6->setObjectName(QStringLiteral("label_6"));
+        label_3 = new QLabel(ExperimentManager);
+        label_3->setObjectName(QStringLiteral("label_3"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
+        label_3->setFont(font1);
+
+        gridLayout_4->addWidget(label_3, 4, 0, 1, 3);
+
+        label_6 = new QLabel(ExperimentManager);
+        label_6->setObjectName(QStringLiteral("label_6"));
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy);
         label_6->setFont(font);
@@ -174,19 +183,19 @@ public:
         confirmPushButton->setMinimumSize(QSize(110, 0));
         confirmPushButton->setFont(font);
 
-        gridLayout_4->addWidget(confirmPushButton, 4, 1, 1, 1);
+        gridLayout_4->addWidget(confirmPushButton, 5, 1, 1, 1);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_4->addItem(horizontalSpacer_3, 4, 0, 1, 1);
+        gridLayout_4->addItem(horizontalSpacer_3, 5, 0, 1, 1);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_4->addItem(horizontalSpacer_4, 4, 2, 1, 1);
+        gridLayout_4->addItem(horizontalSpacer_4, 5, 2, 1, 1);
 
         scanParametersTableView = new QTableView(ExperimentManager);
         scanParametersTableView->setObjectName(QStringLiteral("scanParametersTableView"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(scanParametersTableView->sizePolicy().hasHeightForWidth());
@@ -196,13 +205,9 @@ public:
 
         gridLayout_4->addWidget(scanParametersTableView, 2, 0, 1, 3);
 
-        label_3 = new QLabel(ExperimentManager);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
-        label_3->setSizePolicy(sizePolicy);
-        label_3->setFont(font1);
+        verticalSpacer_5 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Preferred);
 
-        gridLayout_4->addWidget(label_3, 3, 0, 1, 3);
+        gridLayout_4->addItem(verticalSpacer_5, 3, 0, 1, 3);
 
 
         horizontalLayout->addLayout(gridLayout_4);
@@ -224,9 +229,9 @@ public:
         label_2->setText(QApplication::translate("ExperimentManager", "Please don't use the following characters:\n"
 "][!\"#$%&'()*+,./:;<=>?@^`{|}~-", 0));
         label_4->setText(QApplication::translate("ExperimentManager", "Experiment Name:", 0));
+        label_3->setText(QApplication::translate("ExperimentManager", "Parameters are supposed to be integers and greater than 0.", 0));
         label_6->setText(QApplication::translate("ExperimentManager", "Scan Parameters", 0));
         confirmPushButton->setText(QApplication::translate("ExperimentManager", "Confirm", 0));
-        label_3->setText(QApplication::translate("ExperimentManager", "Parameters are supposed to be integers and greater than 0.", 0));
     } // retranslateUi
 
 };

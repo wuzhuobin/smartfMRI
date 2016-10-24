@@ -279,12 +279,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_399D23ED5CE84FC39F8A5D06F51D6A9C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3A50706B0CA2466C855A9B2BAB0434C8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1030,12 +1024,6 @@
         "Entry"
         {
         "MsmKey" = "8:_ABDA8AFBE0264200BC6914804007F4A3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AC7D86E215904A02896D58CE23E766D7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6409,7 +6397,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{374F1909-90EF-4657-A1AA-78CB12935580}"
-        "PackageCode" = "8:{EFB35334-A3D0-4DC9-8514-23A0F9CA0474}"
+        "PackageCode" = "8:{27575588-8E05-49B5-A450-B4164D49372A}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -6981,34 +6969,6 @@
         }
         "MergeModule"
         {
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_399D23ED5CE84FC39F8A5D06F51D6A9C"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC120_CRT_x64.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
-            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_AC7D86E215904A02896D58CE23E766D7"
-            {
-            "UseDynamicProperties" = "11:TRUE"
-            "IsDependency" = "11:FALSE"
-            "SourcePath" = "8:C:\\Program Files (x86)\\Common Files\\Merge Modules\\Microsoft_VC110_CRT_x64.msm"
-                "Properties"
-                {
-                }
-            "LanguageId" = "3:0"
-            "Exclude" = "11:FALSE"
-            "Folder" = "8:"
-            "Feature" = "8:"
-            "IsolateTo" = "8:"
-            }
             "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_DC22848EAD1C4A16BE496449C9F9FE33"
             {
             "UseDynamicProperties" = "11:TRUE"
