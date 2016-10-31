@@ -1035,6 +1035,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ADD59272119647379D39E380B5670EEA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AF3E93AC2492408AA057C3034EB14FA8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4904,6 +4910,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ADD59272119647379D39E380B5670EEA"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\imageformats\\qico.dll"
+            "TargetName" = "8:qico.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_7A3189A94E204621885FB8DFE6DA2DE1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AF3E93AC2492408AA057C3034EB14FA8"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\6_PictureNaming\\Dummy.JPG"
@@ -6202,6 +6228,17 @@
                         {
                         }
                     }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_7A3189A94E204621885FB8DFE6DA2DE1"
+                    {
+                    "Name" = "8:imageformats"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_6BC15F53900246C7A5A1825C539C3064"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_A7F39A64223241F092806CE9FD9786B4"
                     {
                     "Name" = "8:paradigm"
@@ -6397,7 +6434,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{374F1909-90EF-4657-A1AA-78CB12935580}"
-        "PackageCode" = "8:{27575588-8E05-49B5-A450-B4164D49372A}"
+        "PackageCode" = "8:{EE0D7407-17C5-42D0-9F9A-A521CC4B3377}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -22,15 +22,15 @@ ExperimentManager::ExperimentManager(const QString paradigmFolder, QWidget * par
 
 	//int h = ui.scanParametersTableView->horizontalHeader()->height();
 	//for (int i = 0; i < ui.scanParametersTableView->rowCount(); i++)
-	//	h += ui.scanParametersTableView->rowHeight(i);
+//	h += ui.scanParametersTableView->rowHeight(i);
 
-	//w += ui.scanParametersTableView->contentsMargins().left() + ui.scanParametersTableView->contentsMargins().right();
-	//h += ui.scanParametersTableView->contentsMargins().top() + ui.scanParametersTableView->contentsMargins().bottom();
+//w += ui.scanParametersTableView->contentsMargins().left() + ui.scanParametersTableView->contentsMargins().right();
+//h += ui.scanParametersTableView->contentsMargins().top() + ui.scanParametersTableView->contentsMargins().bottom();
 
-	//ui.scanParametersTableView->setMaximumSize(QSize(w, h));
-	//ui.scanParametersTableView->setMinimumSize(QSize(w, h));
+//ui.scanParametersTableView->setMaximumSize(QSize(w, h));
+//ui.scanParametersTableView->setMinimumSize(QSize(w, h));
 
-	connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(accept()));
+connect(ui.confirmPushButton, SIGNAL(clicked()), this, SLOT(accept()));
 }
 
 ExperimentManager::~ExperimentManager() {
@@ -56,7 +56,7 @@ int ExperimentManager::copyParadigm(int exeperimentType)
 
 	QFileInfoList fil(QDir(targetDir.absolutePath() + "/" + folderName).entryInfoList(
 		QStringList("*.ebs2")));
-	if (fil.size() > 0 ) {
+	if (fil.size() > 0) {
 		qDebug() << fil[0].absoluteFilePath();
 		setParadigmFile(fil[0].absoluteFilePath());
 		updataParadigm(exeperimentType);
@@ -70,10 +70,10 @@ int ExperimentManager::loadParadigm(int exeperimentType)
 	ui.experimentNameLineEdit->setText(paradigmFile.dir().dirName());
 	if (spMod != nullptr) {
 		delete spMod;
-	} 
+	}
 	if (e != nullptr) {
 		delete e;
-	} 
+	}
 	e = new Experiment(paradigmFile, this, exeperimentType);
 
 	spMod = new ScanParametersModel(*e, true, this);
@@ -113,12 +113,20 @@ int ExperimentManager::updataParadigm(int experimentType)
 	}
 
 	spMod->setValuesToExperiment(*e);
-	if (ScanParameters::Successful == e->sps1.write() &&
-		ScanParameters::Successful == e->sps2.write() && 
-		ScanParameters::Successful == e->sps3.write() &&
-		ScanParameters::Successful == e->sps4.write()) {
-		qDebug() << "updataParadigm";
+	if (e->getType() == Experiment::CLINICAL) {
+		if (ScanParameters::Successful == e->sps1.write() &&
+			ScanParameters::Successful == e->sps2.write() &&
+			ScanParameters::Successful == e->sps3.write() &&
+			ScanParameters::Successful == e->sps4.write()) {
+			qDebug() << "updataParadigm";
+		}
 	}
+	else {
+		if(ScanParameters::Successful == e->sps4.write()){
+			qDebug() << "updataParadigm";
+		}
+	}
+
 	QDir dir = paradigmFile.dir();
 	if (paradigmFile.dir().dirName() == ui.experimentNameLineEdit->text())
 		return 1;

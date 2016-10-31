@@ -175,13 +175,14 @@ int SmartfMRI::selectExperiment(const QModelIndex& index)
 	if (spMod != nullptr) {
 		delete spMod;
 	}
-	if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()) {
-		e->sps3.read();
-		spMod = new ScanParametersModel(*e, false, this);
-	}
-	else {
-		spMod = new ScanParametersModel(this);
-	}
+	spMod = new ScanParametersModel(*e, false, this);
+	//if (ScanParameters::Successful == e->sps1.read() && ScanParameters::Successful == e->sps2.read()) {
+	//	e->sps3.read();
+	//	spMod = new ScanParametersModel(*e, false, this);
+	//}
+	//else {
+	//	spMod = new ScanParametersModel(this);
+	//}
 	ui.scanParameterTableView->setModel(spMod);
 
 	// automatically setting the width and height of the input field of Scan Parameters
