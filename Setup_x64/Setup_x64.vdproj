@@ -4915,7 +4915,7 @@
             "SourcePath" = "8:..\\x64\\Release\\imageformats\\qico.dll"
             "TargetName" = "8:qico.dll"
             "Tag" = "8:"
-            "Folder" = "8:_7A3189A94E204621885FB8DFE6DA2DE1"
+            "Folder" = "8:_6596F00364274E638EF77AAC5AD5D681"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5495,7 +5495,7 @@
             "SourcePath" = "8:..\\x64\\Release\\platforms\\qwindows.dll"
             "TargetName" = "8:qwindows.dll"
             "Tag" = "8:"
-            "Folder" = "8:_08E0F22570BD45739E67FEBE8FBD3825"
+            "Folder" = "8:_8B628016CE2C49129BF3828DB0CD559A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6206,17 +6206,6 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_08E0F22570BD45739E67FEBE8FBD3825"
-                    {
-                    "Name" = "8:platforms"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_568BD74AC95F46938A12560A5B55D4FA"
-                        "Folders"
-                        {
-                        }
-                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_3E0FF8D24C944608AA218225CE58CE11"
                     {
                     "Name" = "8:bin"
@@ -6228,13 +6217,24 @@
                         {
                         }
                     }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_7A3189A94E204621885FB8DFE6DA2DE1"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_6596F00364274E638EF77AAC5AD5D681"
                     {
                     "Name" = "8:imageformats"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_6BC15F53900246C7A5A1825C539C3064"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_8B628016CE2C49129BF3828DB0CD559A"
+                    {
+                    "Name" = "8:platforms"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_568BD74AC95F46938A12560A5B55D4FA"
                         "Folders"
                         {
                         }
@@ -6434,7 +6434,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{374F1909-90EF-4657-A1AA-78CB12935580}"
-        "PackageCode" = "8:{EE0D7407-17C5-42D0-9F9A-A521CC4B3377}"
+        "PackageCode" = "8:{2A8ADA22-55D1-4F5F-BDF5-B6194532BAED}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -6442,7 +6442,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:6.0.0"
-        "Manufacturer" = "8:DIIR"
+        "Manufacturer" = "8:CompRad Technology"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup_x64"

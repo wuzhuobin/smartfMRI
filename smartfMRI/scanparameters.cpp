@@ -1,16 +1,16 @@
 #include "scanparameters.h"
 
 ScanParameters::ScanParameters(QString parametersFileName, QObject * parent)
-	: QObject(parent), parametersFileName(parametersFileName)
+	: QObject(parent), parametersFileName(parametersFileName), 
+	fileStatus(this->read())
 {
 	qDebug() << QFileInfo(parametersFileName).absoluteFilePath ();
 	qDebug() << "ScanParameters construct";
 	//if(!QFileInfo(m_parametersFileName).exists())
 	//	this->write();
-	this->read();
 }
 
-ScanParameters::status ScanParameters::read()
+int ScanParameters::read()
 {
 	QFile file(parametersFileName);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
@@ -34,7 +34,7 @@ ScanParameters::status ScanParameters::read()
 	return ScanParameters::Successful;
 }
 
-ScanParameters::status ScanParameters::write()
+int ScanParameters::write()
 {
 	QFile file(parametersFileName);
 	QTextStream in(&file);
@@ -42,7 +42,7 @@ ScanParameters::status ScanParameters::write()
 		return ScanParameters::CannotOpenTheFile;
 	}
 	if (attributes.isEmpty() || values.isEmpty())
-		return ScanParameters::ParametersIncorrect;
+		return ScanParameters::FileIncorrect;
 	QString line1 = attributes.join('\t') + "\n";
 	in << line1;
 	for (int i = 0; i < values.size(); ++i) {
@@ -53,6 +53,11 @@ ScanParameters::status ScanParameters::write()
 	}
 	file.close();
 	return ScanParameters::Successful;
+}
+
+int ScanParameters::getFileStatus()
+{
+	return fileStatus;
 }
 
 ScanParameters::~ScanParameters()

@@ -84,6 +84,7 @@ int SmartfMRI::addExperiment() {
 		" to follow Smart fMRI paradigm structure.\n");
 	QPushButton *clinicalButton = experimentTypeQuestionBox.addButton(tr("Clinical"), QMessageBox::YesRole);
 	QPushButton *reserachButton = experimentTypeQuestionBox.addButton(tr("Research"), QMessageBox::NoRole);
+	QPushButton *cancelButton = experimentTypeQuestionBox.addButton(tr("Cancel"), QMessageBox::RejectRole);
 	experimentTypeQuestionBox.exec();
 	
 	int experimentType;
@@ -142,6 +143,24 @@ int SmartfMRI::updateExperiment()
 	qDebug() << "update";
 	Experiment*e = expMod->getExperiment(ui.experimentlistView->
 		currentIndex().data().toString());
+	if (e->sps4.getFileStatus() != ScanParameters::Successful) {
+		QMessageBox::critical(this, tr("Fail to update"),
+			QString("Please check the existence and format of the following files:\n"
+				"\tmyParameters.txt\n"
+				"Re-add the experiment to SmartfMRI can solve this error.\n"));
+		return 0;
+	}
+	if (e->getType() == Experiment::CLINICAL) {
+		if (e->sps1.getFileStatus() != ScanParameters::Successful ||
+			e->sps2.getFileStatus() != ScanParameters::Successful ||
+			e->sps3.getFileStatus() != ScanParameters::Successful
+			) {
+			QMessageBox::critical(this, tr("Fail to update"),
+				QString("Please check the existence and format of the following files:\n"
+					"myBlockList.txt, myCycleList.txt, myDummy.txt.\n"));
+			return 0;
+		}
+	}
 	expMan.setParadigmFile(e->getFi().absoluteFilePath());
 
 	expMan.setModal(true);

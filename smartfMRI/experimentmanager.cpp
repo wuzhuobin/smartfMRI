@@ -43,17 +43,17 @@ int ExperimentManager::copyParadigm(int exeperimentType)
 	QDir beforeDir(paradigmFile.absolutePath());
 	QDir targetDir(paradigmFolder);
 	QString folderName(ui.experimentNameLineEdit->text().remove(' '));
-	if (targetDir.mkdir(folderName))
+	if (!targetDir.mkdir(folderName)){
 		qDebug() << " make directory" << folderName;
-	qDebug() << beforeDir;
-	qDebug() << targetDir;
-	if (beforeDir.absolutePath() == targetDir.absolutePath() + "/" + folderName) {
+		qDebug() << beforeDir.absolutePath();
+		qDebug() << targetDir.absolutePath() + "/" + folderName;
 		QMessageBox::critical(this, tr("Fail to add experiment"),
 			QString("Experiment name may be repeated."));
 		return 0;
 	}
 	QCopyDirRecursively::copy(beforeDir.absolutePath(), targetDir.absolutePath() + "/" + folderName);
-
+	QDir(targetDir.absolutePath() + "/" + folderName
+	 + "/log" ).removeRecursively();
 	QFileInfoList fil(QDir(targetDir.absolutePath() + "/" + folderName).entryInfoList(
 		QStringList("*.ebs2")));
 	if (fil.size() > 0) {
