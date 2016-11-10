@@ -43,7 +43,8 @@ int ExperimentManager::copyParadigm(int exeperimentType)
 	QDir beforeDir(paradigmFile.absolutePath());
 	QDir targetDir(paradigmFolder);
 	QString folderName(ui.experimentNameLineEdit->text().remove(' '));
-	if (!targetDir.mkdir(folderName)){
+	qDebug() << QFile(targetDir.absoluteFilePath(folderName + "/myParameters.txt")).fileName();
+	if (!targetDir.mkdir(folderName) && QFile(targetDir.absoluteFilePath(folderName + "/myParameters.txt")).exists()){
 		qDebug() << " make directory" << folderName;
 		qDebug() << beforeDir.absolutePath();
 		qDebug() << targetDir.absolutePath() + "/" + folderName;
