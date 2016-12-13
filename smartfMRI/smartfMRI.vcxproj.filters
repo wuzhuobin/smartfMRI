@@ -119,6 +119,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_about.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="EncryptionAuthentication\EncryptionAuthentication.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="smartfmri.h">
@@ -200,6 +203,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_about.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptionAuthentication\EncryptionAuthentication.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

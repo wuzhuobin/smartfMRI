@@ -1,5 +1,7 @@
 #include "smartfmri.h"
 #include "keyconfirm.hpp"
+#include "EncryptionAuthentication.h"
+
 #include <QStyleFactory>
 #include <QtWidgets/QApplication>
 
@@ -38,14 +40,29 @@ int main(int argc, char *argv[])
 
 	qApp->setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }");
 
-	keyConfirm k;
 	SmartfMRI w;
-	// checkLicece, if the licence is correct, the main window will show up
-	if (k.checkLicence()) {
-		w.show();
+	//keyConfirm k;
+	//// checkLicece, if the licence is correct, the main window will show up
+	//if (k.checkLicence()) {
+	//	w.show();
+	//}
+	//else {
+	//	k.show();
+	//}
+	//return qApp->exec();
+
+	EncryptionAuthentication ea(0, QString(), QString(),
+		QDateTime(QDate(2017, 12, 31), QTime(24, 0, 0)), "68686868");
+	ea.enableExpiredDateTimeHint(false);
+	if (ea.authenticationExecAndKeyType(
+		EncryptionAuthentication::HAVING_KEY |
+		EncryptionAuthentication::USER_PASSWORD |
+		EncryptionAuthentication::EXPIRED_DATE_TIME) != EncryptionAuthentication::NORMAL) {
+		return EXIT_FAILURE;
 	}
 	else {
-		k.show();
+		 w.show(); 
+		return qApp->exec();
 	}
-	return qApp->exec();
+
 }

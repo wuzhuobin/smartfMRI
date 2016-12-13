@@ -351,6 +351,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_418613B0296A46D281B185C0C01BBE18"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_42139B150BD74B6C8FBC5741A1A97DD5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -514,6 +520,12 @@
         "Entry"
         {
         "MsmKey" = "8:_58E7F04E19D74687A5CF31B551C3769F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_597580FBE5814192B54F6B7887998A93"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1384,12 +1396,6 @@
         "Entry"
         {
         "MsmKey" = "8:_F72E01AFFA0E4D7F8F9790771331835E"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F7AE9427F87F428E9D4B827A8B2EB933"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2630,6 +2636,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_418613B0296A46D281B185C0C01BBE18"
+            {
+            "SourcePath" = "8:vc_redist.x64.exe"
+            "TargetName" = "8:vc_redist.x64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_42139B150BD74B6C8FBC5741A1A97DD5"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\1_Visual\\1_VisualSmart-1-1.txt"
@@ -3176,6 +3202,26 @@
             "TargetName" = "8:Slide21.JPG"
             "Tag" = "8:"
             "Folder" = "8:_E56DEBD0A91D4FF6B93B9A2B6F65D61D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_597580FBE5814192B54F6B7887998A93"
+            {
+            "SourcePath" = "8:..\\x64\\Release\\ViKey.dll"
+            "TargetName" = "8:ViKey.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -6070,26 +6116,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F7AE9427F87F428E9D4B827A8B2EB933"
-            {
-            "SourcePath" = "8:..\\x64\\Release\\license.dat"
-            "TargetName" = "8:license.dat"
-            "Tag" = "8:"
-            "Folder" = "8:_396E767000B04B48B2AB96955CBE7054"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F80ABAD43DBE403B837BC972A6DE4884"
             {
             "SourcePath" = "8:..\\smartfMRI\\paradigm\\6_PictureNaming\\PictureNaming\\Slide3.JPG"
@@ -6434,7 +6460,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:smartfMRI"
         "ProductCode" = "8:{374F1909-90EF-4657-A1AA-78CB12935580}"
-        "PackageCode" = "8:{2A8ADA22-55D1-4F5F-BDF5-B6194532BAED}"
+        "PackageCode" = "8:{4DF9650A-0CBD-436B-BED4-BCDD56EE0324}"
         "UpgradeCode" = "8:{73206063-29FE-4142-B755-933B33AD5F4C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
